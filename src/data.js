@@ -5,22 +5,23 @@ function data() {
     return ([{
         "Ingredients":{
             "Garlic": {
-                "type":"Spice",
-                "number":6,
-                "measure":"Unit"
+                "Type": "Spice",
+                "Variety":"" ,
+                "Quantity": 6,
+                "Measure": "Unit"
             },
             "Potatoes":{
-                "type":"Potato",
-                "number":12,
-                "measure":"Unit"
+                "Type": "Vegetable",
+                "Variety":"Red" ,
+                "Quantity": 12,
+                "Measure": "Unit"
             },
             "Salt":{
-                "type":"Spice",
-                "number":1,
-                "measure":"Kilograms"
+                "Type": "Spice",
+                "Variety":"Coarse Salt",
+                "Quantity": 1,
+                "Measure": "Kilograms"
             },
-            "Carrots":20,
-            "Beef":5,
         },
         "Recipes":{
             "Macaroni and Cheese":{
@@ -28,8 +29,41 @@ function data() {
                     "Mac",
                     "Cheese"
                 ],
-                "Recipe":
-                "Put the Mac in the Cheese and ta da"
+                "Recipe": "Put the Mac in the Cheese and ta da",
+                "Calories": 500,
+                "Tags": 
+                ["Vegetarian", "Lactose", "Pasta", "Lunch or Dinner"],
+                "Serving": 1,
+                "Duration": 8,
+                "Difficulty": "Easy"
+            },
+            "Meatballs and Rice":{
+                "Ingredients needed":[
+                    "Meatballs",
+                    "Rice"
+                ],
+                "Recipe": "Do something with the meatballs and rice",
+                "Calories": 700,
+                "Tags":
+                ["Meat", "Lunch or Dinner"],
+                "Serving": 4,
+                "Duration": 65,
+                "Difficulty": "Medium"
+            },
+            "Pancakes":{
+                "Ingredients needed":[
+                    "Flour",
+                    "Butter",
+                    "Eggs",
+                    "Milk"
+                ],
+                "Recipe": "Put it all together and hope for the best",
+                "Calories": 200,
+                "Tags":
+                ["Breakfast ,Brunch or Lunch", "Vegetarian"],
+                "Serving": 2,
+                "Duration": 15,
+                "Difficulty": "Medium"
             }
         }
     }])

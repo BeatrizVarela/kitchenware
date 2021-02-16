@@ -1,0 +1,42 @@
+.center-buttons {
+  button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid var(--text-colour);
+  }
+
+  #ingredients {
+    position: absolute;
+    left: 260px;
+    top: 300px;
+  }
+
+  #recipes {
+    position: absolute;
+    left: 430px;
+    top: 300px;
+  }
+
+  #tableware {
+    position: absolute;
+    left: 260px;
+    top: 380px;
+  }
+
+  #shopping-alerts {
+    position: absolute;
+    left: 430px;
+    top: 380px;
+  }
+  .center-logo {
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    left: 49%;
+    top: 49vh;
+    svg {
+      width: 50px;
+      height: 30px;
+    }
+  }
+}
