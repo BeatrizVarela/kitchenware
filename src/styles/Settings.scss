@@ -1,0 +1,74 @@
+.settings {
+  margin-top: 5px;
+  button#Gear {
+    margin-top: 15px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 700px;
+    //background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
+    //backdrop-filter: blur(5px);
+    //-webkit-backdrop-filter: blur(5px);
+    border-radius: 30px;
+    border: 1px solid var(--text-colour);
+  }
+  .settings-open {
+    border: 1px solid var(--text-colour);
+    border-radius: 10px;
+    margin: 20px;
+    background: rgba(48, 48, 48, 1);
+    opacity: 1;
+    background-color: var(--settings-background-colour);
+    position: fixed;
+    width: 95%;
+    height: 95%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+
+    button {
+      margin: 5px;
+      box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 30px;
+      border: 1px solid var(--text-colour);
+      width: 80px;
+      height: 30px;
+    }
+
+    button#close {
+      margin-top: 5px;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 680px;
+      //background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
+      //backdrop-filter: blur(5px);
+      //-webkit-backdrop-filter: blur(5px);
+      border-radius: 30px;
+      border: 1px solid var(--text-colour);
+    }
+  }
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms, transform 300ms;
+}

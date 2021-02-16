@@ -1,22 +1,21 @@
-import { GiKitchenScale } from "react-icons/gi";
+import { GiCookingPot } from "react-icons/gi";
+import { Link } from 'react-router-dom'
 import "../styles/HomePage.scss"
 
 const HomePage = ({darkMode,setdarkMode}) => {
 
-    const SettingsDarkMode = (event) => {
-        setdarkMode(!darkMode);
-    }
+
 
     return(
         <section className="home-page">
-            <button onClick={SettingsDarkMode} className="settings">Dark mode</button>
             <div className="center-buttons">
-                <button id="ingredients">Ingredients</button>
-                <button id="recipes">Recipes</button>
-                <button id="tableware">Tableware</button>
-                <button id="shopping-alerts">Shopping Alerts</button>
+                <Link to="/ingredients" id="ingredients"><p>Ingredients</p></Link>
+                <Link to="/recipes" id="recipes"><p>Recipes</p></Link>
+                <Link to="/tableware"ton id="tableware"><p>Tableware</p></Link>
+                <Link to="/shopping-alerts" id="shopping-alerts"><p>Shopping Alerts</p></Link>
                 <div className="center-logo">
-                    <GiKitchenScale />
+                    <GiCookingPot />
+                    <h1>Kitchenware</h1>
                 </div>
             </div>
         </section>

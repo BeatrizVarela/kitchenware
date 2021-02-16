@@ -68,3 +68,5 @@ function data() {
         }
     }])
 }
+
+export default data;
