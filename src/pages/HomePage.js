@@ -2,7 +2,7 @@ import { GiCookingPot } from "react-icons/gi";
 import { Link } from 'react-router-dom'
 import "../styles/HomePage.scss"
 
-const HomePage = ({darkMode,setdarkMode}) => {
+const HomePage = () => {
 
 
 

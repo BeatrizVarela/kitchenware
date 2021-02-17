@@ -1,8 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: var(--background-colour);
   color: var(--text-colour);
   transition: 0.5s ease;
   border-color: var(--text-colour);
+}
+
+html {
+  background-color: var(--background-colour);
+  background-image: var(--background-photo);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
 }
