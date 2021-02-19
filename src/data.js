@@ -36,7 +36,8 @@ function data() {
                 ["Vegetarian", "Lactose", "Pasta", "Lunch or Dinner"],
                 Serving: 1,
                 Duration: 8,
-                Difficulty: "Easy"
+                Difficulty: "Easy",
+                Image:"https://pinchofyum.com/wp-content/uploads/2014/02/healthy-mac-and-cheese-51.jpg"
             },
             {
                 Name: "Meatballs and Rice",
@@ -50,7 +51,8 @@ function data() {
                 ["Meat", "Lunch or Dinner"],
                 Serving: 4,
                 Duration: 65,
-                Difficulty: "Medium"
+                Difficulty: "Medium",
+                Image:"https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/2335/letterbox_Saucy-meatballs-with-rice-593.jpg"
             },
             {
                 Name: "Pancakes",
@@ -66,7 +68,8 @@ function data() {
                 ["Breakfast ,Brunch or Lunch", "Vegetarian"],
                 Serving: 2,
                 Duration: 15,
-                Difficulty: "Medium"
+                Difficulty: "Medium",
+                Image:"https://images-gmi-pmc.edge-generalmills.com/df109202-f5dd-45a1-99b4-f10939afd509.jpg"
             }
         ]
     }
