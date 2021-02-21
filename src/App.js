@@ -6,8 +6,8 @@ import Tableware from "./pages/Tableware"
 import ShoppingAlerts from "./pages/ShoppingAlerts"
 import data from "./data"
 import "./styles/App.scss"
-import LightBackground from "./media/images/kitchenware-lightmode-wallpaper.jpg"
-import DarkBackground from "./media/images/kitchenware-darkmode-wallpaper.jpg"
+import LightBackground from "./media/images/kitchenware-lightmode-wallpaper-edited.jpg"
+import DarkBackground from "./media/images/kitchenware-darkmode-wallpaper-cut.jpg"
 import {Switch, Route} from "react-router"
 import { useState } from "react";
 

@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
-import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md'
 import IngredientList from '../components/IngredientList'
 
 
 const Recipe = ({recipe}) => {
 
-    // <p id="Ingredient" onClick={(() => setingredientCheck(!(ingredientCheck)))}>{ingredientCheck ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />} {ingredient} </p>
 
     const [detailRecipe,setDetailRecipe] = useState(false);
-    // const [ingredientCheck,setingredientCheck] = useState(false);
+
 
     return(
         <div>

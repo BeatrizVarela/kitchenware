@@ -1,17 +1,25 @@
 .settings {
-  margin-top: 5px;
+  position: fixed;
+  z-index: 10;
+  height: 10vh;
+  width: 30%;
+  margin-left: 70%;
   button#Gear {
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
     width: 40px;
     height: 40px;
-    position: absolute;
-    left: 700px;
+    float: right;
     //background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
     //backdrop-filter: blur(5px);
     //-webkit-backdrop-filter: blur(5px);
     border-radius: 30px;
     border: 1px solid var(--text-colour);
+
+    svg {
+      color: var(--text-colour);
+    }
   }
   .settings-open {
     border: 1px solid var(--text-colour);

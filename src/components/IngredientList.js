@@ -8,7 +8,7 @@ const IngredientList = ({ingredient}) => {
 
     return(
         <div id="ingredient-list">
-            <p id="Ingredient" onClick={(() => setingredientCheck(!(ingredientCheck)))}>{ingredientCheck ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />} {ingredient} </p>
+            <p id={`ingredient${ingredientCheck ? '-checked':''}`} onClick={(() => setingredientCheck(!(ingredientCheck)))}>{ingredientCheck ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />} {ingredient} </p>
         </div>
     );
 }
