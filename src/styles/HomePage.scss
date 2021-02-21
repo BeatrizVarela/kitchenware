@@ -14,17 +14,20 @@ section.home-page {
       p {
         text-align: center;
         font-size: 2rem;
+        color: var(--text-colour);
       }
 
       svg {
         font-size: 5rem;
-        background: rgba(255, 255, 255, 0.2);
+        //background: rgba(255, 255, 255, 0.2);
+        background-color: var(--button-background);
         box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        // backdrop-filter: blur(5px);
+        // -webkit-backdrop-filter: blur(5px);
         border-radius: 30%;
         border: 1px solid var(--text-colour);
         padding: 15%;
+        color: var(--text-colour);
       }
     }
 
@@ -67,8 +70,12 @@ section.home-page {
       margin-left: -153px;
 
       svg {
-        font-size: 6rem;
-        margin-left: 106px;
+        font-size: 7rem;
+        margin-left: 100px;
+        color: var(--pot-color);
+        background-color: var(--button-background);
+        border-radius: 30%;
+        border: 1px solid var(--text-colour);
       }
       h1 {
         font-size: 2.3rem;

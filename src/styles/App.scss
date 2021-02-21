@@ -1,9 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  color: var(--text-colour);
   transition: 0.5s ease;
   border-color: var(--text-colour);
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--text-colour);
 }
 
 html {
@@ -12,6 +18,10 @@ html {
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   background-attachment: fixed;
+}
+
+button {
+  background-color: var(--button-background);
 }
 
 .App {
