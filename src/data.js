@@ -33,7 +33,8 @@ function data() {
                 Recipe: "Put the Mac in the Cheese and ta da",
                 Calories: 500,
                 Tags: 
-                ["Vegetarian", "Lactose", "Pasta", "Lunch or Dinner"],
+                ["Vegetarian", "Lactose", "Pasta", ],
+                Meal: "Lunch or Dinner",
                 Serving: 1,
                 Duration: 8,
                 Difficulty: "Easy",
@@ -48,7 +49,8 @@ function data() {
                 Recipe: "Do something with the meatballs and rice",
                 Calories: 700,
                 Tags:
-                ["Meat", "Lunch or Dinner"],
+                ["Meat",],
+                Meal: "Lunch or Dinner",
                 Serving: 4,
                 Duration: 65,
                 Difficulty: "Medium",
@@ -65,7 +67,8 @@ function data() {
                 Recipe: "Put it all together and hope for the best",
                 Calories: 200,
                 Tags:
-                ["Breakfast ,Brunch or Lunch", "Vegetarian"],
+                ["Vegetarian"],
+                Meal: "Breakfast or Brunch",
                 Serving: 2,
                 Duration: 15,
                 Difficulty: "Medium",
