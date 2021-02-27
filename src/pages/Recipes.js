@@ -9,7 +9,7 @@ import "../styles/Recipes.scss"
 const Recipes = ({ingAndRec}) => {
 
     const [recipeName,recipeNameOnChange] = useState("");
-    const [recipeFilter, recipeFilterOnChange] = useState(null);
+    const [recipeFilter, setrecipeFilter] = useState([]);
     const [recipeDificulty, setrecipeDificulty] = useState([])
 
     const dificultyChange = (event) => {
@@ -21,8 +21,27 @@ const Recipes = ({ingAndRec}) => {
             newList.push(event.target.value)
         }
         setrecipeDificulty(newList)
-        console.log(recipeDificulty)
     }
+
+    const recipeFilterOnChange = (e) => {
+        let filter = e.target.innerHTML;
+        let newRecipeFilterList = [];
+        /*if (newRecipeFilterList.includes(filter)) {
+            let i = newRecipeFilterList.indexOf(filter);
+            newRecipeFilterList.splice(i, 1);
+        } else {
+            
+        }*/
+        if (filter === 'Remove Filters'){
+            newRecipeFilterList = []
+        } else {
+            newRecipeFilterList.push(filter)
+        }
+
+        setrecipeFilter(newRecipeFilterList);
+    }
+
+
 
 
     return(
@@ -52,8 +71,12 @@ const Recipes = ({ingAndRec}) => {
                 </button>
             </div>
             <div className="filters">
+                <button onClick={recipeFilterOnChange}>Remove Filters</button>
                 <p>Filtros aqui</p>
-                <button onClick={(() => recipeFilterOnChange(null))}>Remove Filters</button>
+                <button onClick={recipeFilterOnChange}>Vegetarian</button>
+                <button onClick={recipeFilterOnChange}>Meat</button>
+                <button onClick={recipeFilterOnChange}>Lactose</button>
+                <button onClick={recipeFilterOnChange}>Pasta</button>
                 <div className="difficulty-change">
                     <h4>Dificulty filter</h4>
                     <label>Easy</label><input type="checkbox" onClick={dificultyChange} value="Easy"/>
@@ -64,12 +87,24 @@ const Recipes = ({ingAndRec}) => {
             {ingAndRec.Recipes.map((recipe) => {
                 if (recipe.Name.toUpperCase().indexOf(recipeName.toUpperCase()) > -1) {
                     if (recipeDificulty.length===0){
-                        return <Recipe recipe={recipe} />
-                    } else if(recipeDificulty.includes(recipe.Difficulty)) {
-                        return <Recipe recipe={recipe} />
+                        if (recipe.Tags.some(r=> recipeFilter.includes(r)) & recipeFilter.length===1){
+                            return <Recipe recipe={recipe} />
+                        } else if (recipeFilter.length===0) {
+                            return <Recipe recipe={recipe} />
+                        } else {
+                            return <p></p>
+                        }
+                    } else if (recipeDificulty.includes(recipe.Difficulty))  {
+                        if (recipe.Tags.some(r=> recipeFilter.includes(r)) & recipeFilter.length===1){
+                            return <Recipe recipe={recipe} />
+                        } else if (recipeFilter.length===0) {
+                            return <Recipe recipe={recipe} />
+                        } else {
+                            return <p></p>
+                        }
                     } else {
                         return <p></p>
-                    }  
+                    }
                 } else {
                     return <p></p>
                 }
