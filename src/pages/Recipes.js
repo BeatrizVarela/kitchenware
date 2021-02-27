@@ -52,19 +52,19 @@ const Recipes = ({ingAndRec}) => {
                 <input type="text" value={recipeName} onChange={(e) => recipeNameOnChange(e.target.value)} />
             </div>
             <div className="functionalities">
-                <button>
+                <button className="left-meals-buttons" id="week">
                     <BsCalendar />
                     <br />
                     This Week
                 </button>
                 <br />
-                <button>
+                <button className="left-meals-buttons" id="past">
                     <RiHistoryFill />
                     <br />
                     Past Meals
                 </button>
                 <br />
-                <button>
+                <button className="left-meals-buttons" id="saved">
                     <BsFillBookmarkFill />
                     <br />
                     Saved Meals

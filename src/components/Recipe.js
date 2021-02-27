@@ -1,12 +1,24 @@
 import { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import IngredientList from '../components/IngredientList'
+import { BsFillBookmarkFill } from 'react-icons/bs'
 
 
 const Recipe = ({recipe}) => {
 
 
     const [detailRecipe,setDetailRecipe] = useState(false);
+
+    const saveRec = () => {
+        if (localStorage.getItem("saved-recipes")){
+            let i = localStorage.getItem("saved-recipes")
+            let arr = [...i]
+            arr.push(recipe)
+            localStorage.setItem("saved-recipes", [arr])
+        } else {
+            localStorage.setItem("saved-recipes", [recipe])
+        }
+    }
 
 
     return(
@@ -27,6 +39,7 @@ const Recipe = ({recipe}) => {
         
         <div className="detail-recipe">
                 <button id="close" onClick={(() => setDetailRecipe(false))}>Close</button>
+                <button id="save" onClick={saveRec}><BsFillBookmarkFill /></button>
                 <h2>{recipe.Name}</h2>
                 <img src={recipe.Image} alt={recipe.Name} id="food-image" />
                 <p>{recipe.Tags.join(", ")} | {recipe.Duration} minutes | {recipe.Difficulty}</p>
