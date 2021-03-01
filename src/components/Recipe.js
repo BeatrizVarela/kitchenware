@@ -6,17 +6,16 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 
 const Recipe = ({recipe}) => {
 
-
     const [detailRecipe,setDetailRecipe] = useState(false);
 
     const saveRec = () => {
         if (localStorage.getItem("saved-recipes")){
-            let i = localStorage.getItem("saved-recipes")
-            let arr = [...i]
+            let i = JSON.parse(localStorage.getItem("saved-recipes"));
+            let arr = [i]
             arr.push(recipe)
-            localStorage.setItem("saved-recipes", [arr])
+            localStorage.setItem("saved-recipes", JSON.stringify(arr));
         } else {
-            localStorage.setItem("saved-recipes", [recipe])
+            localStorage.setItem("saved-recipes", JSON.stringify([recipe]));
         }
     }
 

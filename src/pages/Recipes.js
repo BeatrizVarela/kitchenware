@@ -1,4 +1,5 @@
 import Recipe from "../components/Recipe"
+import SavedRecipes from "../components/SavedRecipes"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { BsCalendar,BsFillBookmarkFill } from 'react-icons/bs'
@@ -6,11 +7,15 @@ import { RiHistoryFill } from 'react-icons/ri'
 import "../styles/Recipes.scss"
 
 
+
 const Recipes = ({ingAndRec}) => {
 
     const [recipeName,recipeNameOnChange] = useState("");
     const [recipeFilter, setrecipeFilter] = useState([]);
     const [recipeDificulty, setrecipeDificulty] = useState([])
+    const [savedOpen, setSavedOpen] = useState(false);
+
+    var savedRecipes = []
 
     const dificultyChange = (event) => {
         let newList = [...recipeDificulty]
@@ -41,8 +46,9 @@ const Recipes = ({ingAndRec}) => {
         setrecipeFilter(newRecipeFilterList);
     }
 
-
-
+    if (localStorage.getItem("saved-recipes")){
+        savedRecipes = localStorage.getItem("saved-recipes")
+    } 
 
     return(
         <section className="recipes">
@@ -64,11 +70,12 @@ const Recipes = ({ingAndRec}) => {
                     Past Meals
                 </button>
                 <br />
-                <button className="left-meals-buttons" id="saved">
+                <button className="left-meals-buttons" id="saved" onClick={(() => setSavedOpen(!(savedOpen)))}>
                     <BsFillBookmarkFill />
                     <br />
                     Saved Meals
                 </button>
+                <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen}/>
             </div>
             <div className="filters">
                 <button onClick={recipeFilterOnChange}>Remove Filters</button>
