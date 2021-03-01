@@ -1,10 +1,62 @@
 .ingredients {
   padding: 1%;
 
+  .header {
+    font-size: 1.5rem;
+    margin: 4rem 8rem 0 5rem;
+    border: 1px solid;
+    border-radius: 5px;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333333;
+    }
+
+    li#header-name {
+      float: left;
+      padding-left: 2rem;
+    }
+
+    li#header-quantity {
+      float: left;
+      padding-left: 8rem;
+    }
+
+    li#header-variety {
+      float: left;
+      padding-left: 7rem;
+    }
+
+    li p {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+    }
+  }
+
   .ingredients-stock {
     float: left;
-    margin-left: 5%;
-    padding-top: 10%;
+    margin-left: 12%;
+    padding-top: 4%;
     font-size: 1.5rem;
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      padding: 0.8rem;
+      -webkit-column-count: 3; /* Chrome, Safari, Opera */
+      -moz-column-count: 3; /* Firefox */
+      column-count: 3;
+      -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+      -moz-column-gap: 100px; /* Firefox */
+      column-gap: 115px;
+    }
   }
 }
