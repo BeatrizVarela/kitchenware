@@ -19,11 +19,13 @@ function App() {
 
   if (darkMode){
     document.documentElement.style.setProperty('--background-colour', "#0a0e0f");
-    document.documentElement.style.setProperty('--settings-background-colour', "#05070c");
-    document.documentElement.style.setProperty('--text-colour', "#e9f0c6");
+    document.documentElement.style.setProperty('--settings-background-colour', "#1d1d1d");
+    document.documentElement.style.setProperty('--text-colour', "#dddddd");
     document.documentElement.style.setProperty('--background-photo', "url("+DarkBackground+")");
     document.documentElement.style.setProperty('--button-background', '#292929');
     document.documentElement.style.setProperty('--pot-color','#d3a4a5');
+    document.documentElement.style.setProperty('--homepage-button-colour','#e9f0c6');
+    
 
   } else {
     document.documentElement.style.setProperty('--background-colour', "#e6ecee");
@@ -31,7 +33,8 @@ function App() {
     document.documentElement.style.setProperty('--text-colour', "#1d1d1d");
     document.documentElement.style.setProperty('--background-photo', "url("+LightBackground+")");
     document.documentElement.style.setProperty('--button-background', '#ebebeb');
-    document.documentElement.style.setProperty('--pot-color','#664243')
+    document.documentElement.style.setProperty('--pot-color','#664243');
+    document.documentElement.style.setProperty('--homepage-button-colour','#1d1d1d');
   }
 
   return (

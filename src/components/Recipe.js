@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import IngredientList from '../components/IngredientList'
 import { BsFillBookmarkFill } from 'react-icons/bs'
+import { AiOutlineClose } from 'react-icons/ai'
 
 
 const Recipe = ({recipe}) => {
@@ -37,9 +38,9 @@ const Recipe = ({recipe}) => {
             >
         
         <div className="detail-recipe">
-                <button id="close" onClick={(() => setDetailRecipe(false))}>Close</button>
+                <button id="close" onClick={(() => setDetailRecipe(false))}><AiOutlineClose /></button>
                 <button id="save" onClick={saveRec}><BsFillBookmarkFill /></button>
-                <h2>{recipe.Name}</h2>
+                <h2 id="title">{recipe.Name}</h2>
                 <img src={recipe.Image} alt={recipe.Name} id="food-image" />
                 <p>{recipe.Tags.join(", ")} | {recipe.Duration} minutes | {recipe.Difficulty}</p>
                 {recipe.Ingredients.map((ingredient) => {
