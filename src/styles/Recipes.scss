@@ -1,21 +1,35 @@
 .recipes {
   padding: 1%;
 
+  a{
+    width:10%;
+    height:20vh;
+  }
+
   .functionalities {
     position:fixed;
     margin-left: 3%;
 
-    button {
-      justify-content: center;
-      align-items: center;
-      margin:auto;
-      border-radius:50%;
-      width:6rem;
-      height:11vh;
 
-      svg{
-        width:5rem;
-        height:5vh;
+    .button-combo{
+      margin-bottom:10vh;
+
+      p{
+        color:var(--text-colour);
+      }
+      button {
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        border-radius:50%;
+        width:6rem;
+        height:11vh;
+        
+  
+        svg{
+          width:5rem;
+          height:5vh;
+        }
       }
     }
   }
@@ -37,7 +51,7 @@
       transition:1s ease;
       padding:2%;
       border: 2px solid var(--text-colour);
-      border-radius:15%;
+      border-radius:25%;
       margin: 2%;
       font-size: 1.3rem;
       background: none;
@@ -175,7 +189,7 @@
 }
 
 .saved-recipes-show {
-  position: absolute;
+  position: fixed;
   display: block;
   top: 0;
   bottom: 0;
@@ -186,8 +200,11 @@
   margin: auto;
   background-color: var(--settings-background-colour);
   z-index:543567809376095734;
+  overflow:scroll;
 }
 
 .saved-recipes-hidden {
   display: none;
 }
+
+

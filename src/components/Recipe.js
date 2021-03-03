@@ -5,19 +5,23 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 import { AiOutlineClose } from 'react-icons/ai'
 
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, setsavedRecipes}) => {
 
     const [detailRecipe,setDetailRecipe] = useState(false);
 
     const saveRec = () => {
         if (localStorage.getItem("saved-recipes")){
-            let i = JSON.parse(localStorage.getItem("saved-recipes"));
-            let arr = [i]
-            arr.push(recipe)
-            localStorage.setItem("saved-recipes", JSON.stringify(arr));
+            let i = [...JSON.parse(localStorage.getItem("saved-recipes"))];
+            if (localStorage.getItem("saved-recipes").includes(JSON.stringify(recipe))) {
+                i.splice(recipe,1);
+            } else {
+                i.push(recipe)
+            }
+            localStorage.setItem("saved-recipes", JSON.stringify(i));
         } else {
             localStorage.setItem("saved-recipes", JSON.stringify([recipe]));
         }
+        setsavedRecipes(JSON.parse(localStorage.getItem("saved-recipes")));
     }
 
 

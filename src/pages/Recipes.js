@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { BsCalendar,BsFillBookmarkFill } from 'react-icons/bs'
 import { RiHistoryFill } from 'react-icons/ri'
+import { BiArrowBack } from 'react-icons/bi'
 import "../styles/Recipes.scss"
 
 
@@ -14,8 +15,8 @@ const Recipes = ({ingAndRec}) => {
     const [recipeFilter, setrecipeFilter] = useState([]);
     const [recipeDificulty, setrecipeDificulty] = useState([])
     const [savedOpen, setSavedOpen] = useState(false);
+    const [savedRecipes,setsavedRecipes] = useState(JSON.parse(localStorage.getItem("saved-recipes")));
 
-    var savedRecipes = []
 
     const dificultyChange = (event) => {
         let newList = [...recipeDificulty]
@@ -35,8 +36,8 @@ const Recipes = ({ingAndRec}) => {
         if (newRecipeFilterList.includes(filter)) {
             let i = newRecipeFilterList.indexOf(filter);
             newRecipeFilterList.splice(i, 1);
-        }
-        if (filter === 'Remove Filters'){
+            e.target.classList.toggle('Checked-filter');
+        } else if (filter === 'Remove Filters'){
             newRecipeFilterList = []
             let checked = [...document.getElementsByClassName("Checked-filter")]
             if (checked.length>0) {
@@ -53,13 +54,10 @@ const Recipes = ({ingAndRec}) => {
         setrecipeFilter(newRecipeFilterList);
     }
 
-    if (localStorage.getItem("saved-recipes")){
-        savedRecipes = localStorage.getItem("saved-recipes")
-    } 
 
     return(
         <section className="recipes">
-            <Link to="/">Back</Link>
+            <Link to="/"><BiArrowBack id="Back" /></Link>
             <div className="search-bar">
                 <label htmlFor="search">Search:</label>
                 <input type="text" value={recipeName} onChange={(e) => recipeNameOnChange(e.target.value)} />
@@ -89,7 +87,7 @@ const Recipes = ({ingAndRec}) => {
                     <p>Saved Meals</p>
                 </div>
             </div>
-            <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen}/>
+            <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen} savedRecipes={savedRecipes}/>
             <div className="filters">
                 <button onClick={recipeFilterOnChange}>Remove Filters</button>
                 <p>Filtros aqui</p>
@@ -105,20 +103,20 @@ const Recipes = ({ingAndRec}) => {
                 </div>
             </div>
             {ingAndRec.Recipes.map((recipe) => {
-                if (recipe.Name.toUpperCase().indexOf(recipeName.toUpperCase()) > -1) {
+                if (recipe.Name.toUpperCase().indexOf(recipeName.toUpperCase()) > -1) { //Search-bar
                     if (recipeDificulty.length===0){
-                        if (recipe.Tags.some(r=> recipeFilter.includes(r)) & recipeFilter.length===1){
-                            return <Recipe recipe={recipe} />
+                        if (recipe.Tags.some(r=> recipeFilter.includes(r))){
+                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
                         } else if (recipeFilter.length===0) {
-                            return <Recipe recipe={recipe} />
+                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
                         } else {
                             return <p></p>
                         }
                     } else if (recipeDificulty.includes(recipe.Difficulty))  {
-                        if (recipe.Tags.some(r=> recipeFilter.includes(r)) & recipeFilter.length===1){
-                            return <Recipe recipe={recipe} />
+                        if (recipe.Tags.some(r=> recipeFilter.includes(r))){
+                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
                         } else if (recipeFilter.length===0) {
-                            return <Recipe recipe={recipe} />
+                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
                         } else {
                             return <p></p>
                         }
