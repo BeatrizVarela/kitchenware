@@ -19,28 +19,35 @@ const Recipes = ({ingAndRec}) => {
 
     const dificultyChange = (event) => {
         let newList = [...recipeDificulty]
-        if (newList.includes(event.target.value)){
-            let index = newList.indexOf(event.target.value)
+        if (newList.includes(event.target.innerHTML)){
+            let index = newList.indexOf(event.target.innerHTML)
             newList.splice(index, 1);
         } else {
-            newList.push(event.target.value)
+            newList.push(event.target.innerHTML)
         }
         setrecipeDificulty(newList)
+        event.target.classList.toggle('Checked');
     }
 
     const recipeFilterOnChange = (e) => {
         let filter = e.target.innerHTML;
-        let newRecipeFilterList = [];
-        /*if (newRecipeFilterList.includes(filter)) {
+        let newRecipeFilterList = [...recipeFilter];
+        if (newRecipeFilterList.includes(filter)) {
             let i = newRecipeFilterList.indexOf(filter);
             newRecipeFilterList.splice(i, 1);
-        } else {
-            
-        }*/
+        }
         if (filter === 'Remove Filters'){
             newRecipeFilterList = []
+            let checked = [...document.getElementsByClassName("Checked-filter")]
+            if (checked.length>0) {
+                let i;
+                for (i = 0; i < checked.length; i++){
+                    checked[i].classList.toggle('Checked-filter')
+                }
+            }
         } else {
-            newRecipeFilterList.push(filter)
+            newRecipeFilterList.push(filter);
+            e.target.classList.toggle('Checked-filter');
         }
 
         setrecipeFilter(newRecipeFilterList);
@@ -58,25 +65,31 @@ const Recipes = ({ingAndRec}) => {
                 <input type="text" value={recipeName} onChange={(e) => recipeNameOnChange(e.target.value)} />
             </div>
             <div className="functionalities">
-                <button className="left-meals-buttons" id="week">
-                    <BsCalendar />
+                <div className="button-combo">
+                    <button className="left-meals-buttons" id="week">
+                        <BsCalendar />
+                    </button>
                     <br />
-                    This Week
-                </button>
-                <br />
-                <button className="left-meals-buttons" id="past">
-                    <RiHistoryFill />
+                    <p>This Week</p>
                     <br />
-                    Past Meals
-                </button>
-                <br />
-                <button className="left-meals-buttons" id="saved" onClick={(() => setSavedOpen(!(savedOpen)))}>
-                    <BsFillBookmarkFill />
+                </div>
+                <div className="button-combo">
+                    <button className="left-meals-buttons" id="past">
+                        <RiHistoryFill />
+                    </button>
                     <br />
-                    Saved Meals
-                </button>
-                <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen}/>
+                    <p>Past Meals</p>
+                    <br />
+                </div>
+                <div className="button-combo">
+                    <button className="left-meals-buttons" id="saved" onClick={(() => setSavedOpen(!(savedOpen)))}>
+                        <BsFillBookmarkFill />
+                    </button>
+                    <br />
+                    <p>Saved Meals</p>
+                </div>
             </div>
+            <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen}/>
             <div className="filters">
                 <button onClick={recipeFilterOnChange}>Remove Filters</button>
                 <p>Filtros aqui</p>
@@ -86,9 +99,9 @@ const Recipes = ({ingAndRec}) => {
                 <button onClick={recipeFilterOnChange}>Pasta</button>
                 <div className="difficulty-change">
                     <h4>Dificulty filter</h4>
-                    <label>Easy</label><input type="checkbox" onClick={dificultyChange} value="Easy"/>
-                    <label>Medium</label><input type="checkbox" onClick={dificultyChange} value="Medium" />
-                    <label>Hard</label><input type="checkbox" onClick={dificultyChange} value="Hard" />
+                    <button onClick={dificultyChange}>Easy</button>
+                    <button onClick={dificultyChange}>Medium</button>
+                    <button onClick={dificultyChange}>Hard</button>
                 </div>
             </div>
             {ingAndRec.Recipes.map((recipe) => {

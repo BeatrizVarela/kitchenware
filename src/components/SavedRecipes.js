@@ -11,11 +11,18 @@ const SavedRecipes = ({savedOpen,setSavedOpen}) => {
             })}
     */
 
-   const [savedRecipes,setsavedRecipes] = useState(JSON.parse(localStorage.getItem("saved-recipes"))); //Ah
+   const [savedRecipes,setsavedRecipes] = useState(JSON.parse(localStorage.getItem("saved-recipes"))); 
+
+   /*const Test = ({arrayLength}) => {
+       if (arrayLength>1) {
+
+       }
+   }*/
 
     return(
         <div className={`saved-recipes${savedOpen ? '-show' : '-hidden'}`}>
             <button onClick={(() => setSavedOpen(false))}>Fecha-te Sésamo</button>
+
 
         </div>
     )
