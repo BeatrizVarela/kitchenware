@@ -87,7 +87,7 @@ const Recipes = ({ingAndRec}) => {
                     <p>Saved Meals</p>
                 </div>
             </div>
-            <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen} savedRecipes={savedRecipes}/>
+            <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen} savedRecipes={savedRecipes} setsavedRecipes={setsavedRecipes}/>
             <div className="filters">
                 <button onClick={recipeFilterOnChange}>Remove Filters</button>
                 <p>Filtros aqui</p>

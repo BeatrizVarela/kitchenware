@@ -36,30 +36,45 @@
     left: 0px;
     z-index: 1000;
 
-    button {
-      margin: 5px;
+    #dark{
+      margin: 1%;
+    }
+
+    button#dark-mode {
       box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border-radius: 30px;
+      border-radius: 100%;
       border: 1px solid var(--text-colour);
-      width: 80px;
-      height: 30px;
+      width: 8%;
+      height: 10vh;
+
+      svg {
+        width:80%;
+        height:5vh;
+      }
     }
 
     button#close {
       margin-top: 5px;
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      left: 680px;
+      width: 8%;
+      height: 10vh;
+      float:right;
+      //margin-right:2%;
+      //margin-top:2vh;
+      background:none;
       //background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
+      //box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
       //backdrop-filter: blur(5px);
       //-webkit-backdrop-filter: blur(5px);
-      border-radius: 30px;
-      border: 1px solid var(--text-colour);
+      border-radius: 100%;
+      border: none;
+
+      svg {
+        width:80%;
+        height:5vh;
+      }
     }
   }
 }

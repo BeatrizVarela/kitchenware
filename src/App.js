@@ -36,7 +36,7 @@ function App() {
     document.documentElement.style.setProperty('--button-background', '#ebebeb');
     document.documentElement.style.setProperty('--pot-color','#664243');
     document.documentElement.style.setProperty('--homepage-button-colour','#1d1d1d');
-    document.documentElement.style.setProperty('--low-opacity-background','rgba(240, 128, 128, 0.295)');
+    document.documentElement.style.setProperty('--low-opacity-background','rgba(240, 184, 184, 0.541)');
 
   }
 
