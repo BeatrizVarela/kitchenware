@@ -2,24 +2,68 @@ function data() {
   return {
     Ingredients: [
       {
-        Garlic: {
-          Type: "Spice",
-          Variety: "",
-          Quantity: 6,
-          Measure: "Unit",
-        },
-        Potatoes: {
-          Type: "Vegetable",
-          Variety: "Red",
-          Quantity: 12,
-          Measure: "Unit",
-        },
-        Salt: {
-          Type: "Spice",
-          Variety: "Coarse Salt",
-          Quantity: 1,
-          Measure: "Kilograms",
-        },
+        Name: "Garlic",
+        Type: "Spice",
+        Variety: "",
+        Quantity: 6,
+        Measure: "Unit",
+      },
+      {
+        Name: "Potatoes",
+        Type: "Vegetable",
+        Variety: "Red",
+        Quantity: 12,
+        Measure: "Unit",
+      },
+      {
+        Name: "Salt",
+        Type: "Spice",
+        Variety: "Coarse Salt",
+        Quantity: 1,
+        Measure: "Kilograms",
+      },
+    ],
+
+    Tableware: [
+      {
+        Name: "Spoons",
+        Quantity: 6,
+        Type: "Silverware",
+      },
+      {
+        Name: "Knives",
+        Quantity: 6,
+        Type: "Silverware",
+      },
+      {
+        Name: "Forks",
+        Quantity: 6,
+        Type: "Silverware",
+      },
+      {
+        Name: "Soup plates",
+        Quantity: 12,
+        Type: "Dinnerware",
+      },
+      {
+        Name: "Regular plates",
+        Quantity: 12,
+        Type: "Dinnerware",
+      },
+      {
+        Name: "Dessert plates",
+        Quantity: 12,
+        Type: "Dinnerware",
+      },
+      {
+        Name: "Glasses",
+        Quantity: 6,
+        Type: "Drinkware",
+      },
+      {
+        Name: "Salad bowls",
+        Quantity: 2,
+        Type: "Serveware",
       },
     ],
 

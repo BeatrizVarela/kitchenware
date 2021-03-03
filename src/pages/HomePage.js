@@ -15,7 +15,7 @@ const HomePage = () => {
         <Link to="/ingredients" id="ingredients">
           <GiCutLemon />
           <br />
-          <p>IMGREDIENTS</p>
+          <p>INGREDIENTS</p>
         </Link>
         <Link to="/recipes" id="recipes">
           <GiChickenOven />
