@@ -11,7 +11,7 @@ const SavedRecipes = ({savedOpen,setSavedOpen}) => {
             })}
     */
 
-   const [savedRecipes,setsavedRecipes] = useState(JSON.parse(localStorage.getItem("saved-recipes")));
+   const [savedRecipes,setsavedRecipes] = useState(JSON.parse(localStorage.getItem("saved-recipes"))); //Ah
 
     return(
         <div className={`saved-recipes${savedOpen ? '-show' : '-hidden'}`}>
