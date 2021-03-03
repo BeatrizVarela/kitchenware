@@ -3,26 +3,29 @@
 function data() {
 
     return {
-        "Ingredients":[{
-            "Garlic": {
-                "Type": "Spice",
-                "Variety":"" ,
-                "Quantity": 6,
-                "Measure": "Unit"
+        "Ingredients":[
+            {
+                Name: "Garlic",
+                Type: "Spice",
+                Variety:"" ,
+                Quantity: 6,
+                Measure: "Unit"
             },
-            "Potatoes":{
-                "Type": "Vegetable",
-                "Variety":"Red" ,
-                "Quantity": 12,
-                "Measure": "Unit"
+            {
+                Name: "Potatoes",
+                Type: "Vegetable",
+                Variety:"Red" ,
+                Quantity: 12,
+                Measure: "Unit"
             },
-            "Salt":{
-                "Type": "Spice",
-                "Variety":"Coarse Salt",
-                "Quantity": 1,
-                "Measure": "Kilograms"
+            {
+                Name: "Salt", 
+                Type: "Spice",
+                Variety:"Coarse Salt",
+                Quantity: 1,
+                Measure: "Kilograms"
             },
-        }],
+        ],
         "Recipes":[
             {
                 Name: "Mac and Cheese",
