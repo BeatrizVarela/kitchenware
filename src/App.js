@@ -21,6 +21,10 @@ function App() {
       "#0a0e0f"
     );
     document.documentElement.style.setProperty(
+      "--table-background",
+      "rgba(34, 34, 34, 0.849)"
+    );
+    document.documentElement.style.setProperty(
       "--settings-background-colour",
       "#1d1d1d"
     );
@@ -42,6 +46,10 @@ function App() {
     document.documentElement.style.setProperty(
       "--background-colour",
       "#e6ecee"
+    );
+    document.documentElement.style.setProperty(
+      "--table-background",
+      "#e6bfd694"
     );
     document.documentElement.style.setProperty(
       "--settings-background-colour",
