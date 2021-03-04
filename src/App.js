@@ -14,7 +14,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [darkMode,setdarkMode] = useState(false);
+  const [darkMode,setdarkMode] = useState(localStorage.getItem("dark-mode"));
   const [ingAndRec,setingAndRec] = useState(data())
 
   if (darkMode){
@@ -30,13 +30,13 @@ function App() {
 
   } else {
     document.documentElement.style.setProperty('--background-colour', "#e6ecee");
-    document.documentElement.style.setProperty('--settings-background-colour', "#d4d4d4");
+    document.documentElement.style.setProperty('--settings-background-colour', "#f7f7f7");
     document.documentElement.style.setProperty('--text-colour', "#1d1d1d");
     document.documentElement.style.setProperty('--background-photo', "url("+LightBackground+")");
-    document.documentElement.style.setProperty('--button-background', '#ebebeb');
+    document.documentElement.style.setProperty('--button-background', '#dedddd73');
     document.documentElement.style.setProperty('--pot-color','#664243');
     document.documentElement.style.setProperty('--homepage-button-colour','#1d1d1d');
-    document.documentElement.style.setProperty('--low-opacity-background','rgba(240, 184, 184, 0.541)');
+    document.documentElement.style.setProperty('--low-opacity-background','rgba(234, 202, 202 , 0.4)');
 
   }
 

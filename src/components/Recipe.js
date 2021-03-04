@@ -10,12 +10,6 @@ const Recipe = ({recipe, setsavedRecipes}) => {
     const [detailRecipe,setDetailRecipe] = useState(false);
     const [bookmark,bookmarkChange] = useState(false);
 
-    function arrayRemove(arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
 
     const saveRec = (event) => {
         if (localStorage.getItem("saved-recipes")){
@@ -40,8 +34,12 @@ const Recipe = ({recipe, setsavedRecipes}) => {
     }
 
     const Bookmark = () => {
-        if (localStorage.getItem("saved-recipes").includes(JSON.stringify(recipe))) {
-            return <BsFillBookmarkFill />
+        if (localStorage.getItem("saved-recipes")) {
+            if (localStorage.getItem("saved-recipes").includes(JSON.stringify(recipe))){
+                return <BsFillBookmarkFill />
+            } else {
+                return <BsBookmark />
+            }
         } else {
             return <BsBookmark />
         }
@@ -70,10 +68,16 @@ const Recipe = ({recipe, setsavedRecipes}) => {
                 <h2 id="title">{recipe.Name}</h2>
                 <img src={recipe.Image} alt={recipe.Name} id="food-image" />
                 <p>{recipe.Tags.join(", ")} | {recipe.Duration} minutes | {recipe.Difficulty}</p>
+                <h2 id="sub-title">Ingredients:</h2>
                 {recipe.Ingredients.map((ingredient) => {
                     return (<IngredientList ingredient={ingredient}/>);
                 })}
-                <p>{recipe.Recipe}</p>
+                <h2 id="sub-title">Recipe:</h2>
+                <ol>
+                    {recipe.Recipe.map((description) => {
+                        return <li>{description}</li>
+                    })}
+                </ol>
             </div>
             </CSSTransition>
         </div>

@@ -24,7 +24,7 @@
 
 
     .button-combo{
-      margin-bottom:10vh;
+      margin-bottom:12vh;
 
       p{
         color:var(--text-colour);
@@ -128,7 +128,7 @@
     width: 40%;
     height: 40vh;
     margin: auto;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     border-radius: 20px;
   }
 
@@ -145,6 +145,21 @@
     background-color: var(--settings-background-colour);
     border: 2px solid var(--text-colour);
     border-radius: 30px;
+    font-size:1.5rem;
+    overflow-y:scroll;
+
+    li{
+      font-size:1.7rem;
+      color:var(--text-colour);
+      margin: 5%;
+    }
+    h2#sub-title{
+      margin-top:4vh;
+      border-bottom:1px solid black;
+      border-top:1px solid black;
+      width:60%;
+      margin-left:20% !important;
+    }
 
 
     button {
@@ -217,6 +232,13 @@
   border: 2px solid var(--text-colour);
   border-radius: 30px;
 
+  h1#title{
+    width:50%;
+    font-size:3rem;
+    margin-left:34%;
+    margin-top:5vh;
+  }
+
   button#close {
     float:left;
     margin:2%;
@@ -232,7 +254,7 @@
 
   h1.none{
     font-size:3rem;
-    margin-top:38vh;
+    margin-top:30vh;
     text-align:center;
   }
 
@@ -245,4 +267,54 @@
   display: none;
 }
 
+
+@media only screen and (max-width: 765px) {
+
+  .search-bar{
+    width:45% !important;
+  }
+
+  .recipe-card{
+    width:45% !important;
+  }
+
+  .detail-recipe{
+    img#food-image{
+      margin: 0% 25% !important;
+    }
+
+    button#close {
+      width: 10% !important;
+    }
+
+
+    button#save {
+      width: 10% !important;
+    }
+  }
+
+  .functionalities{
+    .button-combo{
+      margin-bottom:15vh !important;
+
+      button {
+        width:6rem !important;
+        height:9vh !important;
+        
+        svg{
+          width:4rem !important;
+          height:4vh !important;
+        }
+      }
+    }
+  }
+
+  .filters {
+    button {
+      font-size: 1.2rem !important;
+    }
+  }
+
+
+}
 

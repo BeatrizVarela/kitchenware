@@ -7,18 +7,18 @@ import { useState } from 'react'
 
 
 const Settings = ({darkMode,setdarkMode}) => {
-    //{darkMode ? "Light Mode" : "Dark Mode"}
+
     const SettingsDarkMode = (event) => {
+        localStorage.setItem("dark-mode",JSON.stringify(!(darkMode)))
         setdarkMode(!darkMode);
     }
 
-    const [showButton, setShowButton] = useState(true);
     const [showMessage, setShowMessage] = useState(false);
 
     return(
         <section className="settings">
            <button onClick={() => setShowMessage(true)} id="Gear"><BsGear /> </button>
-            <CSSTransition in={showMessage} timeout={300} classNames="alert" unmountOnExit onEnter={() => setShowButton(false)} onExited={() => setShowButton(true)}>
+            <CSSTransition in={showMessage} timeout={300} classNames="alert" unmountOnExit >
                 <div className="settings-open">
                     <button onClick={() => setShowMessage(false)} id="close"> <AiOutlineClose /> </button>
                     <div id="dark">

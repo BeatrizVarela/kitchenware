@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Shippori+Mincho&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +12,10 @@ h3,
 h4,
 p,
 label,
-button {
+button,
+li {
   color: var(--text-colour);
+  font-family: 'Barlow', sans-serif;
 }
 
 html {

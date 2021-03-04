@@ -30,10 +30,18 @@ function data() {
             {
                 Name: "Mac and Cheese",
                 Ingredients:[
-                    "Mac",
-                    "Cheese"
+                    "⅓ cup dried elbow macaroni",
+                    "½ cup water",
+                    "2 tablespoons whole milk",
+                    "½ teaspoon cornstarch",
+                    "¼ teaspoon kosher salt",
+                    "¼ teaspoon freshly ground black pepper",
+                    "¼ cup grated sharp cheddar cheese"
                 ],
-                Recipe: "Put the Mac in the Cheese and ta da",
+                Recipe: [
+                    "In a microwave-safe mug or bowl, combine the macaroni and water. Microwave for 1 minute, stir the pasta, then microwave for another minute. Stir the pasta again and taste for doneness. If not al dente, continue microwaving in 1-minute intervals until the water is absorbed and the pasta is cooked.",
+                    "In a small bowl, whisk together cornstarch, milk, salt, and pepper until well combined. Add the cheese, then pour over the macaroni. Microwave for 1 minute, stirring halfway through, until the cheese is melted and the sauce is creamy. ",
+                ],
                 Calories: 500,
                 Tags: 
                 ["Vegetarian", "Lactose", "Pasta", ],
@@ -46,10 +54,22 @@ function data() {
             {
                 Name: "Meatballs and Rice",
                 Ingredients:[
-                    "Meatballs",
-                    "Rice"
+                    "2 tsp olive oil",
+                    "1 onion, peeled and chopped",
+                    "500 g beef mince",
+                    "800 g pack basics chopped tomatoes",
+                    "350 g frozen chopped spinach",
+                    "black pepper, to season",
+                    "400 g easy-cook rice",
+                    "1 tbsp fresh parsley, washed and chopped (optional)"
+
                 ],
-                Recipe: "Do something with the meatballs and rice",
+                Recipe: [
+                    "In a large, lidded frying pan, heat 1 teaspoon of the olive oil, then add the onion. Soften for 5 minutes and remove from the pan.",
+                    "In a large bowl, combine the beef mince with half the cooked onion and mix well. Shape the mince mixture into approximately 20 meatballs. Using the same frying pan, heat the remaining oil and fry the meatballs in batches, until browned. Remove from the pan and set aside.",
+                    "Carefully wipe the pan with kitchen towel to remove any excess liquid, then add the remaining onion along with the chopped tomatoes and spinach. Season well, cover and simmer for 5 minutes, until the spinach has defrosted. Remove the lid from the pan, then add the meatballs and cook for a further 10 minutes, until piping hot throughout and no pink colour remains in the meatballs.",
+                    "Meanwhile, cook the rice following pack instructions. Serve the meatballs on a bed of rice. Garnish with parsley.",
+                ],
                 Calories: 700,
                 Tags:
                 ["Meat",],
@@ -62,15 +82,23 @@ function data() {
             {
                 Name: "Pancakes",
                 Ingredients:[
-                    "Flour",
-                    "Butter",
-                    "Eggs",
-                    "Milk"
+                    "100g plain flour",
+                    "2 large eggs",
+                    "300ml milk",
+                    "1 tbsp sunflower or vegetable oil, plus a little extra for frying",
+                    "lemon wedges to serve (optional)",
+                    "caster sugar to serve (optional)"
                 ],
-                Recipe: "Put it all together and hope for the best",
+                Recipe: [
+                    "Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.",
+                    "Set aside for 30 mins to rest if you have time, or start cooking straight away.",
+                    "Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.",
+                    "When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.",
+                    "Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months."
+                ],
                 Calories: 200,
                 Tags:
-                ["Vegetarian"],
+                ["Vegetarian", "Lactose"],
                 Meal: "Breakfast or Brunch",
                 Serving: 2,
                 Duration: 15,

@@ -23,7 +23,8 @@ const SavedRecipes = ({savedOpen,setSavedOpen,savedRecipes,setsavedRecipes}) => 
             >
         <div className={`saved-recipes${savedOpen ? '-show' : '-hidden'}`}>
             <button onClick={(() => setSavedOpen(false))} id="close"><AiOutlineClose /></button>
-            <Test arrayLength={savedRecipes.length} />
+            <h1 id="title">Saved Recipes</h1>
+            <Test arrayLength={savedRecipes ? savedRecipes.length : 0} />
         </div>
         </CSSTransition>
     )

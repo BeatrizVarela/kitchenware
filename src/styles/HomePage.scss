@@ -68,17 +68,14 @@ section.home-page {
       top: 50%;
       left: 50%;
       margin-top: -76px;
-      margin-left: -153px;
-      font-family: 'Pacifico', cursive;
+      margin-left: -140px;
+      font-family: 'Shippori Mincho', serif !important;
       font-weight: lighter;
 
       svg {
         font-size: 7rem;
         margin-left: 100px;
         color: var(--pot-color);
-        background-color: var(--button-background);
-        border-radius: 30%;
-        border: 1px solid var(--text-colour);
       }
       h1 {
         font-size: 2.3rem;
