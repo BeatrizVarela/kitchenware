@@ -7,6 +7,14 @@ const Ingredients = ({ ingAndRec }) => {
       <Link to='/'>Back</Link>
 
       <div className='table'>
+        <div className='filter'>
+          <div className='filter-header'>
+            <h5>Filters</h5>
+          </div>
+          <div className='filter-buttons'>
+            <button type='button' class='btn btn-danger'>Danger</button>
+          </div>
+        </div>
         <div className='bars'></div>
         <div className='header'>
           <ul>
@@ -36,10 +44,17 @@ const Ingredients = ({ ingAndRec }) => {
           </ul>
         </div>
       </div>
-
-      <div className='filter'></div>
     </section>
   );
 };
+
+/*
+<button>Spices</button>
+<button>Vegetables</button>
+<button>Fruit</button>
+<button>Meat</button>
+<button>Fish</button>
+<button>Garnish</button>
+*/
 
 export default Ingredients;

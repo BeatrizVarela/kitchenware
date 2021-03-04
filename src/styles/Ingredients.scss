@@ -2,7 +2,7 @@
   padding: 1%;
 
   .table {
-    margin: 4rem 17rem 0 3rem;
+    margin: 4rem 17rem 0 2rem;
     height: 70vh;
     background: #e6bfd694;
     border: 0px solid;
@@ -74,5 +74,39 @@
       -moz-column-gap: 100px;
       column-gap: 115px;
     }
+  }
+
+  .filter {
+    float: right;
+    position: absolute;
+    height: 25rem;
+    width: 11.7rem;
+    margin: 0rem 0rem 10rem 47rem;
+    background: #e6bfd694;
+    border: 0px solid;
+    border-radius: 5px;
+
+    .filter-header {
+      height: 62px;
+      background: #636262;
+      font-size: 1.5rem;
+      border: 1px solid;
+      border-radius: 5px;
+
+      h5 {
+        color: white;
+        text-align: center;
+        display: block;
+        padding: 16px;
+        text-decoration: none;
+      }
+    }
+    /*.filter-buttons {
+      button {
+        padding:5%;
+        margin: 10%;
+        border-radius: 5%;
+      }
+    }*/
   }
 }
