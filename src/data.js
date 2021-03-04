@@ -41,11 +41,6 @@ function data() {
         Type: "Silverware",
       },
       {
-        Name: "Soup plates",
-        Quantity: 12,
-        Type: "Dinnerware",
-      },
-      {
         Name: "Regular plates",
         Quantity: 12,
         Type: "Dinnerware",
