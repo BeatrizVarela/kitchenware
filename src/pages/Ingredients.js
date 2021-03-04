@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import '../styles/Ingredients.scss';
 
 const Ingredients = ({ ingAndRec }) => {
+
+  //buttonPressed() = 
+
   return (
     <section className='ingredients'>
       <Link to='/'>Back</Link>
@@ -12,7 +15,12 @@ const Ingredients = ({ ingAndRec }) => {
             <h5>Filters</h5>
           </div>
           <div className='filter-buttons'>
-            <button type='button' class='btn btn-danger'>Danger</button>
+            <button onClick='buttonPressed()'>Spices</button>
+            <button>Vegetables</button>
+            <button>Fruit</button>
+            <button>Meat</button>
+            <button>Fish</button>
+            <button>Garnish</button>
           </div>
         </div>
         <div className='bars'></div>
@@ -49,12 +57,8 @@ const Ingredients = ({ ingAndRec }) => {
 };
 
 /*
-<button>Spices</button>
-<button>Vegetables</button>
-<button>Fruit</button>
-<button>Meat</button>
-<button>Fish</button>
-<button>Garnish</button>
+
+<button type='button' class='btn btn-danger'>Danger</button>
 */
 
 export default Ingredients;
