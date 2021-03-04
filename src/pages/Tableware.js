@@ -11,13 +11,13 @@ const Tableware = ({ ingAndRec }) => {
         <div className="header">
           <ul>
             <li id="header-name">
-              <p>Name</p>
+              <h1>Name</h1>
             </li>
             <li id="header-quantity">
-              <p>Quantity</p>
+              <h1>Quantity</h1>
             </li>
             <li id="header-type">
-              <p>Type</p>
+              <h1>Type</h1>
             </li>
           </ul>
         </div>
@@ -34,8 +34,6 @@ const Tableware = ({ ingAndRec }) => {
           </ul>
         </div>
       </div>
-
-      <div className="filter"></div>
     </section>
   );
 };
