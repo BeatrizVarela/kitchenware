@@ -5,7 +5,7 @@
     outline:none;
   }
 
-  a{
+  a#Back{
     height:5vh;
     position: fixed; 
     svg{
@@ -142,6 +142,8 @@
     bottom: 0px;
     left: 0px;
     margin: auto;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     background-color: var(--settings-background-colour);
     border: 2px solid var(--text-colour);
     border-radius: 30px;
@@ -172,6 +174,7 @@
       border-radius: 50%;
       width: 6%;
       height: 6vh;
+      background:none;
       svg {
         width: 70%;
         height: 70%;
@@ -185,6 +188,7 @@
       border-radius: 50%;
       width: 6%;
       height: 6vh;
+      background:none;
       svg {
         width: 70%;
         height: 70%;
@@ -246,6 +250,7 @@
     border-radius: 50%;
     width: 6%;
     height: 6vh;
+    background:none;
     svg {
       width: 70%;
       height: 70%;

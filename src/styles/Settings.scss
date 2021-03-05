@@ -5,11 +5,11 @@
   width: 30%;
   margin-left: 70%;
   button#Gear {
+    position:absolute;
+    left:75%;
     margin-top: 10px;
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
-    float: right;
+    width: 20%;
+    height: 8vh;
     color: var(--text-colour);
     box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
     //backdrop-filter: blur(5px);
@@ -18,13 +18,14 @@
     border: 1px solid var(--text-colour);
 
     svg {
-      width: 25px;
-      height: 25px;
+      width: 60%;
+      height: 5vh;
     }
   }
+
   .settings-open {
     border: 1px solid var(--text-colour);
-    border-radius: 10px;
+    border-radius: 5%;
     margin: 20px;
     background: rgba(48, 48, 48, 1);
     opacity: 1;
@@ -36,23 +37,74 @@
     left: 0px;
     z-index: 1000;
 
-    #dark{
-      margin: 1%;
+
+    div{
+      display:flex;
+      justify-content: space-between;
+      height:20vh;
+      margin-left:5%;
+      margin-right:10%;
     }
 
-    button#dark-mode {
-      box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
+    button.settings-button {
+      //box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 100%;
       border: 1px solid var(--text-colour);
-      width: 8%;
-      height: 10vh;
+      width: 11%;
+      height: 13vh;
+      position:absolute;
 
       svg {
-        width:80%;
-        height:5vh;
+        width:85%;
+        height:7vh;
+      }
+    }
+
+    div#first-row{
+      margin-top:5vh;
+      width:100%;
+
+      div{
+        width:20%;
+
+        h3{
+          margin-top:13vh;
+          width: 60%;
+          text-align: center;
+        }
+      }
+    }
+
+    div#second-row{
+      margin-top:10vh;
+      width:100%;
+
+      div{
+        width:20%;
+
+        h3{
+          margin-top:13vh;
+          width: 60%;
+          text-align: center;
+        }
+      }
+    }
+
+    div#third-row{
+      margin-top:10vh;
+      width:100%;
+
+      div{
+        width:20%;
+
+        h3{
+          margin-top:13vh;
+          width: 60%;
+          text-align: center;
+        }
       }
     }
 

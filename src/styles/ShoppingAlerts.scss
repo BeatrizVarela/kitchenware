@@ -1,0 +1,14 @@
+.shopping-alerts{
+    a#Back{
+        height:5vh;
+        position: fixed; 
+        margin-top:2vh;
+        svg{
+          width:70px;
+          height:40px;
+        }
+      }
+      a:visited{
+        color:var(--text-colour);
+      }
+}

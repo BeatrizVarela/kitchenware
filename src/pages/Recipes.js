@@ -57,7 +57,7 @@ const Recipes = ({ingAndRec}) => {
 
     return(
         <section className="recipes">
-            <Link to="/"><BiArrowBack id="Back" /></Link>
+            <Link to="/" id="Back"><BiArrowBack /></Link>
             <div className="search-bar">
                 <label htmlFor="search">Search:</label>
                 <input type="text" value={recipeName} onChange={(e) => recipeNameOnChange(e.target.value)} />
