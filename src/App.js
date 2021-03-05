@@ -20,7 +20,7 @@ function App() {
 
   if (darkMode){
     document.documentElement.style.setProperty('--background-colour', "#0a0e0f");
-    document.documentElement.style.setProperty('--settings-background-colour', "#1d1d1d");
+    document.documentElement.style.setProperty('--settings-background-colour', "#1d1d1de8");
     document.documentElement.style.setProperty('--text-colour', "#dddddd");
     document.documentElement.style.setProperty('--background-photo', "url("+DarkBackground+")");
     document.documentElement.style.setProperty('--button-background', '#292929');
@@ -31,7 +31,7 @@ function App() {
 
   } else {
     document.documentElement.style.setProperty('--background-colour', "#e6ecee");
-    document.documentElement.style.setProperty('--settings-background-colour', "#f7e2e2d4");
+    document.documentElement.style.setProperty('--settings-background-colour', "#f7e2e2cc");
     document.documentElement.style.setProperty('--text-colour', "#1d1d1d");
     document.documentElement.style.setProperty('--background-photo', "url("+LightBackground+")");
     document.documentElement.style.setProperty('--button-background', '#dedddd73');

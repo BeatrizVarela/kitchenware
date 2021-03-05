@@ -151,7 +151,7 @@
     overflow-y:scroll;
 
     li{
-      font-size:1.7rem;
+      font-size:1.5rem;
       color:var(--text-colour);
       margin: 5%;
     }
@@ -213,9 +213,14 @@
       margin-left: 25%;
     }
 
+    p#ingredient{
+      margin-top:2vh;
+    }
+
     p#ingredient-checked {
       text-decoration: line-through;
       opacity: 0.7;
+      margin-top:2vh;
     }
   }
 }
@@ -237,10 +242,12 @@
   border-radius: 30px;
 
   h1#title{
-    width:50%;
+    text-align:center;
+    width:70%;
     font-size:3rem;
-    margin-left:34%;
+    margin-left:16%;
     margin-top:5vh;
+    border-bottom:2px solid var(--text-colour);
   }
 
   button#close {
