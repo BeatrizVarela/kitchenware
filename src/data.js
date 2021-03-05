@@ -99,11 +99,38 @@ function data() {
                 Calories: 200,
                 Tags:
                 ["Vegetarian", "Lactose"],
-                Meal: "Breakfast or Brunch",
+                Meal: "Breakfast",
                 Serving: 2,
                 Duration: 15,
                 Difficulty: "Medium",
                 Image:"https://images-gmi-pmc.edge-generalmills.com/df109202-f5dd-45a1-99b4-f10939afd509.jpg"
+            },
+            {
+                Name:"Creamy mushroom soup",
+                Ingredients:[
+                    "50g butter",
+                    "150g chopped shiitake mushrooms",
+                    "100g chopped portobello mushrooms",
+                    "2 shallots, chopped",
+                    "2 tablespoons plain flour",
+                    "400ml chicken stock",
+                    "125ml double cream",
+                    "125ml full fat milk",
+                    "salt and pepper to taste",
+                    "1 pinch ground cinnamon (optional)"
+                ],
+                Recipe: [
+                    "Melt the butter in a large saucepan over medium-high heat. Cook the mushrooms and shallots for about 5 minutes, or until soft. Stir in the flour until smooth. Gradually add and stir in the chicken stock. Cook, stirring, for 5 minutes, or until thick and bubbly.",
+                    "Stir in the cream and milk, season with salt and pepper, and sprinkle with cinnamon. Heat through, but do not boil.",
+                ],
+                Calories: 150,
+                Tags:
+                ["Vegetarian", "Vegetables", "Soup", ],
+                Meal: "Lunch or Dinner",
+                Serving: 4,
+                Duration: 25,
+                Difficulty: "Easy",
+                Image:"http://ukcdn.ar-cdn.com/recipes/land1382/90277d2a-ac65-45e1-96a2-fb5bea99ea11.jpg"
             }
         ]
     }

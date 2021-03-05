@@ -13,7 +13,8 @@ const Recipes = ({ingAndRec}) => {
 
     const [recipeName,recipeNameOnChange] = useState("");
     const [recipeFilter, setrecipeFilter] = useState([]);
-    const [recipeDificulty, setrecipeDificulty] = useState([])
+    const [recipeDificulty, setrecipeDificulty] = useState([]);
+    const [recipeMeal, setrecipeMeal] = useState([]);
     const [savedOpen, setSavedOpen] = useState(false);
     const [savedRecipes,setsavedRecipes] = useState(JSON.parse(localStorage.getItem("saved-recipes")));
 
@@ -27,6 +28,18 @@ const Recipes = ({ingAndRec}) => {
             newList.push(event.target.innerHTML)
         }
         setrecipeDificulty(newList)
+        event.target.classList.toggle('Checked');
+    }
+
+    const mealChange = (event) => {
+        let newList = [...recipeMeal]
+        if (newList.includes(event.target.innerHTML)){
+            let index = newList.indexOf(event.target.innerHTML)
+            newList.splice(index, 1);
+        } else {
+            newList.push(event.target.innerHTML)
+        }
+        setrecipeMeal(newList)
         event.target.classList.toggle('Checked');
     }
 
@@ -64,7 +77,7 @@ const Recipes = ({ingAndRec}) => {
             </div>
             <div className="functionalities">
                 <div className="button-combo">
-                    <button className="left-meals-buttons" id="week">
+                    <button className="left-meals-buttons" id="week" onClick={() => alert("Only button that does something is saved recipes :(")}>
                         <BsCalendar />
                     </button>
                     <br />
@@ -72,7 +85,7 @@ const Recipes = ({ingAndRec}) => {
                     <br />
                 </div>
                 <div className="button-combo">
-                    <button className="left-meals-buttons" id="past">
+                    <button className="left-meals-buttons" id="past" onClick={() => alert("Only button that does something is saved recipes :(")}>
                         <RiHistoryFill />
                     </button>
                     <br />
@@ -89,14 +102,23 @@ const Recipes = ({ingAndRec}) => {
             </div>
             <SavedRecipes savedOpen={savedOpen} setSavedOpen={setSavedOpen} savedRecipes={savedRecipes} setsavedRecipes={setsavedRecipes}/>
             <div className="filters">
-                <button onClick={recipeFilterOnChange}>Remove Filters</button>
-                <p>Filtros aqui</p>
-                <button onClick={recipeFilterOnChange}>Vegetarian</button>
-                <button onClick={recipeFilterOnChange}>Meat</button>
-                <button onClick={recipeFilterOnChange}>Lactose</button>
-                <button onClick={recipeFilterOnChange}>Pasta</button>
+                <div className="regular-filters">
+                    <button onClick={recipeFilterOnChange} id="remove-button">Remove Filters</button>
+                    <h4>Filters:</h4>
+                    <button onClick={recipeFilterOnChange}>Vegetarian</button>
+                    <button onClick={recipeFilterOnChange}>Meat</button>
+                    <button onClick={recipeFilterOnChange}>Lactose</button>
+                    <button onClick={recipeFilterOnChange}>Pasta</button>
+                    <button onClick={recipeFilterOnChange}>Vegetables</button>
+                    <button onClick={recipeFilterOnChange}>Soup</button>
+                </div>
+                <div className="meal-type">
+                    <h4>Meal Type:</h4>
+                    <button onClick={mealChange}>Lunch or Dinner</button>
+                    <button onClick={mealChange}>Breakfast</button>
+                </div>
                 <div className="difficulty-change">
-                    <h4>Dificulty filter</h4>
+                    <h4>Dificulty filter:</h4>
                     <button onClick={dificultyChange}>Easy</button>
                     <button onClick={dificultyChange}>Medium</button>
                     <button onClick={dificultyChange}>Hard</button>
@@ -105,18 +127,42 @@ const Recipes = ({ingAndRec}) => {
             {ingAndRec.Recipes.map((recipe) => {
                 if (recipe.Name.toUpperCase().indexOf(recipeName.toUpperCase()) > -1) { //Search-bar
                     if (recipeDificulty.length===0){
-                        if (recipe.Tags.some(r=> recipeFilter.includes(r))){
-                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
-                        } else if (recipeFilter.length===0) {
-                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                        if (recipeMeal.includes(recipe.Meal)){
+                            if (recipe.Tags.some(r=> recipeFilter.includes(r))){
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else if (recipeFilter.length===0) {
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else {
+                                return <p></p>
+                            }
+                        } else if (recipeMeal.length===0) {
+                            if (recipe.Tags.some(r=> recipeFilter.includes(r))){
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else if (recipeFilter.length===0) {
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else {
+                                return <p></p>
+                            }
                         } else {
                             return <p></p>
                         }
                     } else if (recipeDificulty.includes(recipe.Difficulty))  {
-                        if (recipe.Tags.some(r=> recipeFilter.includes(r))){
-                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
-                        } else if (recipeFilter.length===0) {
-                            return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                        if (recipeMeal.includes(recipe.Meal)){
+                            if (recipe.Tags.some(r=> recipeFilter.includes(r))){
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else if (recipeFilter.length===0) {
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else {
+                                return <p></p>
+                            }
+                        } else if (recipeMeal.length===0) {
+                            if (recipe.Tags.some(r=> recipeFilter.includes(r))){
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else if (recipeFilter.length===0) {
+                                return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
+                            } else {
+                                return <p></p>
+                            }
                         } else {
                             return <p></p>
                         }

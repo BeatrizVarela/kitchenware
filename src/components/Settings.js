@@ -26,21 +26,21 @@ const Settings = ({darkMode,setdarkMode}) => {
                     <button onClick={() => setShowMessage(false)} id="close"> <AiOutlineClose /> </button>
                     <div id="first-row">
                         <div id="wi-fi" className="settings-div">
-                            <button className="settings-button"><FaWifi /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><FaWifi /></button>
                             <h3>Wi-fi</h3>
                         </div>
                         <div id="bluetooth" className="settings-div">
-                            <button className="settings-button"><FaBluetooth /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><FaBluetooth /></button>
                             <h3>Bluetooth</h3>
                         </div>
                         <div id="notifications" className="settings-div">
-                            <button className="settings-button"><IoNotificationsSharp /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><IoNotificationsSharp /></button>
                             <h3>Notifications</h3>
                         </div>
                     </div>
                     <div id="second-row">
                         <div id="connected-devices" className="settings-div">
-                            <button className="settings-button"><MdDevices /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><MdDevices /></button>
                             <h3>Connected Devices</h3>
                         </div>
                         <div id="dark" className="settings-div">
@@ -48,21 +48,21 @@ const Settings = ({darkMode,setdarkMode}) => {
                             <h3>{darkMode ? "Light Mode" : "Dark Mode" }</h3>
                         </div>
                         <div id="measurement" className="settings-div">
-                            <button className="settings-button"><FaRuler /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><FaRuler /></button>
                             <h3>Measurement System</h3>
                         </div>
                     </div>
                     <div id="third-row">
                         <div id="privacy" className="settings-div">
-                            <button className="settings-button"><BsLockFill /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><BsLockFill /></button>
                             <h3>Privacy</h3>
                         </div>
                         <div id="software-update" className="settings-div">
-                            <button className="settings-button"><BsGearWideConnected /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><BsGearWideConnected /></button>
                             <h3>Software Update</h3>
                         </div>
                         <div id="reset" className="settings-div">
-                            <button className="settings-button"><BsArrowCounterclockwise /></button>
+                            <button className="settings-button" onClick={() => alert("Only button that does something is dark mode :(")}><BsArrowCounterclockwise /></button>
                             <h3>Reset Settings</h3>
                         </div>
                     </div>
