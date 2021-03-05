@@ -1,9 +1,28 @@
 import { Link } from 'react-router-dom';
 import '../styles/Ingredients.scss';
+import data from '../data';
+import { useState } from 'react';
+import IngredientStock from '../components/IngredientStock';
 
 const Ingredients = ({ ingAndRec }) => {
+  const ings = data().Ingredients;
+  const [activeFilter, setActiveFilter] = useState(false);
 
-  //buttonPressed() = 
+  const ingredientsFilter = () => {
+    <ul>
+      {ings.filter((ing) => ing.Type === 'Spice').map((filteredIng) => (
+          <li>
+            <p>{filteredIng.Name}</p>
+            <p>
+              {filteredIng.Quantity} {filteredIng.Measure}
+            </p>
+            <p>{filteredIng.Type}</p>
+          </li>
+        ))}
+    </ul>;
+
+    setActiveFilter(!activeFilter);
+  };
 
   return (
     <section className='ingredients'>
@@ -15,7 +34,7 @@ const Ingredients = ({ ingAndRec }) => {
             <h5>Filters</h5>
           </div>
           <div className='filter-buttons'>
-            <button onClick='buttonPressed()'>Spices</button>
+            <button>Spices</button>
             <button>Vegetables</button>
             <button>Fruit</button>
             <button>Meat</button>
@@ -37,28 +56,11 @@ const Ingredients = ({ ingAndRec }) => {
             </li>
           </ul>
         </div>
-
-        <div className='ingredients-stock'>
-          <ul>
-            {ingAndRec.Ingredients.map((ing) => (
-              <li>
-                <p id='stock-name'>{ing.Name}</p>
-                <p id='stock-quantity'>
-                  {ing.Quantity} {ing.Measure}
-                </p>
-                <p id='stock-variety'>{ing.Type}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <IngredientStock />
+        
       </div>
     </section>
   );
 };
-
-/*
-
-<button type='button' class='btn btn-danger'>Danger</button>
-*/
 
 export default Ingredients;

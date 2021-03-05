@@ -1,5 +1,6 @@
 .ingredients {
   padding: 1%;
+  font-family: "Barlow", sans-serif;
 
   .table {
     margin: 4rem 17rem 0 2rem;
@@ -43,7 +44,7 @@
 
     li#header-variety {
       float: left;
-      padding-left: 7.2rem;
+      padding-left: 7.5rem;
     }
 
     li p {
@@ -115,8 +116,8 @@
         display: block;
         background: #eca5ecbe;
         border: solid 1px rgba(141, 0, 110, 0.767);
-        cursor: pointer;
       }
+
     }
   }
 }
