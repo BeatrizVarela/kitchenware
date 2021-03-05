@@ -4,24 +4,44 @@ import data from '../data';
 import { useState } from 'react';
 import IngredientStock from '../components/IngredientStock';
 
+
 const Ingredients = ({ ingAndRec }) => {
   const ings = data().Ingredients;
   const [activeFilter, setActiveFilter] = useState(false);
+  const [type, setType] = useState();
 
-  const ingredientsFilter = () => {
-    <ul>
-      {ings.filter((ing) => ing.Type === 'Spice').map((filteredIng) => (
-          <li>
-            <p>{filteredIng.Name}</p>
-            <p>
-              {filteredIng.Quantity} {filteredIng.Measure}
-            </p>
-            <p>{filteredIng.Type}</p>
-          </li>
-        ))}
-    </ul>;
+  const FilteredIngredients = () => {
+    return (
+      <div className='ingredients-stock'>
+        <ul>
+          {ings
+            .filter((ing) => ing.Type === type)
+            .map((filteredIng) => (
+              <li>
+                <p>{filteredIng.Name}</p>
+                <p>
+                  {filteredIng.Quantity} {filteredIng.Measure}
+                </p>
+                <p>{filteredIng.Type}</p>
+              </li>
+            ))}
+        </ul>
+      </div>
+    );
+  };
 
+  const FilterChecker = () => {
+    if (!activeFilter) {
+      return <IngredientStock />;
+    } else {
+      return <FilteredIngredients />;
+    }
+  };
+
+  const FilterButtonPressed = (event) => {
     setActiveFilter(!activeFilter);
+    setType(event.target.innerHTML);
+    event.target.classList.toggle('Checked-filter');
   };
 
   return (
@@ -31,15 +51,15 @@ const Ingredients = ({ ingAndRec }) => {
       <div className='table'>
         <div className='filter'>
           <div className='filter-header'>
-            <h5>Filters</h5>
+            <p>Filters</p>
           </div>
           <div className='filter-buttons'>
-            <button>Spices</button>
-            <button>Vegetables</button>
-            <button>Fruit</button>
-            <button>Meat</button>
-            <button>Fish</button>
-            <button>Garnish</button>
+            <button onClick={FilterButtonPressed}>Spice</button>
+            <button onClick={FilterButtonPressed}>Vegetable</button>
+            <button onClick={FilterButtonPressed}>Fruit</button>
+            <button onClick={FilterButtonPressed}>Meat</button>
+            <button onClick={FilterButtonPressed}>Fish</button>
+            <button onClick={FilterButtonPressed}>Garnish</button>
           </div>
         </div>
         <div className='bars'></div>
@@ -56,8 +76,8 @@ const Ingredients = ({ ingAndRec }) => {
             </li>
           </ul>
         </div>
-        <IngredientStock />
-        
+
+        <FilterChecker />
       </div>
     </section>
   );

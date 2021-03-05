@@ -1,6 +1,6 @@
 .ingredients {
   padding: 1%;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
 
   .table {
     margin: 4rem 17rem 0 2rem;
@@ -94,7 +94,7 @@
       border: 1px solid;
       border-radius: 5px;
 
-      h5 {
+      p {
         color: white;
         text-align: center;
         display: block;
@@ -116,8 +116,14 @@
         display: block;
         background: #eca5ecbe;
         border: solid 1px rgba(141, 0, 110, 0.767);
+        font-weight: bold;
+        font-family: 'Barlow', sans-serif;
       }
 
+      button.Checked-filter {
+        background: rgba(141, 0, 110, 0.767);
+        color: white;
+      }
     }
   }
 }
