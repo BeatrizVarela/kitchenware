@@ -7,7 +7,6 @@ const Tableware = ({ ingAndRec }) => {
       <Link to="/">Back</Link>
 
       <div className="table">
-        <div className="bars"></div>
         <div className="header">
           <ul>
             <li id="header-name">
@@ -23,6 +22,7 @@ const Tableware = ({ ingAndRec }) => {
         </div>
 
         <div className="tableware-stock">
+          <div className="bars"></div>
           <ul>
             {ingAndRec.Tableware.map((tab) => (
               <li>

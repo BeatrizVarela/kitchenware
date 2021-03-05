@@ -56,7 +56,27 @@ function data() {
         Type: "Drinkware",
       },
       {
+        Name: "Champagne glasses",
+        Quantity: 6,
+        Type: "Drinkware",
+      },
+      {
+        Name: "Wine glasses",
+        Quantity: 6,
+        Type: "Drinkware",
+      },
+      {
         Name: "Salad bowls",
+        Quantity: 2,
+        Type: "Serveware",
+      },
+      {
+        Name: "Poké bowls",
+        Quantity: 2,
+        Type: "Serveware",
+      },
+      {
+        Name: "Bowls de merda",
         Quantity: 2,
         Type: "Serveware",
       },
