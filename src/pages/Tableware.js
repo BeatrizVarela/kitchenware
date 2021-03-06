@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
 import "../styles/Tableware.scss";
 
 const Tableware = ({ ingAndRec }) => {
   return (
     <section className="tableware">
-      <Link to="/">Back</Link>
+      <Link to="/" id="Back">
+        <BiArrowBack />
+      </Link>
 
       <div className="table">
         <div className="header">

@@ -75,11 +75,6 @@ function data() {
         Quantity: 2,
         Type: "Serveware",
       },
-      {
-        Name: "Bowls de merda",
-        Quantity: 2,
-        Type: "Serveware",
-      },
     ],
 
     Recipes: [
