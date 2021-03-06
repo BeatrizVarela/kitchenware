@@ -2,8 +2,21 @@
   padding: 1%;
   font-family: 'Barlow', sans-serif;
 
+  a#Back {
+    height: 5vh;
+    position: fixed;
+    svg {
+      width: 70px;
+      height: 40px;
+    }
+  }
+
+  a:visited {
+    color: var(--text-colour);
+  }
+
   .table {
-    margin: 4rem 17rem 0 2rem;
+    margin: 7rem 17rem 0rem 2rem;
     height: 70vh;
     background: #e6bfd694;
     border: 0px solid;
@@ -80,9 +93,9 @@
   .filter {
     float: right;
     position: absolute;
-    height: 29rem;
+    height: 30rem;
     width: 11.7rem;
-    margin: 0rem 0rem 10rem 47rem;
+    margin: 7rem 0rem 10rem 49rem;
     background: #e6bfd694;
     border: 0px solid;
     border-radius: 5px;
@@ -107,7 +120,7 @@
       button {
         padding: 5%;
         padding-top: 4%;
-        margin: 1rem;
+        margin: 1.1rem;
         margin-left: 2.8rem;
         border-radius: 5%;
         height: 3rem;
@@ -123,6 +136,35 @@
       button.Checked-filter {
         background: rgba(141, 0, 110, 0.767);
         color: white;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .table {
+    margin: 7rem 2rem 0rem 2rem !important;
+    height: 60vh !important;
+  }
+
+  .bars {
+    height: 48vh !important;
+  }
+
+  .filter {
+    position: fixed !important;
+    left: 5% !important;
+    bottom: 5% !important;
+    margin: 0 auto !important;
+    height: 11.7rem !important;
+    width: 43.1rem !important;
+
+    .filter-buttons {
+      button {
+        margin: 0.59rem !important;
+        margin-top: 2.4rem !important;
+        padding: 0 !important;
+        float: left !important;
       }
     }
   }

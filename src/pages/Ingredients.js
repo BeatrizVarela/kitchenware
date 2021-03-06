@@ -3,7 +3,7 @@ import '../styles/Ingredients.scss';
 import data from '../data';
 import { useState } from 'react';
 import IngredientStock from '../components/IngredientStock';
-
+import { BiArrowBack } from 'react-icons/bi';
 
 const Ingredients = ({ ingAndRec }) => {
   const ings = data().Ingredients;
@@ -46,22 +46,25 @@ const Ingredients = ({ ingAndRec }) => {
 
   return (
     <section className='ingredients'>
-      <Link to='/'>Back</Link>
+      <Link to='/' id='Back'>
+        <BiArrowBack />
+      </Link>
+
+      <div className='filter'>
+        <div className='filter-header'>
+          <p>Filters</p>
+        </div>
+        <div className='filter-buttons'>
+          <button onClick={FilterButtonPressed}>Spice</button>
+          <button onClick={FilterButtonPressed}>Vegetable</button>
+          <button onClick={FilterButtonPressed}>Fruit</button>
+          <button onClick={FilterButtonPressed}>Meat</button>
+          <button onClick={FilterButtonPressed}>Fish</button>
+          <button onClick={FilterButtonPressed}>Garnish</button>
+        </div>
+      </div>
 
       <div className='table'>
-        <div className='filter'>
-          <div className='filter-header'>
-            <p>Filters</p>
-          </div>
-          <div className='filter-buttons'>
-            <button onClick={FilterButtonPressed}>Spice</button>
-            <button onClick={FilterButtonPressed}>Vegetable</button>
-            <button onClick={FilterButtonPressed}>Fruit</button>
-            <button onClick={FilterButtonPressed}>Meat</button>
-            <button onClick={FilterButtonPressed}>Fish</button>
-            <button onClick={FilterButtonPressed}>Garnish</button>
-          </div>
-        </div>
         <div className='bars'></div>
         <div className='header'>
           <ul>
