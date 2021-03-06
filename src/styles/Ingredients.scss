@@ -22,15 +22,9 @@
     background: var(--table-background);
     border: 0px solid;
     border-radius: 5px;
-  }
-
-  .bars {
-    height: 58vh;
-    width: 16rem;
-    position: absolute;
-    margin: 5rem 0rem 0rem 13rem;
-    border-left: 1px solid rgb(105, 105, 105);
-    border-right: 1px solid rgb(105, 105, 105);
+    backdrop-filter: blur(6px);
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .header {
@@ -74,6 +68,7 @@
     float: left;
     margin-left: 5%;
     padding-top: 4%;
+    padding-bottom: 2%;
     font-size: 1.5rem;
 
     ul {
@@ -81,13 +76,33 @@
     }
 
     li {
-      padding: 0.8rem;
-      -webkit-column-count: 3;
-      -moz-column-count: 3;
-      column-count: 3;
-      -webkit-column-gap: 100px;
-      -moz-column-gap: 100px;
-      column-gap: 115px;
+      height: 8vh;
+      display: flex;
+      justify-content: space-around;
+      p {
+        height: 8vh;
+        vertical-align: middle;
+        width: 5rem;
+        padding-right: 1rem;
+      }
+      #stock-name {
+        text-decoration: none;
+        border-right: 1px solid rgb(105, 105, 105);
+        width: 8.6rem;
+        padding-left: 1.1rem;
+      }
+      #stock-quantity {
+        text-decoration: none;
+        text-align: center;
+        border-right: 1px solid rgb(105, 105, 105);
+        width: 14.5rem;
+      }
+      #stock-variety {
+        text-decoration: none;
+        margin-left: 4.5rem;
+        float: left;
+        text-align: left;
+      }
     }
   }
 

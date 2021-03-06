@@ -18,11 +18,11 @@ const Ingredients = ({ ingAndRec }) => {
             .filter((ing) => ing.Type === type)
             .map((filteredIng) => (
               <li>
-                <p>{filteredIng.Name}</p>
-                <p>
+                <p id='stock-name'>{filteredIng.Name}</p>
+                <p id='stock-quantity'>
                   {filteredIng.Quantity} {filteredIng.Measure}
                 </p>
-                <p>{filteredIng.Type}</p>
+                <p id='stock-variety'>{filteredIng.Type}</p>
               </li>
             ))}
         </ul>
@@ -65,7 +65,7 @@ const Ingredients = ({ ingAndRec }) => {
       </div>
 
       <div className='table'>
-        <div className='bars'></div>
+        
         <div className='header'>
           <ul>
             <li id='header-name'>
