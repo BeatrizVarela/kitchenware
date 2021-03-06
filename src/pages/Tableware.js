@@ -1,14 +1,29 @@
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { GiKnifeFork } from "react-icons/gi";
+import { useState } from "react";
+import TablewareChecker from "../components/TablewareChecker";
 import "../styles/Tableware.scss";
 
 const Tableware = ({ ingAndRec }) => {
+  const [activeButton, setActiveButton] = useState(false);
+
+  const ButtonPressed = () => {
+    if (!activeButton) {
+      setActiveButton(!activeButton);
+      document.getElementById("tableware-checker-id").style.display = "flex";
+    } else {
+      setActiveButton(!activeButton);
+      document.getElementById("tableware-checker-id").style.display = "none";
+    }
+  };
+
   return (
     <section className="tableware">
       <Link to="/" id="Back">
         <BiArrowBack />
       </Link>
-
+      <TablewareChecker />
       <div className="table">
         <div className="header">
           <ul>
@@ -36,6 +51,12 @@ const Tableware = ({ ingAndRec }) => {
             ))}
           </ul>
         </div>
+      </div>
+      <div className="button">
+        <button onClick={ButtonPressed} id="check-button">
+          <GiKnifeFork />
+          <p>Tableware Checker</p>
+        </button>
       </div>
     </section>
   );
