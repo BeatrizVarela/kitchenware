@@ -14,8 +14,7 @@ const ShoppingAlerts = ({ingAndRec}) => {
     const ShoppingList = () => {
         //localStorage.setItem('shopping-list', JSON.stringify([{Name:"AHHHH", Quantity:2}, {Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},]));
         if (localStorage.getItem('shopping-list')) {
-            let shoppingList = JSON.parse(localStorage.getItem('shopping-list'));
-            if (shoppingList.length) {
+            if (shoppingState.length) {
                 return shoppingState.map((item) => {
                     return (
                         <ul id="shopping-list-content">
@@ -52,7 +51,7 @@ const ShoppingAlerts = ({ingAndRec}) => {
                 <button onClick={() => setaddItemsOpen(true)}><BsPlusSquare /></button>
                 <h3>Add items to the Shopping List</h3>
             </div>
-            <ShoppingListAdd addItemsOpen={addItemsOpen} setaddItemsOpen={setaddItemsOpen} />
+            <ShoppingListAdd addItemsOpen={addItemsOpen} setaddItemsOpen={setaddItemsOpen} shoppingState={shoppingState} setshoppingState={setshoppingState}/>
             <div className="shopping-list">
                 <h1 id="title">Shopping List</h1>
                 <ul id="shopping-list-header">
