@@ -1,10 +1,6 @@
 .recipes {
   padding: 1%;
 
-  button:focus{
-    outline:none;
-  }
-
   a#Back{
     height:5vh;
     position: fixed; 
@@ -303,8 +299,8 @@
   }
 }
 
-.saved-recipes-hidden {
-  display: none;
+.hidden {
+  opacity:0;
 }
 
 

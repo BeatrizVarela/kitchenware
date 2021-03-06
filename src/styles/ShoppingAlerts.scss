@@ -12,36 +12,127 @@
     color: var(--text-colour);
   }
 
+  .shopping-list-add{
+    position:absolute;
+    width:15%;
+    margin-top:20vh;
+    margin-left:8%;
+    text-align:center;
+    background-color:var(--low-opacity-background);
+    padding:1%;
+    border-radius:20px;
+    border:1px solid var(--text-colour);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    button{
+      font-size:3rem;
+      border-radius:20px;
+      width:35%;
+      border:none;
+      background:none;
+    }
+  }
+
+
   .shopping-list{
     background-color:var(--low-opacity-background);
     width:40%;
     height:40vh;
-    margin-top:25vh;
+    margin-top:5vh;
     margin-left:30%;
     position:absolute;
     text-align:center;
     overflow-y:scroll;
     border-radius:10%;
     border:1px solid var(--text-colour);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding-bottom:2vh;
+
     ul{
       display:flex;
       justify-content: space-around;
       list-style-type:none;
-      padding:1%;
+      text-align:center;
     }
 
 
     ul#shopping-list-header{
       font-size:1.5rem;
       border-bottom:1px solid var(--text-colour);
+      margin-bottom:2vh;
+      padding:1%;
+
+      li{
+        width:50%;
+      }
     }
 
     ul#shopping-list-content{
-      margin-top:1vh;
+      height:5vh;
+      font-size:1.1rem;
+      overflow-y:scroll;
+      
+      li{
+        text-align:center;
+        width:50%;
+      }
+
+      li#shop-name{
+        border-right:1px solid;
+      }
     }
 
     h1#none{
       margin-top:12vh;
+    }
+  }
+
+  .shopping-list-clear{
+    position:absolute;
+    margin-top:20vh;
+    margin-left:75%;
+    text-align:center;
+    background-color:var(--low-opacity-background);
+    padding:1%;
+    border-radius:20px;
+    border:1px solid var(--text-colour);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    button{
+      font-size:4rem;
+      border-radius:20px;
+      width:55%;
+    }
+  }
+
+
+
+  .add-items{
+    position:absolute;
+    top:0;
+    left:0;
+    margin-left: 10%;
+    margin-top:10vh;
+    width:80%;
+    height:80vh;
+    background-color:var(--settings-background-colour);
+    z-index:1043824;
+
+    button#close {
+      float:left;
+      margin:2%;
+      border: none;
+      border-radius: 50%;
+      width: 6%;
+      height: 6vh;
+      background:none;
+      svg {
+        width: 70%;
+        height: 70%;
+      }
     }
   }
 }

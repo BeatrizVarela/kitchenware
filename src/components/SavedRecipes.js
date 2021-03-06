@@ -21,7 +21,7 @@ const SavedRecipes = ({savedOpen,setSavedOpen,savedRecipes,setsavedRecipes}) => 
                 classNames="alert"
                 unmountOnExit
             >
-        <div className={`saved-recipes${savedOpen ? '-show' : '-hidden'}`}>
+        <div className={`saved-recipes${savedOpen ? '-show' : ' hidden'}`}>
             <button onClick={(() => setSavedOpen(false))} id="close"><AiOutlineClose /></button>
             <h1 id="title">Saved Recipes</h1>
             <Test arrayLength={savedRecipes ? savedRecipes.length : 0} />
