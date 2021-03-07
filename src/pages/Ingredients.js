@@ -1,22 +1,36 @@
 import { Link } from 'react-router-dom';
 import '../styles/Ingredients.scss';
-import data from '../data';
 import { useState } from 'react';
-import IngredientStock from '../components/IngredientStock';
 import { BiArrowBack } from 'react-icons/bi';
 
 const Ingredients = ({ ingAndRec }) => {
-  const ings = data().Ingredients;
   const [activeFilter, setActiveFilter] = useState(false);
   const [type, setType] = useState();
+
+  const IngredientStock = () => {
+    return (
+      <div className='ingredients-stock'>
+        <ul>
+          {ingAndRec.Ingredients.map((ing) => (
+            <li>
+              <p id='stock-name'>{ing.Name}</p>
+              <p id='stock-quantity'>
+                {ing.Quantity} {ing.Measure}
+              </p>
+              <p id='stock-variety'>{ing.Type}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
 
   const FilteredIngredients = () => {
     return (
       <div className='ingredients-stock'>
         <ul>
-          {ings
-            .filter((ing) => ing.Type === type)
-            .map((filteredIng) => (
+          {ingAndRec.Ingredients.filter((ing) => ing.Type === type).map(
+            (filteredIng) => (
               <li>
                 <p id='stock-name'>{filteredIng.Name}</p>
                 <p id='stock-quantity'>
@@ -24,7 +38,8 @@ const Ingredients = ({ ingAndRec }) => {
                 </p>
                 <p id='stock-variety'>{filteredIng.Type}</p>
               </li>
-            ))}
+            )
+          )}
         </ul>
       </div>
     );
@@ -48,7 +63,9 @@ const Ingredients = ({ ingAndRec }) => {
       event.target.classList.toggle('Checked-filter');
       setType(null);
     } else if (activeFilter && type !== event.target.innerHTML) {
-      document.getElementsByClassName('Checked-filter')[0].classList.remove('Checked-filter');
+      document
+        .getElementsByClassName('Checked-filter')[0]
+        .classList.remove('Checked-filter');
       event.target.classList.toggle('Checked-filter');
       setType(event.target.innerHTML);
     }

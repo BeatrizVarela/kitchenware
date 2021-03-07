@@ -6,14 +6,14 @@ function data() {
         Type: 'Spice',
         Variety: '',
         Quantity: 6,
-        Measure: 'Unit',
+        Measure: 'Units',
       },
       {
         Name: 'Potatoes',
         Type: 'Vegetable',
         Variety: 'Red',
         Quantity: 12,
-        Measure: 'Unit',
+        Measure: 'Units',
       },
       {
         Name: 'Salt',
