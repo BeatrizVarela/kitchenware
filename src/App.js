@@ -64,7 +64,7 @@ function App() {
               <Route path="/tableware" component={Tableware}>
                 <Tableware />
               </Route>
-              <Route path="/shopping-alerts" component={ShoppingAlerts}>
+              <Route path="/shopping-list" component={ShoppingAlerts}>
                 <ShoppingAlerts ingAndRec={ingAndRec} />
               </Route>
             </Switch>
