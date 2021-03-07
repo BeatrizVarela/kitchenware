@@ -37,17 +37,22 @@ function data() {
       },
       {
         Name: "Forks",
-        Quantity: 6,
+        Quantity: 4,
         Type: "Silverware",
       },
       {
         Name: "Regular plates",
-        Quantity: 12,
+        Quantity: 5,
         Type: "Dinnerware",
       },
       {
         Name: "Dessert plates",
-        Quantity: 12,
+        Quantity: 5,
+        Type: "Dinnerware",
+      },
+      {
+        Name: "Soup plates",
+        Quantity: 4,
         Type: "Dinnerware",
       },
       {
