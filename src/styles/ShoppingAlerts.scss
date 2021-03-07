@@ -15,7 +15,7 @@
   .shopping-list-add{
     position:absolute;
     width:15%;
-    margin-top:20vh;
+    margin-top:38vh;
     margin-left:8%;
     text-align:center;
     background-color:var(--low-opacity-background);
@@ -38,8 +38,8 @@
   .shopping-list{
     background-color:var(--low-opacity-background);
     width:40%;
-    height:40vh;
-    margin-top:5vh;
+    height:50vh;
+    margin-top:20vh;
     margin-left:30%;
     position:absolute;
     text-align:center;
@@ -73,6 +73,7 @@
       height:5vh;
       font-size:1.1rem;
       overflow-y:scroll;
+      transition: 500ms ease-in;
       
       li{
         text-align:center;
@@ -84,14 +85,23 @@
       }
     }
 
+    ul.removing{
+      opacity:0;
+      transition: 300ms ease-in;
+
+      li {
+        text-decoration:line-through;
+      }
+    }
+
     h1#none{
-      margin-top:12vh;
+      margin-top:17vh;
     }
   }
 
   .shopping-list-clear{
     position:absolute;
-    margin-top:20vh;
+    margin-top:38vh;
     margin-left:75%;
     text-align:center;
     background-color:var(--low-opacity-background);

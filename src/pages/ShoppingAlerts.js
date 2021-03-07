@@ -12,14 +12,13 @@ const ShoppingAlerts = ({ingAndRec}) => {
     const [addItemsOpen,setaddItemsOpen] = useState(false);
 
     const ShoppingList = () => {
-        //localStorage.setItem('shopping-list', JSON.stringify([{Name:"AHHHH", Quantity:2}, {Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},{Name:"Cala-te", Quantity:50},]));
         if (localStorage.getItem('shopping-list')) {
             if (shoppingState.length) {
                 return shoppingState.map((item) => {
                     return (
-                        <ul id="shopping-list-content">
-                            <li id="shop-name">{item.Name}</li>
-                            <li>{item.Quantity}</li>
+                        <ul id="shopping-list-content" class="shopping-list-things" onClick={(event) => event.currentTarget.classList.add("removing")} onTransitionEnd={() => RemoveShoppingItem(item)}>
+                            <li id="shop-name" value={item.Name}>{item.Name}</li>
+                            <li value={item.Name}>{item.Quantity}</li>
                         </ul>
                         );
                 })
@@ -37,9 +36,24 @@ const ShoppingAlerts = ({ingAndRec}) => {
     }
 
     const ClearShoppingList = () => {
-        localStorage.removeItem('shopping-list')
+        localStorage.removeItem('shopping-list');
         setshoppingState([]);
 
+    }
+
+
+    function RemoveShoppingItem(item) {
+        let shoppingListArr = [...shoppingState];
+        let i;
+        let index;
+        for (i = 0; i < shoppingListArr.length; i++) {
+            if (shoppingListArr[i].Name===item.Name){
+                index =  i
+            }
+        }
+        shoppingListArr.splice(index,1);
+        setshoppingState(shoppingListArr)
+        localStorage.setItem('shopping-list',JSON.stringify(shoppingListArr));
     }
 
 

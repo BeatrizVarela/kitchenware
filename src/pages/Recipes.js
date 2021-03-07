@@ -93,7 +93,7 @@ const Recipes = ({ingAndRec}) => {
                     <br />
                 </div>
                 <div className="button-combo">
-                    <button className="left-meals-buttons" id="saved" onClick={(() => setSavedOpen(!(savedOpen)))}>
+                    <button className="left-meals-buttons" id="saved" onClick={() => setSavedOpen(!savedOpen)}>
                         <BsFillBookmarkFill />
                     </button>
                     <br />

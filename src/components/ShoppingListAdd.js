@@ -18,40 +18,85 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
         document.getElementById("add-item-name").value = ""
         let quantity = document.getElementById("add-item-quantity").value;
         document.getElementById("add-item-quantity").value = ""
-        if (quantity > 0){
-            let dict = {Name:name, Quantity:quantity}
-            let recentArr = [...recentlyAdded]
-            let i;
-            let foundSame = false;
-            for (i = 0; i < recentArr.length; i++) {
-                if (recentArr[i].Name === name) {
-                    recentArr[i].Quantity = Number(recentArr[i].Quantity) + Number(quantity)
-                    foundSame = true;
+        if (localStorage.getItem('shopping-list')){
+            if (quantity > 0){
+                let dict = {Name:name, Quantity:quantity}
+                let recentArr = [...recentlyAdded]
+                let shoppingArr = [...shoppingState]
+                let i;
+                let n;
+                let foundSame = false;
+                let foundSameShop = false;
+                let recentquant;
+                for (i = 0; i < recentArr.length; i++) {
+                    if (recentArr[i].Name === name) {
+                        recentArr[i].Quantity = Number(recentArr[i].Quantity) + Number(quantity)
+                        recentquant = recentArr[i].Quantity;
+                        foundSame = true;
+                    }
                 }
-            }
-            if (!foundSame) {
-                console.log("Did not found same")
-                recentArr.push(dict)
-                setrecentlyAdded(recentArr)
-                if (localStorage.getItem('shopping-list')) {
-                    let shoppingListDict = [...shoppingState]
-                    shoppingListDict.push(dict)
-                    setshoppingState(shoppingListDict)
-                    localStorage.setItem('shopping-list', JSON.stringify(shoppingListDict))
+                for (n = 0; n < shoppingArr.length; n++) {
+                    if (shoppingArr[n].Name === name) {
+                        if (Number(shoppingArr[n].Quantity) !== Number(recentquant)){
+                            shoppingArr[n].Quantity = Number(shoppingArr[n].Quantity) + Number(quantity)
+                        }
+                        foundSameShop = true;
+                    }
+                }
+                if (!foundSameShop) {
+                    if (!foundSame) {
+                        recentArr.push(dict)
+                        setrecentlyAdded(recentArr)
+                        shoppingArr.push(dict)
+                        setshoppingState(shoppingArr)
+                        localStorage.setItem('shopping-list', JSON.stringify(shoppingArr))
+                        } else {
+                            setshoppingState(shoppingArr)
+                            localStorage.setItem('shopping-list', JSON.stringify(shoppingArr))
+                        }
                 } else {
+                    if (!foundSame){
+                        recentArr.push(dict)
+                        setrecentlyAdded(recentArr)
+                        setshoppingState(shoppingArr)
+                        localStorage.setItem('shopping-list',JSON.stringify(shoppingArr))
+                    } else {
+                        setshoppingState(shoppingArr)
+                        localStorage.setItem('shopping-list',JSON.stringify(shoppingArr))
+                    }
+                    
+                }
+
+            }
+
+        } else {
+            if (quantity > 0){
+                let dict = {Name:name, Quantity:quantity}
+                let recentArr = [...recentlyAdded]
+                let i;
+                let foundSame = false;
+                for (i = 0; i < recentArr.length; i++) {
+                    if (recentArr[i].Name === name) {
+                        recentArr[i].Quantity = Number(recentArr[i].Quantity) + Number(quantity)
+                        foundSame = true;
+                    }
+                }
+                if (!foundSame) {
+                    recentArr.push(dict)
+                    setrecentlyAdded(recentArr)
                     let shoppingListDict = []
                     shoppingListDict.push(dict)
                     setshoppingState(shoppingListDict)
                     localStorage.setItem('shopping-list', JSON.stringify(shoppingListDict))
+                } else {
+                    let shoppingListDict = [...shoppingState]
+                    setshoppingState(shoppingListDict)
+                    localStorage.setItem('shopping-list', JSON.stringify(shoppingListDict))
                 }
+                
             } else {
-                let shoppingListDict = [...shoppingState]
-                setshoppingState(shoppingListDict)
-                localStorage.setItem('shopping-list', JSON.stringify(shoppingListDict))
+                alert("Quantity needs to be above 1");
             }
-            
-        } else {
-            alert("Quantity needs to be above 1");
         }
     }
 
@@ -59,15 +104,24 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
         let recent = [...recentlyAdded];
         let shopping = [...shoppingState];
         let shoppingStorage = [...JSON.parse(localStorage.getItem('shopping-list'))];
-        recent.splice(item, 1)
+        let i_recent = recent.indexOf(item)
+        let i_shopping = recent.indexOf(item)
+        recent.splice(i_recent, 1)
         setrecentlyAdded(recent)
-        shopping.splice(item, 1)
-        setshoppingState(shopping)
-        shoppingStorage.splice(item, 1)
-        if (shoppingStorage.length > 0) {
-            localStorage.setItem('shopping-list', JSON.stringify(shoppingStorage));
-        } else {
-            localStorage.removeItem('shopping-list');
+        let quant = Number(shopping[i_shopping].Quantity) - Number(item.Quantity)
+        if (quant > 0){
+            shopping[i_shopping].Quantity = quant
+            setshoppingState(shopping)
+            localStorage.setItem('shopping-list',JSON.stringify(shopping))
+        } else{
+            shopping.splice(i_shopping, 1)
+            setshoppingState(shopping)
+            shoppingStorage.splice(i_shopping, 1)
+            if (shoppingStorage.length > 0) {
+                localStorage.setItem('shopping-list', JSON.stringify(shoppingStorage));
+            } else {
+                localStorage.removeItem('shopping-list');
+            }
         }
 
     }
