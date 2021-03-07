@@ -1,5 +1,4 @@
 import data from '../data';
-import { useState } from 'react';
 
 const IngredientStock = () => {
   const ings = data().Ingredients;

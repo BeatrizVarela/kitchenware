@@ -39,9 +39,19 @@ const Ingredients = ({ ingAndRec }) => {
   };
 
   const FilterButtonPressed = (event) => {
-    setActiveFilter(!activeFilter);
-    setType(event.target.innerHTML);
-    event.target.classList.toggle('Checked-filter');
+    if (!activeFilter) {
+      setActiveFilter(!activeFilter);
+      setType(event.target.innerHTML);
+      event.target.classList.toggle('Checked-filter');
+    } else if (activeFilter && type === event.target.innerHTML) {
+      setActiveFilter(!activeFilter);
+      event.target.classList.toggle('Checked-filter');
+      setType(null);
+    } else if (activeFilter && type !== event.target.innerHTML) {
+      document.getElementsByClassName('Checked-filter')[0].classList.remove('Checked-filter');
+      event.target.classList.toggle('Checked-filter');
+      setType(event.target.innerHTML);
+    }
   };
 
   return (
@@ -65,7 +75,6 @@ const Ingredients = ({ ingAndRec }) => {
       </div>
 
       <div className='table'>
-        
         <div className='header'>
           <ul>
             <li id='header-name'>
