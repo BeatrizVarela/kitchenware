@@ -131,6 +131,65 @@ function data() {
                 Duration: 25,
                 Difficulty: "Easy",
                 Image:"http://ukcdn.ar-cdn.com/recipes/land1382/90277d2a-ac65-45e1-96a2-fb5bea99ea11.jpg"
+            },
+            {
+                Name:"Pork & chestnut wellington",
+                Ingredients:[
+                    "1 tbsp sunflower oil",
+                    "800g pork loin, skin and most of the fat removed (leave about a 5mm layer)",
+                    "25g butter",
+                    "1 small onion, finely chopped",
+                    "1 small chicken breast (about 140g), chopped",
+                    "1 tsp porcini mushroom powder",
+                    "½ tsp truffle oil (optional)",
+                    "1 large egg, beaten, plus 2 egg yolks beaten with 1 tbsp water for glazing",
+                    "100ml double cream",
+                    "125g vacuum-packed cooked chestnuts, crumbled",
+                    "4 sage leaves, chopped",
+                    "12 smoked pancetta rashers",
+                    "500g block puff pastry",
+                    "plain flour, for dusting"
+                ],
+                Recipe:[
+                    "Heat the oil in a frying pan over a high heat, then season the pork loin and sear until well browned all over – use tongs to sear the ends. Set aside on a board and leave to cool. Reduce the heat, add the butter to the pan and cook the onion for 10 mins until golden. Leave to cool.",
+                    "Meanwhile, tip the chicken, mushroom powder, a little salt and the truffle oil, if using, into a food processor. Blitz to a coarse paste. Scrape down the sides and pulse in the whole beaten egg until fully incorporated. Drizzle in the cream, then add the chestnuts, fried onions, sage and a grinding of black pepper. Pulse again to bring everything together – the mixture should resemble a coarse mousse or pâté.",
+                    "Lay a large sheet of baking parchment on your work surface, and arrange the pancetta rashers on top in two rows, slightly overlapping each other so they create a rectangle that’s large enough to wrap around the pork. Spoon the chicken mousse into the middle of the rectangle, and spread with a palette knife or spatula so it covers the pancetta. Lay the cooled pork in the middle. Use the parchment to help you draw the mousse-coated pancetta around the pork, then twist the ends like a Christmas cracker. Transfer to the fridge and chill for 1 hr.",
+                    "Roll the pastry out on a lightly floured surface to a 35 x 30cm rectangle. Trim the edges to neaten (you can reserve the trimmings to make decorations later, if you like), then lightly brush all over with some of the egg yolk glaze. Carefully unwrap the pork from the baking parchment, and lay in the middle of the pastry rectangle. Fold the shorter edges of the pastry over the pork, then roll the whole thing up to encase the pork tightly. Line a baking tray with baking parchment. Put the wellington, seam-side down, on the tray. Chill for at least 30 mins. Will keep chilled for up to 24 hours.",
+                    "Heat the oven to 200C/180C fan/ gas 6 with a baking tray inside. Re-roll the pastry trimmings and cut out pastry leaves, if you like. Unwrap the wellington and brush all over with more of the glaze, score the pastry lightly with a sharp knife, and decorate with the leaves, if using. Brush the leaves with the remaining glaze, then sprinkle with sea salt flakes. Carefully transfer to the hot tray in the oven, along with the baking parchment, and bake for 1 hr until the pastry is golden and the pork is just cooked through. If the pastry starts to get too dark, cover with foil. The pork is cooked when a cooking thermometer reads 65C. Leave to rest for at least 10 mins, then serve in thick slices with mushroom sauce and roast potatoes (see 'goes well with' below).",
+                ],
+                Calories:1134,
+                Tags:
+                ["Meat","Lactose",],
+                Meal: "Lunch or Dinner",
+                Serving:4,
+                Duration:75,
+                Difficulty:"Hard",
+                Image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/10/Pork-chestnut-wellington-e3b0dd2.jpg?quality=90&webp=true"
+            },
+            {
+                Name:"Sausage, kale & gnocchi one-pot",
+                Ingredients:[
+                    "1 tbsp olive oil",
+                    "6 pork sausages",
+                    "1 tsp chilli flakes",
+                    "1 tsp fennel seeds (optional)",
+                    "500g fresh gnocchi",
+                    "500ml chicken stock (fresh if you can get it)",
+                    "100g chopped kale",
+                    "40g parmesan, finely grated",
+                ],
+                Recipe:[
+                    "Heat the oil in a large high-sided frying pan over a medium heat. Squeeze the sausages straight from their skins into the pan, then use the back of a wooden spoon to break the meat up. Sprinkle in the chilli flakes and fennel seeds, if using, then fry until the sausagemeat is crisp around the edges. Remove from the pan with a slotted spoon.",
+                    "Tip the gnocchi into the pan, fry for a minute or so, then pour in the chicken stock. Once bubbling, cover the pan with a lid and cook for 3 mins, then stir in the kale. Cook for 2 mins more or until the gnocchi is tender and the kale has wilted. Stir in the parmesan, then season with black pepper and scatter the crisp sausagemeat over the top.",
+                ],
+                Calories:516,
+                Tags:
+                ["Meat",],
+                Meal:"Lunch or Dinner",
+                Serving:4,
+                Duration:20,
+                Difficulty:"Easy",
+                Image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/sausage-kale-gnocchi-one-pot-e890b33.jpg?quality=90&webp=true"
             }
         ]
     }

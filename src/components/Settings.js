@@ -10,7 +10,7 @@ import { MdDevices } from "react-icons/md"
 
 const Settings = ({darkMode,setdarkMode}) => {
 
-    const SettingsDarkMode = (event) => {
+    const SettingsDarkMode = (event) => {  //mudar de light mode para dark mode e vice versa
         setdarkMode(!darkMode);
         localStorage.setItem("dark-mode",JSON.stringify(!darkMode))
         

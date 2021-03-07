@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group'
 
 const SavedRecipes = ({savedOpen,setSavedOpen,savedRecipes,setsavedRecipes}) => {
 
-    const Test = ({arrayLength}) => {
+    const RecipesSaved = ({arrayLength}) => { //função que faz return a receita se estiver guardada ou a h1 com aquele texto se nao
         if (arrayLength>0) {
                 return savedRecipes.map((recipe)=> {
                     return <Recipe recipe={recipe} setsavedRecipes={setsavedRecipes} />
@@ -24,7 +24,7 @@ const SavedRecipes = ({savedOpen,setSavedOpen,savedRecipes,setsavedRecipes}) => 
         <div className="saved-recipes">
             <button onClick={(() => setSavedOpen(false))} id="close"><AiOutlineClose /></button>
             <h1 id="title">Saved Recipes</h1>
-            <Test arrayLength={savedRecipes ? savedRecipes.length : 0} />
+            <RecipesSaved arrayLength={savedRecipes ? savedRecipes.length : 0} />
         </div>
         </CSSTransition>
     )

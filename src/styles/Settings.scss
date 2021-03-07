@@ -1,10 +1,10 @@
-.settings {
+.settings { //div mãe
   position: fixed;
   z-index: 10;
   height: 10vh;
   width: 30%;
   margin-left: 70%;
-  button#Gear {
+  button#Gear { //botão que está sempre presente
     position:absolute;
     left:75%;
     margin-top: 10px;
@@ -12,8 +12,6 @@
     height: 8vh;
     color: var(--text-colour);
     box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
-    //backdrop-filter: blur(5px);
-    //-webkit-backdrop-filter: blur(5px);
     border-radius: 30px;
     border: 1px solid var(--text-colour);
 
@@ -23,7 +21,7 @@
     }
   }
 
-  .settings-open {
+  .settings-open { //div aberto
     border: 1px solid var(--text-colour);
     border-radius: 5%;
     margin: 20px;
@@ -40,7 +38,7 @@
     -webkit-backdrop-filter: blur(5px);
 
 
-    div{
+    div{ //como os conjuntos de botoes/texto funciona
       display:flex;
       justify-content: space-between;
       height:20vh;
@@ -48,8 +46,7 @@
       margin-right:10%;
     }
 
-    button.settings-button {
-      //box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
+    button.settings-button { //botoes como o dark mode, notifications, etc
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -65,11 +62,11 @@
       }
     }
 
-    div#first-row{
+    div#first-row{ //primeiros três botões
       margin-top:5vh;
       width:100%;
 
-      div{
+      div{ //div do botao/texto
         width:20%;
 
         h3{
@@ -80,7 +77,7 @@
       }
     }
 
-    div#second-row{
+    div#second-row{ //três botões do meio 
       margin-top:10vh;
       width:100%;
 
@@ -95,7 +92,7 @@
       }
     }
 
-    div#third-row{
+    div#third-row{ //ultímos três botões
       margin-top:10vh;
       width:100%;
 
@@ -110,18 +107,12 @@
       }
     }
 
-    button#close {
+    button#close { //botão para fechar
       margin-top: 5px;
       width: 8%;
       height: 10vh;
       float:right;
-      //margin-right:2%;
-      //margin-top:2vh;
       background:none;
-      //background: rgba(255, 255, 255, 0.2);
-      //box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
-      //backdrop-filter: blur(5px);
-      //-webkit-backdrop-filter: blur(5px);
       border-radius: 100%;
       border: none;
 

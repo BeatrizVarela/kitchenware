@@ -1,5 +1,5 @@
-.shopping-alerts {
-  a#Back {
+.shopping-alerts { //div mãe
+  a#Back { //setinha pra trás
     height: 5vh;
     position: fixed;
     margin-top: 2vh;
@@ -12,7 +12,7 @@
     color: var(--text-colour);
   }
 
-  .shopping-list-add{
+  .shopping-list-add{ //divzinho com o botão para adicionar elementos na shopping list
     position:absolute;
     width:15%;
     margin-top:38vh;
@@ -25,7 +25,7 @@
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 
-    button{
+    button{ //botao mesmo
       font-size:3rem;
       border-radius:20px;
       width:35%;
@@ -35,7 +35,7 @@
   }
 
 
-  .shopping-list{
+  .shopping-list{ //shopping list do meio
     background-color:var(--low-opacity-background);
     width:40%;
     height:50vh;
@@ -50,7 +50,7 @@
     -webkit-backdrop-filter: blur(4px);
     padding-bottom:2vh;
 
-    ul{
+    ul{ //items la dentro
       display:flex;
       justify-content: space-around;
       list-style-type:none;
@@ -58,7 +58,7 @@
     }
 
 
-    ul#shopping-list-header{
+    ul#shopping-list-header{ //parte de cima
       font-size:1.5rem;
       border-bottom:1px solid var(--text-colour);
       margin-bottom:2vh;
@@ -69,7 +69,7 @@
       }
     }
 
-    ul.shopping-list-things{
+    ul.shopping-list-things{ //items mesmo
       height:5vh;
       font-size:1.1rem;
       overflow-y:scroll;
@@ -81,12 +81,12 @@
         overflow:hidden;
       }
 
-      li#shop-name{
+      li#shop-name{ //separação no meio de name e quantity
         border-right:1px solid;
       }
     }
 
-    ul.removing{
+    ul.removing{ //o que acontece quando se clica
       opacity:0;
       transition: 300ms ease-in;
 
@@ -95,12 +95,12 @@
       }
     }
 
-    h1#none{
+    h1#none{ //quando não há nada guardado
       margin-top:17vh;
     }
   }
 
-  .shopping-list-clear{
+  .shopping-list-clear{ //divzinho para limpar a shopping list
     position:absolute;
     margin-top:38vh;
     margin-left:75%;
@@ -121,7 +121,7 @@
 
 
 
-  .add-items{
+  .add-items{ //quando se clica no botao add-items o que se vê
     position:absolute;
     top:0;
     left:0;
@@ -136,7 +136,7 @@
     overflow-y:scroll;
     padding-bottom:1vh;
 
-    h1,h2{
+    h1,h2{ //titulos
       position:absolute;
       text-align: center;
       width:80%;
@@ -147,7 +147,7 @@
       border-bottom:1px solid var(--text-colour);
     }
 
-    button#close {
+    button#close { //botao para fechar
       float:left;
       margin:2%;
       border: none;
@@ -161,22 +161,21 @@
       }
     }
     
-    .add-item{
+    .add-item{ //div de adicionar o item
       display:flex;
       justify-content: space-around;
       padding-top:10vh;
       height:10vh;
-      //border-bottom: 1px solid var(--text-colour);
       width:80%;
 
-      input{
+      input{ //os inputs
         margin-top:4vh;
         width:30%;
         height:4vh;
         font-size:1.2rem;
       }
   
-      button#add{
+      button#add{ //botao com o +
         margin-left:2%;
         font-size:2rem;
         margin-top:3.2vh;
@@ -188,22 +187,22 @@
       }
     }
 
-    .recently-added{
+    .recently-added{ //coisas recentemente adicionadas
       margin-top:11vh;
 
-      ul#title{
+      ul#title{ // titulo da cena 
         font-size:1.8rem;
         font-weight:bold;
         margin-bottom:2vh;
       }
 
-      h3#none{
+      h3#none{ //quando não há nada
         text-align:center;
         font-size:1.7rem;
         margin-top:5vh;
       }
 
-      ul{
+      ul{ //lista das cenas recentemente adicionadas
         display:flex;
         justify-content: space-around;
         list-style-type:none;
@@ -217,12 +216,20 @@
 
         li#remove{
           border-left:1px solid var(--text-colour);
+
+          button { //botao de remover
+            font-size:2rem;
+            border:none;
+            background:none;
+          }
         }
       }
     }
 
   }
 }
+
+//coisas pra ficar "bonito" quando se vira o ecrã
 
 @media only screen and (max-width: 770px) {
   .shopping-alerts{

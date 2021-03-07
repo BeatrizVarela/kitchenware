@@ -8,10 +8,13 @@ import ShoppingListAdd from "../components/ShoppingListAdd"
 
 const ShoppingAlerts = ({ingAndRec}) => {
 
+    //usestates
     const [shoppingState,setshoppingState] = useState(JSON.parse(localStorage.getItem('shopping-list')));
     const [addItemsOpen,setaddItemsOpen] = useState(false);
 
-    const ShoppingList = () => {
+    //funçoes
+
+    const ShoppingList = () => { //funçao que mostra a shopping list
         if (localStorage.getItem('shopping-list')) {
             if (shoppingState.length) {
                 return shoppingState.map((item) => {
@@ -35,19 +38,18 @@ const ShoppingAlerts = ({ingAndRec}) => {
         
     }
 
-    const ClearShoppingList = () => {
+    const ClearShoppingList = () => { //funçao de quando se clica no clear shopping list
         // let i;
         // for (i = 0; i < document.getElementsByClassName("shopping-list-things").length; i++) {
         //     document.getElementsByClassName("shopping-list-things")[i].classList.add('removing')
-        // }
+        // } não está a funcionar como quero não sei porque
         localStorage.removeItem('shopping-list');
         setshoppingState([]);
 
     }
 
 
-    function RemoveShoppingItem(item) {
-        //experimentar console log item para ver se todos os coisos tentam ser removed quando se faz o clear shopping list(e adicionar a class removed)
+    function RemoveShoppingItem(item) {  //funçao de quando se clica na linha do shopping list
         console.log(item)
         let shoppingListArr = [...shoppingState];
         let i;
@@ -62,6 +64,7 @@ const ShoppingAlerts = ({ingAndRec}) => {
         localStorage.setItem('shopping-list',JSON.stringify(shoppingListArr));
     }
 
+    //fim de funções
 
 
     return(

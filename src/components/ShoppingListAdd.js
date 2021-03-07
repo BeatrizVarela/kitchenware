@@ -11,7 +11,6 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
         setaddItemsOpen(false);
     }
 
-    //AMANHÃ ARRANJAR O FACTO DE QUANDO SE ADICIONA ALGO QUE JÁ ESTÁ NA SHOPPING LISTA CRIA UMA NOVA LINHA
 
     const AddToShopList = () => {
         let name = document.getElementById("add-item-name").value;
@@ -133,7 +132,7 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
                     <ul>
                         <li>{item.Name}</li>
                         <li>{item.Quantity}</li>
-                        <li id="remove"><button onClick={() => RemoveFromList(item)}>Remove</button></li>
+                        <li id="remove"><button onClick={() => RemoveFromList(item)} id="remove-btn"><AiOutlineClose /></button></li>
                     </ul>
                 )
             })

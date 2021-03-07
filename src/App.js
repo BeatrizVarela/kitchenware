@@ -15,9 +15,12 @@ import { TransitionGroup,CSSTransition } from 'react-transition-group'
 
 function App() {
 
+  //use states
   const [darkMode,setdarkMode] = useState(JSON.parse(localStorage.getItem("dark-mode")));
   const [ingAndRec,setingAndRec] = useState(data())
 
+
+  //set variaveis para o css em caso de dark mode ou não dark mode
   if (darkMode){
     document.documentElement.style.setProperty('--background-colour', "#0a0e0f");
     document.documentElement.style.setProperty('--settings-background-colour', "#1d1d1de8");
