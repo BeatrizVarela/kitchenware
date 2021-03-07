@@ -17,7 +17,7 @@ const Ingredients = ({ ingAndRec }) => {
               <p id='stock-quantity'>
                 {ing.Quantity} {ing.Measure}
               </p>
-              <p id='stock-variety'>{ing.Type}</p>
+              <p id='stock-variety'>{ing.Variety}</p>
             </li>
           ))}
         </ul>
@@ -36,7 +36,7 @@ const Ingredients = ({ ingAndRec }) => {
                 <p id='stock-quantity'>
                   {filteredIng.Quantity} {filteredIng.Measure}
                 </p>
-                <p id='stock-variety'>{filteredIng.Type}</p>
+                <p id='stock-variety'>{filteredIng.Variety}</p>
               </li>
             )
           )}
