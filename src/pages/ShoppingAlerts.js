@@ -16,7 +16,7 @@ const ShoppingAlerts = ({ingAndRec}) => {
             if (shoppingState.length) {
                 return shoppingState.map((item) => {
                     return (
-                        <ul id="shopping-list-content" class="shopping-list-things" onClick={(event) => event.currentTarget.classList.add("removing")} onTransitionEnd={() => RemoveShoppingItem(item)}>
+                        <ul class="shopping-list-things" onClick={(event) => event.currentTarget.classList.add("removing")} onTransitionEnd={() => RemoveShoppingItem(item)}>
                             <li id="shop-name" value={item.Name}>{item.Name}</li>
                             <li value={item.Name}>{item.Quantity}</li>
                         </ul>
@@ -36,6 +36,10 @@ const ShoppingAlerts = ({ingAndRec}) => {
     }
 
     const ClearShoppingList = () => {
+        // let i;
+        // for (i = 0; i < document.getElementsByClassName("shopping-list-things").length; i++) {
+        //     document.getElementsByClassName("shopping-list-things")[i].classList.add('removing')
+        // }
         localStorage.removeItem('shopping-list');
         setshoppingState([]);
 
@@ -43,6 +47,8 @@ const ShoppingAlerts = ({ingAndRec}) => {
 
 
     function RemoveShoppingItem(item) {
+        //experimentar console log item para ver se todos os coisos tentam ser removed quando se faz o clear shopping list(e adicionar a class removed)
+        console.log(item)
         let shoppingListArr = [...shoppingState];
         let i;
         let index;

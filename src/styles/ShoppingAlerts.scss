@@ -69,7 +69,7 @@
       }
     }
 
-    ul#shopping-list-content{
+    ul.shopping-list-things{
       height:5vh;
       font-size:1.1rem;
       overflow-y:scroll;
@@ -78,6 +78,7 @@
       li{
         text-align:center;
         width:50%;
+        overflow:hidden;
       }
 
       li#shop-name{
@@ -132,6 +133,8 @@
     z-index:10434;
     border:2px solid var(--text-colour);
     border-radius:30px;
+    overflow-y:scroll;
+    padding-bottom:1vh;
 
     h1,h2{
       position:absolute;
@@ -219,4 +222,25 @@
     }
 
   }
+}
+
+@media only screen and (max-width: 770px) {
+  .shopping-alerts{
+    .shopping-list{
+      height:60vh;
+      width:50%;
+      margin-left:25% !important;
+      margin-top:15vh !important;
+    }
+  }
+
+  .shopping-list-add{
+    margin-left:5% !important;
+  }
+
+  .shopping-list-clear{
+    width:18%;
+    margin-left:77% !important;
+  }
+
 }

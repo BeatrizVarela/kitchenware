@@ -84,3 +84,24 @@ section.home-page {
     }
   }
 }
+
+@media only screen and (max-width: 770px) {
+  .home-page{
+    a{
+      width:20% !important;
+      margin-left:-2% !important;
+      p{
+        margin-left:-30px !important;
+      }
+    }
+
+    h1{
+      margin-left:50px;
+    }
+
+    .center-logo{
+      margin-top: -100px !important;
+      margin-left: -150px !important;
+    }
+  }
+}
