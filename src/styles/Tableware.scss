@@ -34,16 +34,105 @@ a:visited {
     width: 75%;
     border: 2px solid #d7ddc094;
     border-radius: 5px;
-    background: #e6bfd6c7;
+    background: #eed0e2c7;
     backdrop-filter: blur(6px);
     z-index: 1000;
-    display: none;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
 
     p {
       padding: 5%;
       font-family: "Barlow", sans-serif;
       font-size: 1.1rem;
     }
+  }
+
+  .button-close {
+    float: right;
+    margin: 2%;
+    width: 2rem;
+
+    #button-close-id {
+      padding: 0.2rem 0 0 0;
+      border: 1px solid rgb(105, 105, 105);
+      border-radius: 50px;
+      height: 2rem;
+      width: 2rem;
+      font-size: 1.5rem;
+      color: rgb(173, 127, 127);
+    }
+    #button-close-id:focus {
+      outline: none;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-top: 0.2rem;
+      margin-left: -0.5rem;
+      font-family: "Barlow", sans-serif;
+      font-weight: bold;
+      color: rgb(105, 105, 105);
+    }
+  }
+  .tableware-checker-content {
+    margin: 5%;
+    .tableware-question {
+      margin-top: 1rem;
+      font-family: "Barlow", sans-serif;
+      font-size: 26px;
+    }
+    .tableware-question-input {
+      margin-top: 1%;
+      margin-left: 5%;
+      border: 1px solid rgb(105, 105, 105);
+      height: 3vh;
+      padding: 0.5rem;
+    }
+    .tableware-question-input:focus {
+      outline: none;
+    }
+    .tableware-second-question {
+      margin-top: 3%;
+      margin-bottom: 1%;
+      font-family: "Barlow", sans-serif;
+      font-size: 26px;
+      padding-bottom: 0.5rem;
+    }
+    .outer-checktable {
+      .checktable {
+        margin-top: 3%;
+        margin-left: 5%;
+        overflow-y: scroll;
+        display: inline-block;
+        width: 12rem;
+        input {
+          height: 1.1rem;
+          width: 1.1rem;
+          vertical-align: middle;
+        }
+        label {
+          vertical-align: middle;
+          font-size: 16px;
+        }
+      }
+    }
+    .tableware-question-submit-button {
+      margin-top: 6%;
+      margin-left: 5%;
+      padding: 0.4rem;
+      border-radius: 5px;
+      border: 1px solid rgb(105, 105, 105);
+    }
+    .tableware-question-submit-button:focus {
+      outline: none;
+    }
+  }
+
+  div#Active {
+    opacity: 1 !important;
+  }
+
+  div#Hidden {
+    opacity: 0;
   }
 
   .table {

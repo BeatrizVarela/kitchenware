@@ -11,10 +11,14 @@ const Tableware = ({ ingAndRec }) => {
   const ButtonPressed = () => {
     if (!activeButton) {
       setActiveButton(!activeButton);
-      document.getElementById("tableware-checker-id").style.display = "flex";
+      document
+        .getElementsByClassName("tableware-checker")[0]
+        .setAttribute("id", "Active");
     } else {
       setActiveButton(!activeButton);
-      document.getElementById("tableware-checker-id").style.display = "none";
+      document
+        .getElementsByClassName("tableware-checker")[0]
+        .setAttribute("id", "Hidden");
     }
   };
 
@@ -23,7 +27,11 @@ const Tableware = ({ ingAndRec }) => {
       <Link to="/" id="Back">
         <BiArrowBack />
       </Link>
-      <TablewareChecker />
+      <TablewareChecker
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+        ingAndRec={ingAndRec}
+      />
       <div className="table">
         <div className="header">
           <ul>
