@@ -32,7 +32,7 @@ function data() {
       },
       {
         Name: "Knives",
-        Quantity: 6,
+        Quantity: 3,
         Type: "Silverware",
       },
       {
@@ -78,6 +78,11 @@ function data() {
       {
         Name: "Poké bowls",
         Quantity: 2,
+        Type: "Serveware",
+      },
+      {
+        Name: "Fruit bowls",
+        Quantity: 1,
         Type: "Serveware",
       },
     ],
