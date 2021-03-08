@@ -1,9 +1,25 @@
 .ingredients {
   padding: 1%;
 
+  .table {
+    margin: 4rem 17rem 0 3rem;
+    height: 70vh;
+    background: #e6bfd694;
+    border: 0px solid;
+    border-radius: 5px;
+  }
+
+  .bars {
+    height: 58vh;
+    width: 16rem;
+    position: absolute;
+    margin: 5rem 0rem 0rem 13rem;
+    border-left: 1px solid rgb(105, 105, 105);
+    border-right: 1px solid rgb(105, 105, 105);
+  }
+
   .header {
     font-size: 1.5rem;
-    margin: 4rem 8rem 0 5rem;
     border: 1px solid;
     border-radius: 5px;
 
@@ -12,7 +28,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: #333333;
+      background-color: #636262;
     }
 
     li#header-name {
@@ -22,12 +38,12 @@
 
     li#header-quantity {
       float: left;
-      padding-left: 8rem;
+      padding-left: 8.5rem;
     }
 
     li#header-variety {
       float: left;
-      padding-left: 7rem;
+      padding-left: 7.2rem;
     }
 
     li p {
@@ -41,7 +57,7 @@
 
   .ingredients-stock {
     float: left;
-    margin-left: 12%;
+    margin-left: 5%;
     padding-top: 4%;
     font-size: 1.5rem;
 
@@ -51,11 +67,11 @@
 
     li {
       padding: 0.8rem;
-      -webkit-column-count: 3; /* Chrome, Safari, Opera */
-      -moz-column-count: 3; /* Firefox */
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
       column-count: 3;
-      -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
-      -moz-column-gap: 100px; /* Firefox */
+      -webkit-column-gap: 100px;
+      -moz-column-gap: 100px;
       column-gap: 115px;
     }
   }

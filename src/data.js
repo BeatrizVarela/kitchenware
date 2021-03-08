@@ -1,7 +1,4 @@
-
-
 function data() {
-
     return {
         "Ingredients":[
             {
