@@ -1,0 +1,253 @@
+.shopping-alerts { //div mãe
+  a#Back { //setinha pra trás
+    height: 5vh;
+    position: fixed;
+    margin-top: 2vh;
+    svg {
+      width: 70px;
+      height: 40px;
+    }
+  }
+  a:visited {
+    color: var(--text-colour);
+  }
+
+  .shopping-list-add{ //divzinho com o botão para adicionar elementos na shopping list
+    position:absolute;
+    width:15%;
+    margin-top:38vh;
+    margin-left:8%;
+    text-align:center;
+    background-color:var(--low-opacity-background);
+    padding:1%;
+    border-radius:20px;
+    border:1px solid var(--text-colour);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    button{ //botao mesmo
+      font-size:3rem;
+      border-radius:20px;
+      width:35%;
+      border:none;
+      background:none;
+    }
+  }
+
+
+  .shopping-list{ //shopping list do meio
+    background-color:var(--low-opacity-background);
+    width:40%;
+    height:50vh;
+    margin-top:20vh;
+    margin-left:30%;
+    position:absolute;
+    text-align:center;
+    overflow-y:scroll;
+    border-radius:10%;
+    border:1px solid var(--text-colour);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding-bottom:2vh;
+
+    ul{ //items la dentro
+      display:flex;
+      justify-content: space-around;
+      list-style-type:none;
+      text-align:center;
+    }
+
+
+    ul#shopping-list-header{ //parte de cima
+      font-size:1.5rem;
+      border-bottom:1px solid var(--text-colour);
+      margin-bottom:2vh;
+      padding:1%;
+
+      li{
+        width:50%;
+      }
+    }
+
+    ul.shopping-list-things{ //items mesmo
+      height:5vh;
+      font-size:1.1rem;
+      overflow-y:scroll;
+      transition: 500ms ease-in;
+      
+      li{
+        text-align:center;
+        width:50%;
+        overflow:hidden;
+      }
+
+      li#shop-name{ //separação no meio de name e quantity
+        border-right:1px solid;
+      }
+    }
+
+    ul.removing{ //o que acontece quando se clica
+      opacity:0;
+      transition: 300ms ease-in;
+
+      li {
+        text-decoration:line-through;
+      }
+    }
+
+    h1#none{ //quando não há nada guardado
+      margin-top:17vh;
+    }
+  }
+
+  .shopping-list-clear{ //divzinho para limpar a shopping list
+    position:absolute;
+    margin-top:38vh;
+    margin-left:75%;
+    text-align:center;
+    background-color:var(--low-opacity-background);
+    padding:1%;
+    border-radius:20px;
+    border:1px solid var(--text-colour);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    button{
+      font-size:4rem;
+      border-radius:20px;
+      width:55%;
+    }
+  }
+
+
+
+  .add-items{ //quando se clica no botao add-items o que se vê
+    position:absolute;
+    top:0;
+    left:0;
+    margin-left: 10%;
+    margin-top:10vh;
+    width:80%;
+    height:80vh;
+    background-color:var(--settings-background-colour);
+    z-index:10434;
+    border:2px solid var(--text-colour);
+    border-radius:30px;
+    overflow-y:scroll;
+    padding-bottom:1vh;
+
+    h1,h2{ //titulos
+      position:absolute;
+      text-align: center;
+      width:80%;
+      margin-left:10%;
+      margin-top:2vh;
+      padding-bottom:2vh;
+      font-size:2rem;
+      border-bottom:1px solid var(--text-colour);
+    }
+
+    button#close { //botao para fechar
+      float:left;
+      margin:2%;
+      border: none;
+      border-radius: 50%;
+      width: 6%;
+      height: 6vh;
+      background:none;
+      svg {
+        width: 70%;
+        height: 70%;
+      }
+    }
+    
+    .add-item{ //div de adicionar o item
+      display:flex;
+      justify-content: space-around;
+      padding-top:10vh;
+      height:10vh;
+      width:80%;
+
+      input{ //os inputs
+        margin-top:4vh;
+        width:30%;
+        height:4vh;
+        font-size:1.2rem;
+      }
+  
+      button#add{ //botao com o +
+        margin-left:2%;
+        font-size:2rem;
+        margin-top:3.2vh;
+        width:7%;
+        height:6vh;
+        svg{
+          margin-top:2px;
+        }
+      }
+    }
+
+    .recently-added{ //coisas recentemente adicionadas
+      margin-top:11vh;
+
+      ul#title{ // titulo da cena 
+        font-size:1.8rem;
+        font-weight:bold;
+        margin-bottom:2vh;
+      }
+
+      h3#none{ //quando não há nada
+        text-align:center;
+        font-size:1.7rem;
+        margin-top:5vh;
+      }
+
+      ul{ //lista das cenas recentemente adicionadas
+        display:flex;
+        justify-content: space-around;
+        list-style-type:none;
+        text-align:center;
+        font-size:1.3rem;
+        height:5vh;
+
+        li{
+          width:50%;
+        }
+
+        li#remove{
+          border-left:1px solid var(--text-colour);
+
+          button { //botao de remover
+            font-size:2rem;
+            border:none;
+            background:none;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+//coisas pra ficar "bonito" quando se vira o ecrã
+
+@media only screen and (max-width: 770px) {
+  .shopping-alerts{
+    .shopping-list{
+      height:60vh;
+      width:50%;
+      margin-left:25% !important;
+      margin-top:15vh !important;
+    }
+  }
+
+  .shopping-list-add{
+    margin-left:5% !important;
+  }
+
+  .shopping-list-clear{
+    width:18%;
+    margin-left:77% !important;
+  }
+
+}
