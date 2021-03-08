@@ -22,7 +22,7 @@
     background: var(--table-background);
     border: 0px solid;
     border-radius: 5px;
-    backdrop-filter: blur(6px);
+    //backdrop-filter: blur(6px);
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -36,6 +36,7 @@
     ul {
       list-style-type: none;
       background-color: #636262;
+      
     }
 
     li {
@@ -43,7 +44,7 @@
       display: inline-block;
       justify-content: space-around;
       text-align: center;
-      width: 14.5rem;
+      width: 14.55rem;
 
       p {
         color: white;
@@ -148,6 +149,16 @@
   .table {
     margin: 20rem 2rem 0rem 2rem !important;
     height: 64vh !important;
+
+    .header {
+      li {
+        width: 14.3rem !important;
+      }
+    }
+
+    .ingredients-stock {
+      padding-top: 7rem !important;
+    }
   }
 
   .filter {
