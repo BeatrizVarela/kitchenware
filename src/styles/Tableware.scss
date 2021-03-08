@@ -36,7 +36,6 @@ a:visited {
     border-radius: 5px;
     background: #eed0e2c7;
     backdrop-filter: blur(6px);
-    z-index: 1000;
     opacity: 0;
     transition: all 0.2s ease-in-out;
 
@@ -128,10 +127,12 @@ a:visited {
   }
 
   div#Active {
+    z-index: 1000;
     opacity: 1 !important;
   }
 
   div#Hidden {
+    z-index: 0;
     opacity: 0;
   }
 
