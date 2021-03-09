@@ -3,6 +3,8 @@ import '../styles/Ingredients.scss';
 import { useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
+// Falta ajustar com ecrã vertical
+
 const Ingredients = ({ ingAndRec }) => {
   const [activeFilter, setActiveFilter] = useState(false);
   const [type, setType] = useState();
@@ -82,12 +84,16 @@ const Ingredients = ({ ingAndRec }) => {
           <p>Filters</p>
         </div>
         <div className='filter-buttons'>
-          <button onClick={FilterButtonPressed}>Spice</button>
-          <button onClick={FilterButtonPressed}>Vegetable</button>
+          <button onClick={FilterButtonPressed}>Spices</button>
+          <button onClick={FilterButtonPressed}>Vegetables</button>
           <button onClick={FilterButtonPressed}>Fruit</button>
           <button onClick={FilterButtonPressed}>Meat</button>
           <button onClick={FilterButtonPressed}>Fish</button>
           <button onClick={FilterButtonPressed}>Garnish</button>
+          <button onClick={FilterButtonPressed}>Snacks</button>
+          <button onClick={FilterButtonPressed}>Bread</button>
+          <button onClick={FilterButtonPressed}>Dairy</button>
+          <button onClick={FilterButtonPressed}>Alcohol</button>
         </div>
       </div>
 
