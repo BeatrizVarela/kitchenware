@@ -24,7 +24,9 @@ const SavedRecipes = ({savedOpen,setSavedOpen,savedRecipes,setsavedRecipes}) => 
         <div className="saved-recipes">
             <button onClick={(() => setSavedOpen(false))} id="close"><AiOutlineClose /></button>
             <h1 id="title">Saved Recipes</h1>
-            <RecipesSaved arrayLength={savedRecipes ? savedRecipes.length : 0} />
+            <div className="saved-recipes-list">
+                <RecipesSaved arrayLength={savedRecipes ? savedRecipes.length : 0} />
+            </div>
         </div>
         </CSSTransition>
     )

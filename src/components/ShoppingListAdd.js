@@ -100,6 +100,11 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
     }
 
     const RemoveFromList = (item) => {
+        let list = document.getElementById(item.Name)
+        list.classList.add("removing")
+    }
+
+    const RemoveAfterTransition = (item) => {
         let recent = [...recentlyAdded];
         let shopping = [...shoppingState];
         let shoppingStorage = [...JSON.parse(localStorage.getItem('shopping-list'))];
@@ -129,10 +134,10 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
         if (recentlyAdded.length > 0){
             return recentlyAdded.map((item) => {
                 return (
-                    <ul>
+                    <ul id={item.Name} onTransitionEnd={() => RemoveAfterTransition(item)} key={item.Name} >
                         <li>{item.Name}</li>
                         <li>{item.Quantity}</li>
-                        <li id="remove"><button onClick={() => RemoveFromList(item)} id="remove-btn"><AiOutlineClose /></button></li>
+                        <li id="remove"><button onClick={() => RemoveFromList(item)} onTransitionEnd={() => RemoveAfterTransition(item)} id="remove-btn"><AiOutlineClose /></button></li>
                     </ul>
                 )
             })
@@ -164,7 +169,9 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
                     <li>Quantity</li>
                     <li>Remove</li>
                 </ul>
-                <RecentlyAddedShow />
+                <div className="recently-added-show">
+                    <RecentlyAddedShow />
+                </div>
             </div>
         </div>
         </CSSTransition>
