@@ -247,6 +247,37 @@ a:visited {
       margin-left: -0.9rem;
     }
   }
+  .final-message {
+    position: fixed;
+    top: 6%;
+    margin: 4.5rem 14rem 0 4.55rem;
+    height: 60vh;
+    width: 80%;
+    border: 2px solid #d7ddc094;
+    border-radius: 5px;
+    background: #d089ffc7;
+    backdrop-filter: blur(6px);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+
+    .something-missing {
+      .something-missing-text {
+        padding: 5%;
+        font-family: "Barlow", sans-serif;
+        font-size: 1.1rem;
+        z-index: 0;
+      }
+    }
+
+    .nothing-missing {
+      .nothing-missing-text {
+        padding: 5%;
+        font-family: "Barlow", sans-serif;
+        font-size: 1.1rem;
+        z-index: 0;
+      }
+    }
+  }
 }
 
 // @media only screen and (max-width: 765px) {
