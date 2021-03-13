@@ -41,15 +41,15 @@
     li {
       height: 8vh;
       display: inline-block;
-      justify-content: space-around;
-      text-align: center;
       width: 14.55rem;
 
       p {
+        height: 8vh;
         color: white;
+        display: flex;
+        justify-content: center;
         text-align: center;
         padding: 16px;
-        text-decoration: none;
       }
     }
   }
@@ -64,12 +64,13 @@
     }
 
     li {
-      height: 8vh;
       display: flex;
       justify-content: space-around;
       p {
         height: 8vh;
-        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       #stock-name {
         text-decoration: none;
@@ -95,7 +96,7 @@
     float: right;
     position: absolute;
     height: 36rem;
-    width: 11.7rem;
+    width: 10rem;
     margin: 7rem 0rem 10rem 49rem;
     background: #e6bfd694;
     background: var(--table-background);
@@ -125,7 +126,6 @@
     .filter-buttons {
       padding-top: 4rem;
 
-      
       button {
         padding: 5%;
         padding-top: 4%;
@@ -158,6 +158,10 @@
     .header {
       li {
         width: 14.3rem !important;
+
+        p {
+          padding: 26px !important;
+        }
       }
     }
 
@@ -171,7 +175,7 @@
     left: 5% !important;
     top: 11% !important;
     margin: 0 auto !important;
-    height: 10.1rem !important;
+    height: 10.15rem !important;
     width: 43.1rem !important;
 
     .filter-header {
@@ -186,10 +190,14 @@
     .filter-buttons {
       position: fixed !important;
       margin: 0rem 0rem 0rem 8rem !important;
-      top: 12% !important;
+      height: 162px !important;
+      width: 559px !important;
+      padding: 0 !important;
+      overflow-y: scroll !important;
+      overflow-x: hidden !important;
 
       button {
-        margin: 0.5rem 1rem 1rem 4rem !important;
+        margin: 1rem 0rem 1rem 2rem !important;
         padding: 0 !important;
         float: left !important;
       }
