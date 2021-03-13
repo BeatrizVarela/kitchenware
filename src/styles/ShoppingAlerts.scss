@@ -8,6 +8,8 @@
       height: 40px;
     }
   }
+
+
   a:visited {
     color: var(--text-colour);
   }
@@ -43,12 +45,12 @@
     margin-left:30%;
     position:absolute;
     text-align:center;
-    overflow-y:scroll;
     border-radius:10%;
     border:1px solid var(--text-colour);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    padding-bottom:2vh;
+
+
 
     ul{ //items la dentro
       display:flex;
@@ -69,16 +71,20 @@
       }
     }
 
+    .shopping-list-items{
+      height:37.8vh;
+      overflow-y:scroll;
+    }
+
     ul.shopping-list-things{ //items mesmo
       height:5vh;
       font-size:1.1rem;
-      overflow-y:scroll;
       transition: 500ms ease-in;
+      overflow:hidden !important;
       
       li{
         text-align:center;
         width:50%;
-        overflow:hidden;
       }
 
       li#shop-name{ //separação no meio de name e quantity
@@ -133,7 +139,6 @@
     z-index:10434;
     border:2px solid var(--text-colour);
     border-radius:30px;
-    overflow-y:scroll;
     padding-bottom:1vh;
 
     h1,h2{ //titulos
@@ -209,19 +214,42 @@
         text-align:center;
         font-size:1.3rem;
         height:5vh;
+        opacity:1;
+        transition: 500ms ease-in-out;
+      }
 
-        li{
-          width:50%;
-        }
-
-        li#remove{
-          border-left:1px solid var(--text-colour);
-
-          button { //botao de remover
-            font-size:2rem;
-            border:none;
-            background:none;
+      .recently-added-show{
+        overflow-y:scroll;
+        height:39vh;
+        ul{ //lista das cenas recentemente adicionadas
+          display:flex;
+          justify-content: space-around;
+          list-style-type:none;
+          text-align:center;
+          font-size:1.3rem;
+          height:5vh;
+          opacity:1;
+          transition: 500ms ease-in-out;
+  
+          li{
+            width:50%;
           }
+  
+          li#remove{
+            border-left:1px solid var(--text-colour);
+  
+            button { //botao de remover
+              font-size:2rem;
+              border:none;
+              background:none;
+            }
+          }
+        }
+  
+        ul.removing{ //o que acontece quando se clica
+          opacity:0;
+          transform: scale(0.9);
+          transition: 500ms ease-in-out;
         }
       }
     }
@@ -250,4 +278,13 @@
     margin-left:77% !important;
   }
 
+  .add-items{
+    .add-item{
+      button#add{
+        margin-top:3.9vh !important;
+        width:10% !important;
+        height: 4.5vh !important;
+      }
+    }
+  }
 }

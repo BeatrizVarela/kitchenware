@@ -262,7 +262,6 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index:54356795734;
-  overflow-y:scroll;
   border: 2px solid var(--text-colour);
   border-radius: 30px;
 
@@ -299,6 +298,11 @@
     margin-top:5%;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
+  }
+
+  .saved-recipes-list{
+    overflow-y:scroll;
+    height:75vh;
   }
 }
 

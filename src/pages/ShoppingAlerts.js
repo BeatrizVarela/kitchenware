@@ -81,7 +81,9 @@ const ShoppingAlerts = ({ingAndRec}) => {
                     <li>Name</li>
                     <li>Quantity</li>
                 </ul>
-                <ShoppingList />
+                <div className="shopping-list-items">
+                    <ShoppingList />
+                </div>
             </div>
             <div className="shopping-list-clear">
                 <button onClick={ClearShoppingList}><BiListCheck /></button>
