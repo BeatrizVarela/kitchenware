@@ -25,6 +25,10 @@ function App() {
       "rgba(34, 34, 34, 0.849)"
     );
     document.documentElement.style.setProperty(
+      "--final-table-background",
+      "rgba(34, 34, 34, 0.849)"
+    );
+    document.documentElement.style.setProperty(
       "--settings-background-colour",
       "#1d1d1d"
     );
@@ -42,6 +46,7 @@ function App() {
       "--homepage-button-colour",
       "#e9f0c6"
     );
+    document.documentElement.style.setProperty("--button-color", "#e9f0c6");
   } else {
     document.documentElement.style.setProperty(
       "--background-colour",
@@ -50,6 +55,10 @@ function App() {
     document.documentElement.style.setProperty(
       "--table-background",
       "#e6bfd694"
+    );
+    document.documentElement.style.setProperty(
+      "--final-table-background",
+      "rgba(218, 238, 195, 0.705)"
     );
     document.documentElement.style.setProperty(
       "--settings-background-colour",
@@ -68,6 +77,10 @@ function App() {
     document.documentElement.style.setProperty(
       "--homepage-button-colour",
       "#1d1d1d"
+    );
+    document.documentElement.style.setProperty(
+      "--button-color",
+      "rgb(173, 127, 127)"
     );
   }
 

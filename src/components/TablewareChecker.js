@@ -1,4 +1,5 @@
 import { AiOutlineClose } from "react-icons/ai";
+import { GiCookingPot } from "react-icons/gi";
 import { useState } from "react";
 
 const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
@@ -6,6 +7,9 @@ const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
     missingTablewareDictionaries,
     setMissingTablewareDictionaries,
   ] = useState([]);
+
+  const [finalActiveButton, setFinalActiveButton] = useState(false);
+
   const CloseButtonPressed = () => {
     if (activeButton) {
       setActiveButton(!activeButton);
@@ -15,11 +19,11 @@ const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
     }
   };
   const CloseButtonPressedFinalMessage = () => {
-    if (activeButton) {
-      setActiveButton(!activeButton);
+    if (finalActiveButton) {
+      setFinalActiveButton(!finalActiveButton);
       document
         .getElementsByClassName("final-message")[0]
-        .setAttribute("id", "Hidden");
+        .classList.add("Hidden");
     }
   };
 
@@ -83,34 +87,44 @@ const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
 
     setMissingTablewareDictionaries(MissingTablewareDictionaries);
 
-    console.log(TablewareNameList);
-    console.log(TablewareQuantityList);
-    console.log(TablewareValueList);
-    console.log(TrueValueList);
-    console.log(TrueNameList);
-    console.log(TrueQuantityList);
-    console.log(MissingTablewareName);
-    console.log(MissingTablewareQuantity);
-    console.log(TablewareDifference);
+    setFinalActiveButton(!finalActiveButton);
+    document
+      .getElementsByClassName("final-message")[0]
+      .classList.toggle("Hidden");
+
+    // console.log(TablewareNameList);
+    // console.log(TablewareQuantityList);
+    // console.log(TablewareValueList);
+    // console.log(TrueValueList);
+    // console.log(TrueNameList);
+    // console.log(TrueQuantityList);
+    // console.log(MissingTablewareName);
+    // console.log(MissingTablewareQuantity);
+    // console.log(TablewareDifference);
   };
 
   const TablewareText = () => {
-    let MissingTablewareDictionaries = [...missingTablewareDictionaries];
-    let i = 0;
     let Text = "Uh-oh! It appears like you're missing ";
     let Go = "You have enough tableware. Enjoy your meal!";
-    return MissingTablewareDictionaries.map((item) => {
-      i++;
-      if (i + 1 == MissingTablewareDictionaries.length) {
-        return item.missingQuantity + " " + item.name + " and ";
-      } else if (i + 1 < MissingTablewareDictionaries.length) {
-        return item.missingQuantity + " " + item.name + ", ";
-      } else if (i == MissingTablewareDictionaries.length) {
-        return item.missingQuantity + " " + item.name + ".";
-      } else {
-        return "";
-      }
-    });
+    if (missingTablewareDictionaries.length > 0) {
+      let MissingTablewareDictionaries = [...missingTablewareDictionaries];
+      let i = 0;
+      return (
+        Text +
+        MissingTablewareDictionaries.map((item) => {
+          i++;
+          if (i + 1 == MissingTablewareDictionaries.length) {
+            return item.missingQuantity + " " + item.name + " and";
+          } else if (i + 1 < MissingTablewareDictionaries.length) {
+            return item.missingQuantity + " " + item.name + ",";
+          } else if (i == MissingTablewareDictionaries.length) {
+            return item.missingQuantity + " " + item.name + ".";
+          }
+        }).join(" ")
+      );
+    } else {
+      return Go;
+    }
   };
 
   return (
@@ -157,26 +171,21 @@ const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
           Submit
         </button>
       </div>
-      <div className="final-message">
+      <div className="final-message Hidden">
         <div className="button-close">
           <button onClick={CloseButtonPressedFinalMessage} id="button-close-id">
             <AiOutlineClose />
             <p>Close</p>
           </button>
         </div>
-        <div className="something-missing">
-          <p className="something-missing-text">
-            Uh-oh! It appears like you're missing <TablewareText />
+        <div className="final-fantasy">
+          {/* If you know, you know */}
+          <p className="final-message-icon">
+            <GiCookingPot />
           </p>
-        </div>
-        <div className="nothing-missing">
-          <p className="nothing-missing-text">
-            You have enough tableware. Enjoy your meal!
+          <p className="final-message-text">
+            <TablewareText />
           </p>
-          {/* if tableware >= number of people:
-              print("You have enough tableware. Enjoy your meal.")
-            else:
-            print("You don't have enough tableware. Maybe more [Tableware.Name].")*/}
         </div>
       </div>
     </div>
@@ -184,3 +193,6 @@ const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
 };
 
 export default TablewareChecker;
+
+// Editar o modo vertical
+// Caixa das settings fica por trás das da Tableware
