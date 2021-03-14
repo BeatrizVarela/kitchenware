@@ -3,7 +3,6 @@ import '../styles/Ingredients.scss';
 import { useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
-// Falta ajustar com ecrã vertical
 
 const Ingredients = ({ ingAndRec }) => {
   const [activeFilter, setActiveFilter] = useState(false);
