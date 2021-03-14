@@ -17,7 +17,7 @@ const Ingredients = ({ ingAndRec }) => {
             <li>
               <p id='stock-name'>{ing.Name}</p>
               <p id='stock-quantity'>
-                {ing.Quantity} {ing.Measure}
+                {ing.Quantity} {ing.Quantity == 1 ? ing.Measure : ing.Measure + 's'}
               </p>
               <p id='stock-variety'>{ing.Variety}</p>
             </li>
@@ -31,12 +31,11 @@ const Ingredients = ({ ingAndRec }) => {
     return (
       <div className='ingredients-stock'>
         <ul>
-          {ingAndRec.Ingredients.filter((ing) => ing.Type === type).map(
-            (filteredIng) => (
+          {ingAndRec.Ingredients.filter((ing) => ing.Type === type).map((filteredIng) => (
               <li>
                 <p id='stock-name'>{filteredIng.Name}</p>
                 <p id='stock-quantity'>
-                  {filteredIng.Quantity} {filteredIng.Measure}
+                  {filteredIng.Quantity} {filteredIng.Quantity == 1? filteredIng.Measure : filteredIng.Measure + 's'}
                 </p>
                 <p id='stock-variety'>{filteredIng.Variety}</p>
               </li>
