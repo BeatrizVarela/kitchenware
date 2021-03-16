@@ -5,9 +5,15 @@ import { BiArrowBack } from 'react-icons/bi';
 
 
 const Ingredients = ({ ingAndRec }) => {
-  const [activeFilter, setActiveFilter] = useState(false);
-  const [type, setType] = useState();
 
+  // use states
+  const [activeFilter, setActiveFilter] = useState(false);  // activa ou desativa os filtros
+  const [type, setType] = useState();  // muda o tipo de ingrediente consoante o filtro escolhido
+
+
+  // funções
+
+  // vai buscar a informação dos ingredientes ao ficheiro data.js
   const IngredientStock = () => {
     return (
       <div className='ingredients-stock'>
@@ -26,6 +32,7 @@ const Ingredients = ({ ingAndRec }) => {
     );
   };
 
+  // filtra os ingredientes
   const FilteredIngredients = () => {
     return (
       <div className='ingredients-stock'>
@@ -45,6 +52,7 @@ const Ingredients = ({ ingAndRec }) => {
     );
   };
 
+  // alterna a lista de ingredientes completa com lista filtrada
   const FilterChecker = () => {
     if (!activeFilter) {
       return <IngredientStock />;
@@ -53,6 +61,7 @@ const Ingredients = ({ ingAndRec }) => {
     }
   };
 
+  // altera o tipo de filtro quando um botão é pressionado
   const FilterButtonPressed = (event) => {
     if (!activeFilter) {
       setActiveFilter(!activeFilter);

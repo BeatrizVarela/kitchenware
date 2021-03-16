@@ -152,13 +152,15 @@ const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
           {ingAndRec.Tableware.map((tab) => {
             return (
               <div className="checktable" id="checktable-id">
-                <input
-                  type="checkbox"
-                  id="tableware-name"
-                  className="tableware-checkmark"
-                  value={tab}
-                />
-                <label for="tableware-name"> {tab.Name} </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="tableware-name"
+                    className="tableware-checkmark"
+                    value={tab}
+                  />
+                  {tab.Name} 
+                </label>
               </div>
             );
           })}
@@ -194,5 +196,3 @@ const TablewareChecker = ({ activeButton, setActiveButton, ingAndRec }) => {
 
 export default TablewareChecker;
 
-// Editar o modo vertical
-// Caixa das settings fica por trás das da Tableware
