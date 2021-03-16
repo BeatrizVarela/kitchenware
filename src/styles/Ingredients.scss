@@ -1,64 +1,62 @@
 .ingredients {
   padding: 1%;
+  font-family: 'Barlow', sans-serif;
 
-  .table {
-    margin: 4rem 17rem 0 3rem;
-    height: 70vh;
-    background: #e6bfd694;
-    border: 0px solid;
-    border-radius: 5px;
+  a#Back {
+    height: 5vh;
+    position: fixed;
+    svg {
+      width: 70px;
+      height: 40px;
+    }
   }
 
-  .bars {
-    height: 58vh;
-    width: 16rem;
-    position: absolute;
-    margin: 5rem 0rem 0rem 13rem;
-    border-left: 1px solid rgb(105, 105, 105);
-    border-right: 1px solid rgb(105, 105, 105);
+  a:visited {
+    color: var(--text-colour);
+  }
+
+  .table {
+    margin: 7rem 17rem 0rem 2rem;
+    height: 36rem;
+    background: #e6bfd694;
+    background: var(--table-background);
+    border: 0px solid;
+    border-radius: 5px;
+    //backdrop-filter: blur(6px);
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .header {
     font-size: 1.5rem;
     border: 1px solid;
     border-radius: 5px;
+    position: fixed;
 
     ul {
       list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
       background-color: #636262;
     }
 
-    li#header-name {
-      float: left;
-      padding-left: 2rem;
-    }
+    li {
+      height: 8vh;
+      display: inline-block;
+      width: 14.55rem;
 
-    li#header-quantity {
-      float: left;
-      padding-left: 8.5rem;
-    }
-
-    li#header-variety {
-      float: left;
-      padding-left: 7.2rem;
-    }
-
-    li p {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 16px;
-      text-decoration: none;
+      p {
+        height: 8vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 16px;
+      }
     }
   }
 
   .ingredients-stock {
-    float: left;
-    margin-left: 5%;
-    padding-top: 4%;
+    padding-top: 5.5rem;
+    padding-bottom: 2%;
     font-size: 1.5rem;
 
     ul {
@@ -66,13 +64,143 @@
     }
 
     li {
-      padding: 0.8rem;
-      -webkit-column-count: 3;
-      -moz-column-count: 3;
-      column-count: 3;
-      -webkit-column-gap: 100px;
-      -moz-column-gap: 100px;
-      column-gap: 115px;
+      display: flex;
+      justify-content: space-around;
+      p {
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #stock-name {
+        text-decoration: none;
+        border-right: 1px solid rgb(105, 105, 105);
+        text-align: center;
+        width: 14.5rem;
+      }
+      #stock-quantity {
+        text-decoration: none;
+        text-align: center;
+        border-right: 1px solid rgb(105, 105, 105);
+        width: 14.5rem;
+      }
+      #stock-variety {
+        text-decoration: none;
+        text-align: center;
+        width: 14.5rem;
+      }
+    }
+  }
+
+  .filter {
+    float: right;
+    position: absolute;
+    height: 36rem;
+    width: 11.5rem;
+    margin: 7rem 0rem 10rem 49rem;
+    background: #e6bfd694;
+    background: var(--table-background);
+    border: 0px solid;
+    border-radius: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .filter-header {
+      height: 62px;
+      width: 11.38rem;
+      background: #636262;
+      font-size: 1.5rem;
+      border: 1px solid;
+      border-radius: 5px;
+      position: fixed;
+
+      p {
+        color: white;
+        text-align: center;
+        display: block;
+        padding: 16px;
+        text-decoration: none;
+      }
+    }
+
+    .filter-buttons {
+      padding-top: 4rem;
+
+      button {
+        padding: 5%;
+        padding-top: 4%;
+        margin: 1.1rem;
+        margin-left: 2.8rem;
+        border-radius: 20%;
+        height: 3rem;
+        width: 6rem;
+        text-align: center;
+        display: block;
+        background: var(--button-background2);
+        border: solid 1px black;
+        font-weight: bold;
+        font-family: 'Barlow', sans-serif;
+      }
+
+      button.Checked-filter {
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .table {
+    margin: 20rem 2rem 0rem 2rem !important;
+    height: 64vh !important;
+
+    .header {
+      li {
+        width: 14.3rem !important;
+
+        p {
+          padding: 26px !important;
+        }
+      }
+    }
+
+    .ingredients-stock {
+      padding-top: 7rem !important;
+    }
+  }
+
+  .filter {
+    position: fixed !important;
+    left: 5% !important;
+    top: 11% !important;
+    margin: 0 auto !important;
+    height: 10.15rem !important;
+    width: 43.1rem !important;
+
+    .filter-header {
+      height: 10rem !important;
+      width: 8rem !important;
+
+      p {
+        padding-top: 4rem !important;
+      }
+    }
+
+    .filter-buttons {
+      position: fixed !important;
+      margin: 0rem 0rem 0rem 8rem !important;
+      height: 162px !important;
+      width: 559px !important;
+      padding: 0 !important;
+      overflow-y: scroll !important;
+      overflow-x: hidden !important;
+
+      button {
+        margin: 1rem 0rem 1rem 2rem !important;
+        padding: 0 !important;
+        float: left !important;
+      }
     }
   }
 }
