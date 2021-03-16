@@ -13,9 +13,6 @@ import { useState } from "react";
 import { TransitionGroup,CSSTransition } from 'react-transition-group'
 
 function App() {
-  const [darkMode, setdarkMode] = useState(false);
-  const [ingAndRec, setingAndRec] = useState(data());
-
   //use states
   const [darkMode,setdarkMode] = useState(JSON.parse(localStorage.getItem("dark-mode")));
   const [ingAndRec,setingAndRec] = useState(data())
@@ -72,7 +69,7 @@ function App() {
                 <Recipes ingAndRec={ingAndRec}/>
               </Route>
               <Route path="/tableware" component={Tableware}>
-                <Tableware />
+                <Tableware ingAndRec={ingAndRec}/>
               </Route>
               <Route path="/shopping-list" component={ShoppingAlerts}>
                 <ShoppingAlerts ingAndRec={ingAndRec} />
