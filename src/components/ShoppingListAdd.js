@@ -109,7 +109,7 @@ const ShoppingListAdd = ({addItemsOpen,setaddItemsOpen,shoppingState,setshopping
         let shopping = [...shoppingState];
         let shoppingStorage = [...JSON.parse(localStorage.getItem('shopping-list'))];
         let i_recent = recent.indexOf(item)
-        let i_shopping = recent.indexOf(item)
+        let i_shopping = shopping.indexOf(item)
         recent.splice(i_recent, 1)
         setrecentlyAdded(recent)
         let quant = Number(shopping[i_shopping].Quantity) - Number(item.Quantity)

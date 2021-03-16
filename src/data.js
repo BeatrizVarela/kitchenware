@@ -399,8 +399,70 @@ function data() {
                 Difficulty:"Easy",
                 Image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/sausage-kale-gnocchi-one-pot-e890b33.jpg?quality=90&webp=true"
             }
+        ],
+        Tableware: [
+          {
+            Name: "Spoons",
+            Quantity: 6,
+            Type: "Silverware",
+          },
+          {
+            Name: "Knives",
+            Quantity: 3,
+            Type: "Silverware",
+          },
+          {
+            Name: "Forks",
+            Quantity: 4,
+            Type: "Silverware",
+          },
+          {
+            Name: "Regular plates",
+            Quantity: 5,
+            Type: "Dinnerware",
+          },
+          {
+            Name: "Dessert plates",
+            Quantity: 5,
+            Type: "Dinnerware",
+          },
+          {
+            Name: "Soup plates",
+            Quantity: 4,
+            Type: "Dinnerware",
+          },
+          {
+            Name: "Glasses",
+            Quantity: 6,
+            Type: "Drinkware",
+          },
+          {
+            Name: "Champagne glasses",
+            Quantity: 6,
+            Type: "Drinkware",
+          },
+          {
+            Name: "Wine glasses",
+            Quantity: 6,
+            Type: "Drinkware",
+          },
+          {
+            Name: "Salad bowls",
+            Quantity: 2,
+            Type: "Serveware",
+          },
+          {
+            Name: "Poké bowls",
+            Quantity: 2,
+            Type: "Serveware",
+          },
+          {
+            Name: "Fruit bowls",
+            Quantity: 1,
+            Type: "Serveware",
+          },
         ]
-    }
+  }
 }
 
 export default data;

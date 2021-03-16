@@ -1,12 +1,10 @@
-import { GiCookingPot,GiCutLemon,GiChickenOven,GiForkKnifeSpoon,GiShoppingCart } from "react-icons/gi";
-import { Link } from 'react-router-dom'
-import "../styles/HomePage.scss"
+import { GiCookingPot, GiCutLemon, GiChickenOven, GiForkKnifeSpoon, GiShoppingCart } from "react-icons/gi";
+import { Link } from "react-router-dom";
+import "../styles/HomePage.scss";
 
 const HomePage = () => {
 
-
-
-    return(
+  return(
         <section className="home-page">
             <div className="center-buttons">
                 <Link to="/ingredients" id="ingredients"><GiCutLemon /><br /><p>Ingredients</p></Link>
@@ -22,4 +20,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default HomePage;
