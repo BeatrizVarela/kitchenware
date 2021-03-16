@@ -1,13 +1,13 @@
-section.home-page {
+section.home-page { //div parente
   width: 100%;
   height: 100vh;
-  div.center-buttons {
+  div.center-buttons { //div quase parente
     margin: auto;
     padding-top: 15vh;
     padding-bottom: 15vh;
     width: 70%;
     height: 70vh;
-    a {
+    a { //links bonitos
       text-decoration: none;
       width: 11.5%;
 
@@ -20,17 +20,16 @@ section.home-page {
 
       svg {
         font-size: 5rem;
-        //background: rgba(255, 255, 255, 0.2);
         background-color: var(--button-background);
         box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
-        // backdrop-filter: blur(5px);
-        // -webkit-backdrop-filter: blur(5px);
         border-radius: 30%;
         border: 1px solid var(--text-colour);
         padding: 15%;
         color: var(--homepage-button-colour);
       }
     }
+    
+    //divs de botoes/texto nos sitios certos
 
     #ingredients {
       position: absolute;
@@ -61,29 +60,52 @@ section.home-page {
       left: 70%;
       top: 65vh;
     }
-    .center-logo {
+
+    //fim de divs de botoes/texto dos sitios certos
+
+    .center-logo { //div do kitchenware do meio
       width: 30%;
       height: 20vh;
-      position: fixed; /* or absolute */
+      position: fixed;
       top: 50%;
       left: 50%;
       margin-top: -76px;
-      margin-left: -153px;
-      font-family: 'Pacifico', cursive;
+      margin-left: -140px;
+      font-family: 'Shippori Mincho', serif !important;
       font-weight: lighter;
 
       svg {
         font-size: 7rem;
         margin-left: 100px;
         color: var(--pot-color);
-        background-color: var(--button-background);
-        border-radius: 30%;
-        border: 1px solid var(--text-colour);
       }
       h1 {
         font-size: 2.3rem;
         text-align: center;
       }
+    }
+  }
+}
+
+//Coisas para ficar bonitas de lado
+
+@media only screen and (max-width: 770px) {
+  .home-page{
+    a{
+      width:20% !important;
+      margin-left:-2% !important;
+      p{
+        margin-left:-30px !important;
+      }
+    }
+
+    h1{
+      margin-left:50px;
+    }
+
+    .center-logo{
+      margin-top: -100px !important;
+      margin-left: -150px !important;
     }
   }
 }
