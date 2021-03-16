@@ -1,30 +1,29 @@
-.settings {
+.settings { //div mãe
   position: fixed;
   z-index: 10;
   height: 10vh;
   width: 30%;
   margin-left: 70%;
-  button#Gear {
+  button#Gear { //botão que está sempre presente
+    position:absolute;
+    left:75%;
     margin-top: 10px;
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
-    float: right;
+    width: 20%;
+    height: 8vh;
     color: var(--text-colour);
     box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
-    //backdrop-filter: blur(5px);
-    //-webkit-backdrop-filter: blur(5px);
     border-radius: 30px;
     border: 1px solid var(--text-colour);
 
     svg {
-      width: 25px;
-      height: 25px;
+      width: 60%;
+      height: 5vh;
     }
   }
-  .settings-open {
+
+  .settings-open { //div aberto
     border: 1px solid var(--text-colour);
-    border-radius: 10px;
+    border-radius: 5%;
     margin: 20px;
     background: rgba(48, 48, 48, 1);
     opacity: 1;
@@ -34,50 +33,139 @@
     height: 95%;
     top: 0px;
     left: 0px;
-    z-index: 1000;
+    z-index: 10000000;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
-    button {
-      margin: 5px;
-      box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
+
+    div{ //como os conjuntos de botoes/texto funciona
+      display:flex;
+      justify-content: space-between;
+      height:20vh;
+      margin-left:5%;
+      margin-right:10%;
+    }
+
+    button.settings-button { //botoes como o dark mode, notifications, etc
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border-radius: 30px;
+      border-radius: 100%;
       border: 1px solid var(--text-colour);
-      width: 80px;
-      height: 30px;
+      width: 11%;
+      height: 13vh;
+      position:absolute;
+
+      svg {
+        width:85%;
+        height:7vh;
+      }
     }
 
-    button#close {
+    div#first-row{ //primeiros três botões
+      margin-top:5vh;
+      width:100%;
+
+      div{ //div do botao/texto
+        width:20%;
+
+        h3{
+          margin-top:13vh;
+          width: 60%;
+          text-align: center;
+        }
+      }
+    }
+
+    div#second-row{ //três botões do meio 
+      margin-top:10vh;
+      width:100%;
+
+      div{
+        width:20%;
+
+        h3{
+          margin-top:13vh;
+          width: 60%;
+          text-align: center;
+        }
+      }
+    }
+
+    div#third-row{ //ultímos três botões
+      margin-top:10vh;
+      width:100%;
+
+      div{
+        width:20%;
+
+        h3{
+          margin-top:13vh;
+          width: 60%;
+          text-align: center;
+        }
+      }
+    }
+
+    button#close { //botão para fechar
       margin-top: 5px;
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      left: 680px;
-      //background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px 0 rgba(48, 48, 48, 0.37);
-      //backdrop-filter: blur(5px);
-      //-webkit-backdrop-filter: blur(5px);
-      border-radius: 30px;
-      border: 1px solid var(--text-colour);
+      width: 8%;
+      height: 10vh;
+      float:right;
+      background:none;
+      border-radius: 100%;
+      border: none;
+
+      svg {
+        width:80%;
+        height:5vh;
+      }
     }
   }
 }
 
-.alert-enter {
-  opacity: 0;
-  transform: scale(0.95);
+@media only screen and (max-width: 770px) {
+  button#Gear{
+    height: 6vh !important;
+    width: 27% !important;
+    left:65% !important;
+    margin-top: 20px !important;
+  }
+
+  .settings-open {
+    div{
+      width:100% !important;
+      div{
+        width:40% !important;
+        button{
+          width:20% !important;
+          margin-left:-4%;
+        }
+        h3{
+          width:70% !important;
+        }
+      }
+    }
+    div#first-row{
+      div#notifications{
+        h3{
+          width:200% !important;
+          margin-left:-30% !important;
+          text-align:center !important;
+        }
+      }
+    }
+
+    div#second-row{
+      div#measurement{
+        h3{
+          width:200% !important;
+          margin-left:-30% !important;
+          text-align:center !important;
+        }
+      }
+    }
+  }
 }
-.alert-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms, transform 300ms;
-}
-.alert-exit {
-  opacity: 1;
-}
-.alert-exit-active {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 300ms, transform 300ms;
-}
+
+

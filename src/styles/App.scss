@@ -1,25 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Shippori+Mincho&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   transition: 0.5s ease;
   border-color: var(--text-colour);
 }
+
+*:focus{
+  outline:none;
+}
+
+//cores e fontes
 h1,
 h2,
 h3,
 h4,
 p,
 label,
-button {
+button,
+li {
   color: var(--text-colour);
+  font-family: 'Barlow', sans-serif;
 }
 
 html {
   background-color: var(--background-colour);
   background-image: var(--background-photo);
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size:100% 100vh;
   background-attachment: fixed;
+  scroll-behavior: auto;
 }
 
 button {
@@ -29,4 +40,45 @@ button {
 .App {
   width: 100%;
   height: 100vh;
+}
+
+//CSSTransition stuff
+
+.page-enter {
+  opacity: 0;
+  z-index:1
+}
+
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.page-exit {
+  opacity: 1;
+  z-index:-100;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms, transform 300ms;
 }

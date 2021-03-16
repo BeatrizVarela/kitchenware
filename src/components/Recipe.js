@@ -1,24 +1,55 @@
+//imports
+
 import { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import IngredientList from '../components/IngredientList'
-import { BsFillBookmarkFill } from 'react-icons/bs'
+import { BsFillBookmarkFill,BsBookmark } from 'react-icons/bs'
 import { AiOutlineClose } from 'react-icons/ai'
 
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, setsavedRecipes}) => {
 
+    //useStates
     const [detailRecipe,setDetailRecipe] = useState(false);
+    const [bookmark,bookmarkChange] = useState(false);
 
-    const saveRec = () => {
+
+    //funções
+    const saveRec = (event) => { //função para salvar a receita ou retirar a receita de salvar
         if (localStorage.getItem("saved-recipes")){
-            let i = JSON.parse(localStorage.getItem("saved-recipes"));
-            let arr = [i]
-            arr.push(recipe)
+            let arr = JSON.parse(localStorage.getItem("saved-recipes"));
+            if (localStorage.getItem("saved-recipes").includes(JSON.stringify(recipe))) {
+                var i;
+                for (i = 0; i < arr.length ; i++) {
+                    if (JSON.stringify(arr[i])===JSON.stringify(recipe)) {
+                        arr.splice(i,1)
+                    }
+                }
+            } else {
+                arr.push(recipe);
+            }
             localStorage.setItem("saved-recipes", JSON.stringify(arr));
         } else {
             localStorage.setItem("saved-recipes", JSON.stringify([recipe]));
         }
+        setsavedRecipes(JSON.parse(localStorage.getItem("saved-recipes")));
+
+        bookmarkChange(!(bookmark))
     }
+
+    const Bookmark = () => { //função que mostra bookmark filled se estiver guardado, ou não se não estiver guardado
+        if (localStorage.getItem("saved-recipes")) {
+            if (localStorage.getItem("saved-recipes").includes(JSON.stringify(recipe))){
+                return <BsFillBookmarkFill />
+            } else {
+                return <BsBookmark />
+            }
+        } else {
+            return <BsBookmark />
+        }
+    }
+
+    //fim de funções
 
 
     return(
@@ -39,14 +70,21 @@ const Recipe = ({recipe}) => {
         
         <div className="detail-recipe">
                 <button id="close" onClick={(() => setDetailRecipe(false))}><AiOutlineClose /></button>
-                <button id="save" onClick={saveRec}><BsFillBookmarkFill /></button>
+                <button id="save" onClick={saveRec}><Bookmark /> </button>
                 <h2 id="title">{recipe.Name}</h2>
                 <img src={recipe.Image} alt={recipe.Name} id="food-image" />
-                <p>{recipe.Tags.join(", ")} | {recipe.Duration} minutes | {recipe.Difficulty}</p>
+                <p>Serves: {recipe.Serving} people</p>
+                <p>{recipe.Tags.join(", ")} | {recipe.Duration} minutes | {recipe.Difficulty} | Kcal: {recipe.Calories}</p>
+                <h2 id="sub-title">Ingredients:</h2>
                 {recipe.Ingredients.map((ingredient) => {
                     return (<IngredientList ingredient={ingredient}/>);
                 })}
-                <p>{recipe.Recipe}</p>
+                <h2 id="sub-title">Recipe:</h2>
+                <ol>
+                    {recipe.Recipe.map((description) => {
+                        return <li>{description}</li>
+                    })}
+                </ol>
             </div>
             </CSSTransition>
         </div>

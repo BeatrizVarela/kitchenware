@@ -6,6 +6,7 @@ import TablewareChecker from "../components/TablewareChecker";
 import "../styles/Tableware.scss";
 
 const Tableware = ({ ingAndRec }) => {
+  console.log(ingAndRec)
   const [activeButton, setActiveButton] = useState(false);
 
   const ButtonPressed = () => {

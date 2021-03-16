@@ -1,30 +1,106 @@
-.recipes {
+.recipes { //div mãe
   padding: 1%;
 
-  .functionalities {
-    float: left;
-    margin-left: 3%;
-  }
-
-  .filters {
-    float: right;
-    margin-right: 3%;
-    font-size: 1.5rem;
-    width: 20%;
-    background-color: rgba(240, 128, 128, 0.295);
-
-    button {
-      border: 1px solid var(--text-colour);
-      margin: 2%;
-      font-size: 1.5rem;
-      background: none;
+  a#Back{ //seta do ínicio para voltar atrás
+    height:5vh;
+    position: fixed; 
+    svg{
+      width:70px;
+      height:40px;
     }
   }
 
-  p {
+  a:visited{
+    color:var(--text-colour);
+  }
+
+  .functionalities { //div para os botões de lado como o "saved recipes" e "this week"
+    position:fixed;
+    margin-left: 3%;
+
+
+    .button-combo{ //div com só o botão e texto 
+      margin-bottom:12vh;
+
+      p{
+        color:var(--text-colour);
+      }
+      button {
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        border-radius:50%;
+        width:6rem;
+        height:11vh;
+        
+  
+        svg{
+          width:5rem;
+          height:5vh;
+        }
+      }
+    }
+  }
+
+  .filters { //div com os filtros do lado direito
+    position:fixed;
+    left:75%;
+    margin-right: 3%;
+    font-size: 1.5rem;
+    width: 20%;
+    background-color: var(--low-opacity-background);
+    border: 2px solid var(--text-colour);
+    border-radius: 10%;
+    padding-left:2%;
+    padding-top:2%;
+    padding-bottom:2%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+
+    div{ 
+      width:100%;
+    }
+
+    div.difficulty-change{ //div com as dificuldades
+      align-items: center;
+    }
+    
+
+    button#remove-button{ //botao que remove os filtros
+      transition:0.5s;
+    }
+
+    button#remove-button:active{ //quando se clica no botão
+      transform:scale(1.1)
+    }
+
+    button { //settings para todos os botões
+      transition:1s ease;
+      padding:2%;
+      border: 2px solid var(--text-colour);
+      border-radius:25%;
+      margin: 2%;
+      margin-right:4%;
+      font-size: 1.3rem;
+      background: none;
+    }
+
+    button.Checked { //line through nos botões quando se clica
+      text-decoration:line-through;
+      opacity: 0.5;
+    }
+
+    button.Checked-filter {
+      text-decoration:line-through;
+      opacity: 0.5;
+    }
+  }
+
+  p { //font-size para o text todo
     font-size: 1.3rem;
   }
-  img#food-image {
+  img#food-image { //dimensões para a imagem dos recipe-cards
     width: 90%;
     height: 30vh;
     object-fit: cover;
@@ -32,7 +108,7 @@
     border: 3px solid var(--text-colour);
   }
 
-  .search-bar {
+  .search-bar { //search bar settings
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -42,7 +118,7 @@
     height: 7vh;
     width: 40%;
 
-    input {
+    input[type=text] {
       display: block;
       margin-left: 1%;
       width: 100%;
@@ -51,6 +127,13 @@
       border-radius: 10px;
     }
 
+    input[type=text]:focus { //quando se clica na search bar
+      transform: scale(1.1);
+      transition: 0.5s ease-in-out;
+    }
+
+
+
     label {
       display: block;
       margin-bottom: 1vh;
@@ -58,7 +141,7 @@
     }
   }
 
-  .recipe-card {
+  .recipe-card { //todas as receitas em forma de cartão
     padding: 1.5%;
     align-items: center;
     justify-content: center;
@@ -69,11 +152,11 @@
     width: 40%;
     height: 40vh;
     margin: auto;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     border-radius: 20px;
   }
 
-  .detail-recipe {
+  .detail-recipe { //as receitas abertas
     width: 90%;
     height: 90vh;
     z-index: 24353465;
@@ -83,33 +166,53 @@
     bottom: 0px;
     left: 0px;
     margin: auto;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     background-color: var(--settings-background-colour);
     border: 2px solid var(--text-colour);
     border-radius: 30px;
+    font-size:1.5rem;
+    overflow-y:scroll;
+
+    li{ //passos das receitas
+      font-size:1.5rem;
+      color:var(--text-colour);
+      margin: 5%;
+    }
+    h2#sub-title{ //titulo das cenas dos ingredientes
+      margin-top:4vh;
+      border-bottom:1px solid black;
+      border-top:1px solid black;
+      width:60%;
+      margin-left:20% !important;
+    }
 
 
-    button {
+    button { //margem para os botoes todos ali
       margin: 20px;
     }
 
-    button#close {
+    button#close { //botao que fecha
       float: left;
       border: none;
       border-radius: 50%;
       width: 6%;
       height: 6vh;
+      background:none;
       svg {
         width: 70%;
         height: 70%;
       }
     }
 
-    button#save {
+
+    button#save { //botao que guarda
       float: right;
       border: none;
       border-radius: 50%;
       width: 6%;
       height: 6vh;
+      background:none;
       svg {
         width: 70%;
         height: 70%;
@@ -118,15 +221,15 @@
 
     h2,
     p,
-    img {
+    img { //margin pra tudo
       margin-left: 20px;
       text-align: center;
     }
 
-    h2#title{
+    h2#title{ //titulo da receita
       margin-top:6.5%;
     }
-    img#food-image {
+    img#food-image { //mais cenas pra imagem MAS só quando o div está aberto
       width: 50%;
       height: 40vh;
       justify-content: center;
@@ -134,16 +237,20 @@
       margin-left: 25%;
     }
 
-    p#ingredient-checked {
+    p#ingredient{ //cenas dos ingredientes
+      margin-top:2vh;
+    }
+
+    p#ingredient-checked { //cenas pra quando os ingredientes sao usados
       text-decoration: line-through;
       opacity: 0.7;
+      margin-top:2vh;
     }
   }
 }
 
-.saved-recipes-show {
-  position: absolute;
-  display: block;
+.saved-recipes { //tudo a ver com as receitas guardadas
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -151,9 +258,123 @@
   width: 90%;
   height: 90vh;
   margin: auto;
-  background-color: rgba(240, 128, 128, 0.295);
+  background-color: var(--settings-background-colour);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index:54356795734;
+  border: 2px solid var(--text-colour);
+  border-radius: 30px;
+
+  h1#title{ //titulo do "saved recipes"
+    text-align:center;
+    width:70%;
+    font-size:3rem;
+    margin-left:16%;
+    margin-top:5vh;
+    border-bottom:2px solid var(--text-colour);
+  }
+
+  button#close { //botao que fecha
+    float:left;
+    margin:2%;
+    border: none;
+    border-radius: 50%;
+    width: 6%;
+    height: 6vh;
+    background:none;
+    svg {
+      width: 70%;
+      height: 70%;
+    }
+  }
+
+  h1.none{ //quando nao ha nenhuma receita guardada
+    font-size:3rem;
+    margin-top:30vh;
+    text-align:center;
+  }
+
+  .recipe-card { //coisas da recipe-card quando está dentro do saved recipes
+    margin-top:5%;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .saved-recipes-list{
+    overflow-y:scroll;
+    height:75vh;
+  }
 }
 
-.saved-recipes-hidden {
-  display: none;
+//CSS Transition things
+
+.recipes-fade-enter {
+  opacity: 0;
+  z-index:100000000;
 }
+
+.recipes-fade-active {
+  opacity: 1;
+  transition: opacity 200ms linear 150ms;
+}
+
+.recipes-fade-exit {
+  opacity: 1;
+  z-index:100000000;
+}
+
+.recipes-fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+
+//media query para funcionar de lado
+
+@media only screen and (max-width: 770px) {
+
+  .search-bar{
+    width:45% !important;
+  }
+
+  .recipe-card{
+    width:45% !important;
+  }
+
+  .detail-recipe{
+    img#food-image{
+      margin: 0% 25% !important;
+    }
+
+    button#close {
+      width: 10% !important;
+    }
+
+
+    button#save {
+      width: 10% !important;
+    }
+  }
+
+  .functionalities{
+    .button-combo{
+      margin-bottom:15vh !important;
+
+      button {
+        width:6rem !important;
+        height:9vh !important;
+        
+        svg{
+          width:4rem !important;
+          height:4vh !important;
+        }
+      }
+    }
+  }
+
+  .filters {
+    button {
+      font-size: 1.2rem !important;
+    }
+  }
+}
+
