@@ -13,7 +13,7 @@ const HomePage = () => {
                 <Link to="/shopping-list" id="shopping-alerts"><GiShoppingCart /><br /><p>Shopping List</p></Link>
                 <div className="center-logo">
                     <GiCookingPot />
-                    <h1>Kitchenware</h1>
+                    <h1>KITCHENWARE</h1>
                 </div>
             </div>
         </section>

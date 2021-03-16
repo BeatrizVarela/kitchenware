@@ -1,3 +1,4 @@
+
 section.home-page { //div parente
   width: 100%;
   height: 100vh;
@@ -37,7 +38,7 @@ section.home-page { //div parente
       left: 20%;
       top: 15vh;
       p {
-        margin-left: -10%;
+        margin-left: -5%;
       }
     }
 
@@ -70,9 +71,8 @@ section.home-page { //div parente
       position: fixed;
       top: 50%;
       left: 50%;
-      margin-top: -76px;
+      margin-top: -90px;
       margin-left: -140px;
-      font-family: 'Shippori Mincho', serif !important;
       font-weight: lighter;
 
       svg {
@@ -83,6 +83,7 @@ section.home-page { //div parente
       h1 {
         font-size: 1.7rem;
         text-align: center;
+        font-family: 'Shippori Mincho', serif !important;
       }
     }
   }

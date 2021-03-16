@@ -27,23 +27,6 @@
     overflow-x: hidden;
   }
 
-  .table {
-    margin: 4rem 17rem 0 3rem;
-    height: 70vh;
-    background: #e6bfd694;
-    border: 0px solid;
-    border-radius: 5px;
-  }
-
-  .bars {
-    height: 58vh;
-    width: 16rem;
-    position: absolute;
-    margin: 5rem 0rem 0rem 13rem;
-    border-left: 1px solid rgb(105, 105, 105);
-    border-right: 1px solid rgb(105, 105, 105);
-  }
-
   .header {
     font-size: 1.5rem;
     border: 1px solid;
@@ -168,55 +151,57 @@
 }
 
 @media only screen and (max-width: 769px) {
-  .table {
-    margin: 20rem 2rem 0rem 2rem !important;
-    height: 64vh !important;
+  .ingredients{
+    .table {
+      margin: 20rem 2rem 0rem 2rem !important;
+      height: 64vh !important;
 
-    .header {
-      li {
-        width: 14.3rem !important;
+      .header {
+        li {
+          width: 14.3rem !important;
 
-        p {
-          padding: 26px !important;
+          p {
+            padding: 26px !important;
+          }
         }
       }
-    }
 
-    .ingredients-stock {
-      padding-top: 7rem !important;
-    }
-  }
-
-  .filter {
-    position: fixed !important;
-    left: 5% !important;
-    top: 11% !important;
-    margin: 0 auto !important;
-    height: 10.15rem !important;
-    width: 43.1rem !important;
-
-    .filter-header {
-      height: 10rem !important;
-      width: 8rem !important;
-
-      p {
-        padding-top: 4rem !important;
+      .ingredients-stock {
+        padding-top: 7rem !important;
       }
     }
 
-    .filter-buttons {
+    .filter {
       position: fixed !important;
-      margin: 0rem 0rem 0rem 8rem !important;
-      height: 162px !important;
-      width: 559px !important;
-      padding: 0 !important;
-      overflow-y: scroll !important;
-      overflow-x: hidden !important;
+      left: 5% !important;
+      top: 11% !important;
+      margin: 0 auto !important;
+      height: 10.15rem !important;
+      width: 43.1rem !important;
 
-      button {
-        margin: 1rem 0rem 1rem 2rem !important;
+      .filter-header {
+        height: 10rem !important;
+        width: 8rem !important;
+
+        p {
+          padding-top: 4rem !important;
+        }
+      }
+
+      .filter-buttons {
+        position: fixed !important;
+        margin: 0rem 0rem 0rem 8rem !important;
+        height: 162px !important;
+        width: 559px !important;
         padding: 0 !important;
-        float: left !important;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+
+        button {
+          margin: 1rem 0rem 1rem 2rem !important;
+          padding: 0 !important;
+          float: left !important;
+        }
       }
     }
   }

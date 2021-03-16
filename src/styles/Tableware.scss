@@ -15,10 +15,10 @@ a:visited {
 
 .tableware {
   position: absolute;
-  padding: 3%;
   font-family: "Barlow", sans-serif;
-  width: 100%;
+  width: 90%;
   height: 100vh;
+  margin-top:3%;
 
   h1 {
     display: block;
@@ -141,6 +141,7 @@ a:visited {
 
   .table {
     margin: 4rem 14rem 0 3rem;
+    width:75%;
     height: 73vh;
     background: #e6bfd694;
     background: var(--table-background);
@@ -223,7 +224,7 @@ a:visited {
   .button {
     position: absolute;
     float: right;
-    left: 84%;
+    left: 88%;
     margin-top: -60vh;
     width: 10rem;
 
@@ -292,38 +293,40 @@ a:visited {
   }
 }
 
-@media only screen and (max-width: 850px) {
-  .header {
-    li#header-name {
-      padding-left: 1.5rem !important;
+@media only screen and (max-width: 770px) {
+  .tableware{
+    .header {
+      li#header-name {
+        padding-left: 1.5rem !important;
+      }
+
+      li#header-quantity {
+        padding-left: 2rem !important;
+      }
+
+      li#header-type {
+        padding-left: 3.5rem !important;
+      }
+    }
+    #stock-name {
+      width: 7.4rem !important;
+    }
+    #stock-quantity {
+      width: 8rem !important;
+    }
+    #stock-type {
+      margin-left: 2.5rem !important;
     }
 
-    li#header-quantity {
-      padding-left: 2rem !important;
-    }
+    .final-message {
+      margin: 6rem 14rem 0 3rem !important;
+      height: 30vh !important;
+      width: 80% !important;
 
-    li#header-type {
-      padding-left: 3.5rem !important;
-    }
-  }
-  #stock-name {
-    width: 7.4rem !important;
-  }
-  #stock-quantity {
-    width: 8rem !important;
-  }
-  #stock-type {
-    margin-left: 2.5rem !important;
-  }
-
-  .final-message {
-    margin: 6rem 14rem 0 3rem !important;
-    height: 30vh !important;
-    width: 80% !important;
-
-    .final-fantasy {
-      .final-message-icon {
-        margin-left: 12rem !important;
+      .final-fantasy {
+        .final-message-icon {
+          margin-left: 12rem !important;
+        }
       }
     }
   }

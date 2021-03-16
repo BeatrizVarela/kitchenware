@@ -102,7 +102,7 @@
     }
 
     h1#none{ //quando não há nada guardado
-      margin-top:17vh;
+      margin-top:15vh;
     }
   }
 
@@ -266,6 +266,12 @@
       width:50%;
       margin-left:25% !important;
       margin-top:15vh !important;
+
+      h1#none{
+        margin-top:20vh !important;
+        margin-left:10%;
+        width:80%;
+      }
     }
   }
 
