@@ -13,9 +13,10 @@ section.home-page { //div parente
 
       p {
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.3rem;
         color: var(--text-colour);
-        font-family: 'Tajawal', sans-serif;
+        font-family: "Barlow", sans-serif;
+        font-weight: bold;
       }
 
       svg {
@@ -80,7 +81,7 @@ section.home-page { //div parente
         color: var(--pot-color);
       }
       h1 {
-        font-size: 2.3rem;
+        font-size: 1.7rem;
         text-align: center;
       }
     }
