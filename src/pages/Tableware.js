@@ -5,17 +5,21 @@ import { useState } from "react";
 import TablewareChecker from "../components/TablewareChecker";
 import "../styles/Tableware.scss";
 
+//função para a construção da página /tableware
 const Tableware = ({ ingAndRec }) => {
-  console.log(ingAndRec)
-  const [activeButton, setActiveButton] = useState(false);
+  //console.log(ingAndRec)
+  const [activeButton, setActiveButton] = useState(false); //definição do useState para o botao Tableware Checker
 
+  // botão Tableware Checker
   const ButtonPressed = () => {
     if (!activeButton) {
+      // carregar para abrir
       setActiveButton(!activeButton);
       document
         .getElementsByClassName("tableware-checker")[0]
         .setAttribute("id", "Active");
     } else {
+      // após aberto, carregar para fechar
       setActiveButton(!activeButton);
       document
         .getElementsByClassName("tableware-checker")[0]
@@ -25,16 +29,22 @@ const Tableware = ({ ingAndRec }) => {
 
   return (
     <section className="tableware">
+      {/* definição do back button */}
       <Link to="/" id="Back">
         <BiArrowBack />
       </Link>
+      {/* export do TablewareChecker.js, atraves do botão Tableware Checker */}
       <TablewareChecker
         activeButton={activeButton}
         setActiveButton={setActiveButton}
         ingAndRec={ingAndRec}
       />
       <div className="table">
+        {" "}
+        {/* definição da tabela de Tableware */}
         <div className="header">
+          {" "}
+          {/* header da tabela */}
           <ul>
             <li id="header-name">
               <h1>Name</h1>
@@ -47,14 +57,17 @@ const Tableware = ({ ingAndRec }) => {
             </li>
           </ul>
         </div>
-
         <div className="tableware-stock">
-          <div className="bars"></div>
+          {" "}
+          {/* conteudos da tabela */}
           <ul>
             {ingAndRec.Tableware.map((tab) => (
               <li>
+                {/* nomes dos tablewares */}
                 <p id="stock-name">{tab.Name}</p>
+                {/* quantidades dos tablewares */}
                 <p id="stock-quantity">{tab.Quantity}</p>
+                {/* tipos dos tablewares */}
                 <p id="stock-type">{tab.Type}</p>
               </li>
             ))}
@@ -62,6 +75,7 @@ const Tableware = ({ ingAndRec }) => {
         </div>
       </div>
       <div className="button">
+        {/* botão para aceder ao Tableware Checker */}
         <button onClick={ButtonPressed} id="check-button">
           <GiKnifeFork />
           <p>Tableware Checker</p>

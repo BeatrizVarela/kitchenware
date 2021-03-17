@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
 
+//botao back
 a#Back {
   height: 5vh;
   position: fixed;
@@ -9,16 +10,63 @@ a#Back {
   }
 }
 
+//botao back quando clickado
 a:visited {
   color: var(--text-colour);
 }
 
+//tabela com a lista de tableware disponivel
+.table {
+  margin: 4rem 14rem 0 3rem;
+  width: 75%;
+  height: 73vh;
+  background: #e6bfd694;
+  background: var(--table-background);
+  border: 0px solid;
+  border-radius: 5px;
+  backdrop-filter: blur(6px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+//header da tabela
+.header {
+  font-size: 1.5rem;
+  border: 1px solid;
+  border-radius: 5px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #636262;
+  }
+
+  //definição da fonte no header
+  li#header-name {
+    float: left;
+    padding-left: 2rem;
+  }
+
+  li#header-quantity {
+    float: left;
+    padding-left: 10rem;
+  }
+
+  li#header-type {
+    float: left;
+    padding-left: 5.5rem;
+  }
+}
+
+//conteudos da tabela
 .tableware {
   position: absolute;
   font-family: "Barlow", sans-serif;
   width: 90%;
   height: 100vh;
-  margin-top:3%;
+  margin-top: 3%;
 
   h1 {
     display: block;
@@ -26,159 +74,6 @@ a:visited {
     text-align: center;
     padding: 16px;
     text-decoration: none;
-  }
-
-  .tableware-checker {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 4.5rem 14rem 0 3rem;
-    height: 78vh;
-    width: 75%;
-    border: 2px solid #d1d6bb91;
-    border-radius: 5px;
-    background: var(--table-background);
-    backdrop-filter: blur(6px);
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-
-    p {
-      padding: 5%;
-      font-family: "Barlow", sans-serif;
-      font-size: 1.1rem;
-    }
-  }
-
-  .button-close {
-    float: right;
-    margin: 2%;
-    width: 2rem;
-
-    #button-close-id {
-      padding: 0.2rem 0 0 0;
-      border: 1px solid rgb(105, 105, 105);
-      border-radius: 50px;
-      height: 2rem;
-      width: 2rem;
-      font-size: 1.5rem;
-      color: var(--button-color);
-    }
-    #button-close-id:focus {
-      outline: none;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-top: 0.2rem;
-      margin-left: -0.5rem;
-      font-family: "Barlow", sans-serif;
-      font-weight: bold;
-      color: rgb(105, 105, 105);
-    }
-  }
-  .tableware-checker-content {
-    margin: 5%;
-    .tableware-question {
-      margin-top: 1rem;
-      font-family: "Barlow", sans-serif;
-      font-size: 26px;
-    }
-    .tableware-question-input {
-      margin-top: 1%;
-      margin-left: 5%;
-      border: 1px solid rgb(105, 105, 105);
-      height: 3vh;
-      padding: 0.5rem;
-    }
-    .tableware-question-input:focus {
-      outline: none;
-    }
-    .tableware-second-question {
-      margin-top: 3%;
-      margin-bottom: 1%;
-      font-family: "Barlow", sans-serif;
-      font-size: 26px;
-      padding-bottom: 0.5rem;
-    }
-    .outer-checktable {
-      .checktable {
-        margin-top: 3%;
-        margin-left: 5%;
-        overflow-y: scroll;
-        display: inline-block;
-        width: 12rem;
-        input {
-          height: 1.1rem;
-          width: 1.1rem;
-          vertical-align: middle;
-        }
-        label {
-          vertical-align: middle;
-          font-size: 16px;
-        }
-      }
-    }
-    .tableware-question-submit-button {
-      margin-top: 6%;
-      margin-left: 5%;
-      padding: 0.4rem;
-      border-radius: 5px;
-      border: 1px solid rgb(105, 105, 105);
-    }
-    .tableware-question-submit-button:focus {
-      outline: none;
-    }
-  }
-
-  div#Active {
-    z-index: 1000;
-    opacity: 1 !important;
-  }
-
-  div#Hidden {
-    z-index: -1000;
-    opacity: 0;
-  }
-
-  .table {
-    margin: 4rem 14rem 0 3rem;
-    width:75%;
-    height: 73vh;
-    background: #e6bfd694;
-    background: var(--table-background);
-    border: 0px solid;
-    border-radius: 5px;
-    backdrop-filter: blur(6px);
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-
-  .header {
-    font-size: 1.5rem;
-    border: 1px solid;
-    border-radius: 5px;
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #636262;
-    }
-
-    li#header-name {
-      float: left;
-      padding-left: 2rem;
-    }
-
-    li#header-quantity {
-      float: left;
-      padding-left: 10rem;
-    }
-
-    li#header-type {
-      float: left;
-      padding-left: 5.5rem;
-    }
   }
 
   .tableware-stock {
@@ -196,6 +91,8 @@ a:visited {
       height: 8vh;
       display: flex;
       justify-content: space-around;
+
+      //definição da fonte na tabela
       p {
         height: 8vh;
         vertical-align: middle;
@@ -221,6 +118,8 @@ a:visited {
       }
     }
   }
+
+  // botao Tableware Checker
   .button {
     position: absolute;
     float: right;
@@ -251,6 +150,137 @@ a:visited {
       margin-left: -0.9rem;
     }
   }
+
+  //checker com as perguntas e checkboxes
+  .tableware-checker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 4.5rem 14rem 0 3rem;
+    height: 78vh;
+    width: 75%;
+    border: 2px solid #d1d6bb91;
+    border-radius: 5px;
+    background: var(--table-background);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+
+    p {
+      padding: 5%;
+      font-family: "Barlow", sans-serif;
+      font-size: 1.1rem;
+    }
+  }
+
+  //close button
+  .button-close {
+    float: right;
+    margin: 2%;
+    width: 2rem;
+
+    #button-close-id {
+      padding: 0.2rem 0 0 0;
+      border: 1px solid rgb(105, 105, 105);
+      border-radius: 50px;
+      height: 2rem;
+      width: 2rem;
+      font-size: 1.5rem;
+      color: var(--button-color);
+    }
+
+    //retirar o outline ao botao quando clickado
+    #button-close-id:focus {
+      outline: none;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-top: 0.2rem;
+      margin-left: -0.5rem;
+      font-family: "Barlow", sans-serif;
+      font-weight: bold;
+      color: rgb(105, 105, 105);
+    }
+  }
+
+  //conteudo do checker
+  .tableware-checker-content {
+    margin: 5%;
+
+    // primeira pergunta
+    .tableware-question {
+      margin-top: 1rem;
+      font-family: "Barlow", sans-serif;
+      font-size: 26px;
+    }
+
+    // answer box
+    .tableware-question-input {
+      margin-top: 1%;
+      margin-left: 5%;
+      border: 1px solid rgb(105, 105, 105);
+      height: 3vh;
+      padding: 0.5rem;
+    }
+    .tableware-question-input:focus {
+      outline: none;
+    }
+
+    // segunda pergunta
+    .tableware-second-question {
+      margin-top: 3%;
+      margin-bottom: 1%;
+      font-family: "Barlow", sans-serif;
+      font-size: 26px;
+      padding-bottom: 0.5rem;
+    }
+
+    //opções das checkboxes
+    .outer-checktable {
+      .checktable {
+        margin-top: 3%;
+        margin-left: 13%;
+        overflow-y: scroll;
+        display: inline-block;
+        width: 12rem;
+        input {
+          height: 1.1rem;
+          width: 1.1rem;
+          vertical-align: middle;
+        }
+        label {
+          vertical-align: middle;
+          font-size: 16px;
+        }
+      }
+    }
+
+    //submit button
+    .tableware-question-submit-button {
+      margin-top: 3%;
+      margin-left: 5%;
+      padding: 0.4rem;
+      border-radius: 5px;
+      border: 1px solid rgb(105, 105, 105);
+    }
+    .tableware-question-submit-button:focus {
+      outline: none;
+    }
+  }
+
+  //para tornar a div visivel quando acionado o botao
+  div#Active {
+    z-index: 1000;
+    opacity: 1 !important;
+  }
+
+  //para tornar a div oculta quando acionado o botao
+  div#Hidden {
+    z-index: -1000;
+    opacity: 0;
+  }
+
+  //mensagem final
   .final-message {
     position: fixed;
     top: 6%;
@@ -265,11 +295,13 @@ a:visited {
     z-index: 1000;
     opacity: 1;
 
+    //definições para quando está hidden
     &.Hidden {
       z-index: -1000;
       opacity: 0;
     }
 
+    //conteudo da mensagem final (icon + texto)
     .final-fantasy {
       .final-message-icon {
         font-size: 3.5rem;
@@ -293,8 +325,11 @@ a:visited {
   }
 }
 
+//compatibilidade com modo vertical
 @media only screen and (max-width: 770px) {
-  .tableware{
+  //conteudos da tabela
+  .tableware {
+    //definição da fonte no header
     .header {
       li#header-name {
         padding-left: 1.5rem !important;
@@ -308,6 +343,8 @@ a:visited {
         padding-left: 3.5rem !important;
       }
     }
+
+    //definição da fonte na tabela
     #stock-name {
       width: 7.4rem !important;
     }
@@ -318,11 +355,13 @@ a:visited {
       margin-left: 2.5rem !important;
     }
 
+    //mensagem final
     .final-message {
       margin: 6rem 14rem 0 3rem !important;
       height: 30vh !important;
       width: 80% !important;
 
+      //conteudo da mensagem final (icon)
       .final-fantasy {
         .final-message-icon {
           margin-left: 12rem !important;
